@@ -6,7 +6,8 @@ PRODUCT_SOONG_NAMESPACES += \
 
 PRODUCT_PACKAGES += \
     XiaomiParts \
-    XiaomiDoze
+    XiaomiDoze \
+    Dirac
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
