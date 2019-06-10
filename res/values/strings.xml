@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018 The Asus-SDM660 Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="advanced_settings">ZenParts</string>
+    <string name="advanced_settings_summary">Device specific tweaks</string>
+
+    <string name="display_title">Display</string>
+
+    <!-- KCAL -->
+    <string name="device_kcal_title">Display color calibration</string>
+    <string name="kcal_enabled_summary">Calibrate display using KCAL</string>
+
+    <!-- Backlight Dimmer -->
+    <string name="backlight_dimmer">Backlight dimmer</string>
+    <string name="backlight_summary">Dim the display to the maximum value</string>
+
+    <!-- Torch -->
+    <string name="torch_title">Torch</string>
+    <string name="torch_brightness_title">Brightness</string>
+
+    <!-- Vibration -->
+    <string name="vibration_title">Vibration</string>
+    <string name="vib_strength_title">Strength</string>
+    <string name="vib_strength_summary_head">Define the strength of the vibrator</string>
+    <string name="vib_call_strength_title_head">Call strength</string>
+    <string name="vib_call_strength_summary_head">Define the strength of the vibrator during an incoming call</string>
+    <string name="vib_notif_strength_title_head">Notification strength</string>
+    <string name="vib_notif_strength_summary_head">Define the strength of the vibrator during an incoming notification</string>
+
+    <!-- Notification LED brightness -->
+    <string name="notification_title">Notification LED</string>
+    <string name="notification_led_title">LED brightness</string>
+
+    <!-- Spectrum Profiles -->
+    <string name="spectrum_profile_title">Spectrum</string>
+    <string name="spectrum_title">Spectrum profiles</string>
+    <string name="spectrum_summary">Choose your spectrum profiles</string>
+    <string name="spectrum_dialogTitle">Choose your spectrum profiles</string>
+
+    <!-- Values for Spectrum Presets -->
+    <string name="spectrum_performance">Performance</string>
+    <string name="spectrum_battery">Battery</string>
+    <string name="spectrum_gaming">Gaming</string>
+    <string name="spectrum_balance">Balance</string>
+
+    <string name="audio_enhancer_title">Audio enhancer</string>
+    <string name="audio_gain_title">Audio gains</string>
+
+    <!-- Dirac settings -->
+    <string name="dirac_title">Dirac sound enhancer</string>
+    <string name="dirac_summary">Optimize audio quality</string>
+    <string name="dirac_headset_title">Choose headphones type</string>
+    <string name="dirac_preset_title">Choose a preset</string>
+
+    <!-- Dirac settings: Headset types -->
+    <string name="dirac_headset_default">Default</string>
+    <string name="dirac_headset_earbuds">Mi earbuds</string>
+    <string name="dirac_headset_in_ear_2013">Mi in-ear (2013)</string>
+    <string name="dirac_headset_piston_1">Mi piston-1</string>
+    <string name="dirac_headset_general">General</string>
+    <string name="dirac_headset_general_inear">General in-ear</string>
+    <string name="dirac_headset_piston_basic">Basic edition</string>
+    <string name="dirac_headset_piston_2">Mi piston-2</string>
+    <string name="dirac_headset_piston_standard">Standard edition</string>
+    <string name="dirac_headset_headphone">Mi headphones</string>
+    <string name="dirac_headset_piston_youth">Youth edition</string>
+    <string name="dirac_headset_piston_color">Color edition</string>
+    <string name="dirac_headset_in_ear">Mi in-ear</string>
+    <string name="dirac_headset_capsule">Mi capsule</string>
+    <string name="dirac_headset_in_ear_pro">Mi in-ear pro</string>
+    <string name="dirac_headset_comfort">Mi comfort</string>
+    <string name="dirac_headset_reduction_noise">Mi noise cancelling Type-C</string>
+    <string name="dirac_headset_cancelling">Mi noise cancelling 3.5mm</string>
+    <string name="dirac_headset_half_in_ear">Mi half in-ear</string>
+    <string name="dirac_headset_in_ear2">Mi in-ear 2</string>
+    <string name="dirac_headset_earphone_basic">Mi earphones basic</string>
+    <string name="dirac_headset_earphone">Mi earphones</string>
+
+    <!-- Dirac settings: Equalizer presets -->
+    <string name="dirac_preset_default">Default</string>
+    <string name="dirac_preset_rock">Rock</string>
+    <string name="dirac_preset_jazz">Jazz</string>
+    <string name="dirac_preset_pop">Pop</string>
+    <string name="dirac_preset_classical">Classical</string>
+    <string name="dirac_preset_hiphop">Hip hop</string>
+    <string name="dirac_preset_blues">Blues</string>
+    <string name="dirac_preset_electronic">Electronic</string>
+    <string name="dirac_preset_country">Country</string>
+    <string name="dirac_preset_dance">Dance</string>
+    <string name="dirac_preset_metal">Metal</string>
+
+    <!-- Audio amplification -->
+    <string name="headphone_gain">Headphone gain</string>
+    <string name="microphone_gain">Microphone gain</string>
+    <string name="earpiece_gain">Earpiece gain (Calls)</string>
+    <string name="speaker_gain">Speaker gain</string>
+
+    <!-- KCAL -->
+    <string name="advanced_settings_kcal">Display color calibration</string>
+    <string name="cat_colormanagement">Color settings</string>
+    <string name="cat_calibration">Display calibration</string>
+
+    <string name="kcal_enabled">On</string>
+    <string name="kcal_disabled">Off</string>
+    <string name="set_on_boot">Set on boot</string>
+    <string name="color_red">Red</string>
+    <string name="color_green">Green</string>
+    <string name="color_blue">Blue</string>
+    <string name="color_minimum">Minimum</string>
+    <string name="saturation">Saturation</string>
+    <string name="value">Value</string>
+    <string name="contrast">Contrast</string>
+    <string name="hue">Hue</string>
+    <string name="grayscale">Grayscale display</string>
+
+    <string name="presets_dialog_title">Select preset</string>
+
+    <!-- Presets -->
+    <string name="preset_default">Default</string>
+    <string name="preset_version_1">Version 1</string>
+    <string name="preset_version_2">Version 2</string>
+    <string name="preset_version_3">Version 3</string>
+    <string name="preset_triluminous">Triluminous</string>
+    <string name="preset_deep_black_white">Deep black and white</string>
+    <string name="preset_deep_natural">Deep natural</string>
+    <string name="preset_cool_amoled">Cool amoled</string>
+    <string name="preset_extreme_amoled">Extreme amoled</string>
+    <string name="preset_warm_amoled">Warm amoled</string>
+    <string name="preset_hybrid_mamba">Hybrid mamba</string>
+    <string name="preset_sir_banger">Sir Banger</string>
+    <string name="preset_gerard_extrem_cool">Gerard extreme cool</string>
+    <string name="preset_yoyoz808">Yoyoz808</string>
+    <string name="preset_purian">Purian</string>
+    <string name="preset_deep_black_colorful">Deep black colorful</string>
+    <string name="preset_vomer_deep_rich">Vomer deep rich</string>
+    <string name="preset_franco">Franco</string>
+    <string name="preset_wrinklefree_cool">Wrinklefree cool</string>
+    <string name="preset_harley_tech">Harley-tech</string>
+    <string name="preset_perfection">Perfection</string>
+    <string name="preset_banged_up">Banged up</string>
+    <string name="preset_sim_cooler">Simcooler</string>
+    <string name="preset_obsanity">Obsanity</string>
+    <string name="preset_obsanity_ips">Obsanity IPS</string>
+
+    <!-- USB fastcharge -->
+    <string name="usb_fastcharge_title">USB fastcharge</string>
+    <string name="fastcharge_title">Enable/Disable USB fastcharge</string>
+    <string name="fastcharge_summary">Charge upto 900mA when connected to a computer via USB 3.0 port</string>
+
+    <!-- menu -->
+    <string name="kcal_presets" translatable="false">@string/presets_dialog_title</string>
+    <string name="kcal_reset">Reset</string>
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Value: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">Default</string>
+    <string name="custom_seekbar_default_value_to_set">Default value: <xliff:g id="v">%s</xliff:g>\nLong press to set</string>
+    <string name="custom_seekbar_default_value_is_set">Default value is set</string>
+
+    <!-- Gestures: Touchscreen gestures -->
+    <string name="gestures">Gestures</string>
+
+    <!-- Log Tile -->
+    <string name="quick_settings_log_tile_label">Logs</string>
+    <string name="quick_settings_log_tile_dialog_title">Options</string>
+    <string name="cannot_get_su">Action failed because of missing superuser access</string>
+
+    <!-- FPS Info -->
+    <string name="fps_info_title">FPS info overlay</string>
+    <string name="fps_info_summary">Show overlay with current frames per second</string>
+
+    <!-- Ambient gesture haptic feedback -->
+    <string name="ambient_gesture_haptic_feedback">Haptic feedback</string>
+    <string name="ambient_gesture_haptic_feedback_summary">Vibrate when an ambient gesture is detected</string>
+
+    <!-- Ambient Display -->
+    <string name="ambient_display_enable_title">Ambient display gestures</string>
+    <string name="ambient_display_enable_summary">Wake screen when you receive notifications</string>
+    <string name="ambient_display_gestures_title">Ambient display gestures</string>
+    <string name="ambient_display_gestures_summary">Additional gestures to wake the screen</string>
+    <string name="ambient_display_summary">Wake screen when you receive notifications</string>
+    <string name="ambient_display_summary_on">Screen will wake when you receive notifications</string>
+    <string name="ambient_display_summary_off">Screen will not wake when you receive notifications</string>
+
+    <!-- Doze sensor -->
+    <string name="tilt_sensor_title">Tilt sensor</string>
+    <string name="pickup_sensor_title">Pickup sensor</string>
+    <string name="proximity_sensor_title">Proximity sensor</string>
+
+    <!-- Hand wave gesture -->
+    <string name="hand_wave_gesture_title">Hand wave</string>
+    <string name="hand_wave_gesture_summary">Pulse notifications on hand wave</string>
+    <string name="hand_wave_gesture_flat_title">Detect orientation</string>
+    <string name="hand_wave_gesture_flat_summary">Pulse only if the phone is lying face up on a flat surface</string>
+
+    <!-- Pick-up gesture -->
+    <string name="pick_up_gesture_title">Pick-up</string>
+    <string name="pick_up_gesture_summary">Pulse notifications on pick-up</string>
+
+    <!-- Pocket gesture -->
+    <string name="pocket_gesture_title">Pocket</string>
+    <string name="pocket_gesture_summary">Pulse notifications on removal from pocket</string>
+
+    <!-- Proximity wake -->
+    <string name="proximity_wake_title">Proximity wake</string>
+    <string name="proximity_wake_enable_title">Proximity wake</string>
+    <string name="proximity_wake_enable_summary">Wake device on hand wave</string>
+
+    <!-- Label for feature switch -->
+    <string name="switch_bar_on">On</string>
+
+    <!-- Label for feature switch -->
+    <string name="switch_bar_off">Off</string>
+
+    <!-- Boosts -->
+    <string name="boost_title">Boost</string>
+    <string name="gpuboost_title">GPU boost</string>
+    <string name="cpuboost_title">CPU boost</string>
+    <string name="gpuboost_dialogTitle">Select your GPU boost level</string>
+    <string name="cpuboost_dialogTitle">Select your CPU boost level</string>
+
+    <!-- GPU/CPU Boost Presets -->
+    <string name="gpuboost_high">High</string>
+    <string name="gpuboost_medium">Medium</string>
+    <string name="gpuboost_low">Low</string>
+    <string name="gpuboost_disable">Disable</string>
+
+    <string name="cpuboost_extreme">Extreme</string>
+    <string name="cpuboost_high">High</string>
+    <string name="cpuboost_medium">Medium</string>
+    <string name="cpuboost_low">Low</string>
+    <string name="cpuboost_disable">Disable</string>
+
+    <!-- Touchboost -->
+    <string name="touchboost_title">Enable/Disable touchboost</string>
+    <string name="touchboost_summary">Boosts CPU when touch detected for smooth experience</string>
+
+    <!-- Selinux Switch -->
+    <string name="selinux_category">SELinux</string>
+    <string name="selinux_explanation_summary">SELinux is a set of kernel modifications and user-space tools. Changing modes can cause unwanted effects. Use at your own risk.</string>
+    <string name="selinux_mode_title">SELinux mode</string>
+    <string name="selinux_permissive_summary">Permissive</string>
+    <string name="selinux_enforcing_summary">Enforcing</string>
+    <string name="selinux_persistence_title">Persist across reboots</string>
+    <string name="selinux_persistence_summary">Restore the above set sepolicy mode on each boot</string>
+    <string name="selinux_permissive_toast_title">Selinux set to permissive!</string>
+    <string name="selinux_enforcing_toast_title">Selinux set to enforcing!</string>
+
+    <!-- Speaker -->
+    <string name="speaker_category">Speaker</string>
+
+    <!-- Clear Speaker -->
+    <string name="clear_speaker_title">Clear speaker</string>
+    <string name="clear_speaker_summary">Play a 30-second audio to clear the speaker</string>
+    <string name="clear_speaker_description">Run this feature once or twice if you find that your speaker is lightly blocked by dust. Set media volume to maximum.\n\nIf the speaker is blocked heavily, run this feature 2-5 times while shaking your device with the speaker facing downwards.</string>
+
+    <!-- Charging -->
+    <string name="smart_charging_main_title">Charging</string>
+    <string name="smart_charging_title">Smart charging</string>
+    <string name="smart_charging_summary">Helps in cooling down &amp; also protects from over charging the device</string>
+    <string name="reset_stats_title">Reset battery stats</string>
+    <string name="reset_stats_summary">Battery stats will get reset when charging limit is reached</string>
+
+</resources>

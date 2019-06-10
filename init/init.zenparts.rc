@@ -1,0 +1,162 @@
+on boot
+
+# SMART CHARGING
+  chown system system /sys/class/power_supply/battery/input_suspend
+  chmod 0666 /sys/class/power_supply/battery/input_suspend
+  chown system system /sys/class/power_supply/battery/charging_enabled
+  chmod 0660 /sys/class/power_supply/battery/charging_enabled
+
+# Audio gain permissions
+  chown system system /sys/kernel/sound_control/earpiece_gain
+  chown system system /sys/kernel/sound_control/headphone_gain
+  chown system system /sys/kernel/sound_control/mic_gain
+  chown system system /sys/kernel/sound_control/speaker_gain
+  chmod 0660 /sys/kernel/sound_control/earpiece_gain
+  chmod 0660 /sys/kernel/sound_control/headphone_gain
+  chmod 0660 /sys/kernel/sound_control/mic_gain
+  chmod 0660 /sys/kernel/sound_control/speaker_gain
+
+# Backlight Dimmer
+  chown system system /sys/module/mdss_fb/parameters/backlight_dimmer
+  chmod 0660 /sys/module/mdss_fb/parameters/backlight_dimmer
+
+# Boosts
+# GPU/CPU Boost based on ronax's MayhemParts
+
+    chown system system /sys/devices/soc/5000000.qcom,kgsl-3d0/devfreq/5000000.qcom,kgsl-3d0/adrenoboost
+    chmod 0644 /sys/devices/soc/5000000.qcom,kgsl-3d0/devfreq/5000000.qcom,kgsl-3d0/adrenoboost
+
+    chown system system /sys/module/cpu_boost/parameters/input_boost_enabled
+    chown system system /sys/module/cpu_boost/parameters/input_boost_freq
+    chown system system /sys/module/cpu_boost/parameters/input_boost_ms
+    chmod 0644 /sys/module/cpu_boost/parameters/input_boost_enabled
+    chmod 0644 /sys/module/cpu_boost/parameters/input_boost_freq
+    chmod 0644 /sys/module/cpu_boost/parameters/input_boost_ms
+
+    # Run zenparts script to initialize boost props
+    exec u:r:init:s0 root root -- /vendor/bin/init.zenparts.sh
+    exec u:r:su:s0 root root -- /vendor/bin/init.zenparts.sh
+
+# GPU-Disable (default profile)
+on property:persist.zenparts.gpu_profile=0
+    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 0
+    write /sys/module/adreno_idler/parameters/adreno_idler_active "Y"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload "10000"
+    write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential "35"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idlewait "15"
+
+# GPU-Low
+on property:persist.zenparts.gpu_profile=1
+    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 1
+    write /sys/module/adreno_idler/parameters/adreno_idler_active "Y"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload "6000"
+    write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential "15"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idlewait "25"
+
+# GPU-Medium
+on property:persist.zenparts.gpu_profile=2
+    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 2
+    write /sys/module/adreno_idler/parameters/adreno_idler_active "Y"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idleworkload "5000"
+    write /sys/module/adreno_idler/parameters/adreno_idler_downdifferential "15"
+    write /sys/module/adreno_idler/parameters/adreno_idler_idlewait "40"
+
+# GPU-High
+on property:persist.zenparts.gpu_profile=3
+    write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 3
+    write /sys/module/adreno_idler/parameters/adreno_idler_active "N"
+
+# CPU-Disable (default profile)
+on property:persist.zenparts.cpu_profile=0
+    write /sys/module/cpu_boost/parameters/input_boost_enabled 0
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:0 1:0 2:0 3:0 4:0 5:0 6:0 7:0"
+    write /sys/module/cpu_boost/parameters/input_boost_ms 0
+
+# CPU-Low
+on property:persist.zenparts.cpu_profile=1
+    write /sys/module/cpu_boost/parameters/input_boost_enabled 1
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1113600 1:1113600 2:1113600 3:1113600 4:1113600 5:1113600 6:1113600 7:1113600"
+    write /sys/module/cpu_boost/parameters/input_boost_ms 400
+
+# CPU-Medium
+on property:persist.zenparts.cpu_profile=2
+    write /sys/module/cpu_boost/parameters/input_boost_enabled 1
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1401600 1:1401600 2:1401600 3:1401600 4:1401600 5:1401600 6:1401600 7:1401600"
+    write /sys/module/cpu_boost/parameters/input_boost_ms 700
+
+# CPU-High
+on property:persist.zenparts.cpu_profile=3
+    write /sys/module/cpu_boost/parameters/input_boost_enabled 1
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1747200 1:1747200 2:1747200 3:1747200 4:1958400 5:1958400 6:1958400 7:1958400"
+    write /sys/module/cpu_boost/parameters/input_boost_ms 1000
+
+# CPU-Extreme
+on property:persist.zenparts.cpu_profile=4
+    write /sys/module/cpu_boost/parameters/input_boost_enabled 1
+    write /sys/module/cpu_boost/parameters/input_boost_freq "0:2150400 1:2150400 2:2150400 3:2150400 4:2208000 5:2208000 6:2208000 7:2208000"
+    write /sys/module/cpu_boost/parameters/input_boost_ms 3000
+
+# FPS Info
+  chown system graphics /sys/class/graphics/fb0/measured_fps
+  chmod 0666 /sys/class/graphics/fb0/measured_fps
+
+# KCAL permissions
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_enable
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_cont
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_sat
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_hue
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_min
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_val
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_enable
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_cont
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_sat
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_hue
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_min
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_val
+
+# LED Brightness
+  chown system system /sys/class/leds/blue/max_brightness
+  chown system system /sys/class/leds/red/max_brightness
+  chown system system /sys/class/leds/green/max_brightness
+  chown system system /sys/class/leds/blue/brightness
+  chown system system /sys/class/leds/red/brightness
+  chown system system /sys/class/leds/green/brightness
+  chmod 0660 /sys/class/leds/blue/max_brightness
+  chmod 0660 /sys/class/leds/red/max_brightness
+  chmod 0660 /sys/class/leds/green/max_brightness
+  chmod 0660 /sys/class/leds/blue/brightness
+  chmod 0660 /sys/class/leds/red/brightness
+  chmod 0660 /sys/class/leds/green/brightness
+
+# Smartcharging permissions
+  chown system system /sys/class/power_supply/battery/charging_enabled
+  chown system system /sys/class/power_supply/battery/input_suspend
+  chmod 0666 /sys/class/power_supply/battery/charging_enabled
+  chmod 0666 /sys/class/power_supply/battery/input_suspend
+
+# Torch permissions
+  chown system system /sys/class/leds/led:torch_0/max_brightness
+  chown system system /sys/class/leds/led:torch_1/max_brightness
+  chmod 0660 /sys/class/leds/led:torch_0/max_brightness
+  chmod 0660 /sys/class/leds/led:torch_1/max_brightness
+
+# Touchboost
+  chown system system /sys/module/msm_performance/parameters/touchboost
+  chmod 0660 /sys/module/msm_performance/parameters/touchboost
+
+# USB fastcharge permissions
+  chown system system /sys/kernel/fast_charge/force_fast_charge
+  chmod 0660 /sys/kernel/fast_charge/force_fast_charge
+
+# Vibrator permissions
+  chown system system /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_override
+  write /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_override 1
+  chown system system /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_mv_user
+  chown system system /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_mv_call
+  chown system system /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_mv_strong
+  chmod 0660 /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_override
+  chown 0660 /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_mv_user
+  chmod 0660 /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_mv_call
+  chmod 0660 /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_mv_strong
