@@ -29,6 +29,8 @@ import android.widget.Toast;
 import android.text.TextUtils;
 
 import com.xiaomi.parts.kcal.Utils;
+import com.xiaomi.parts.DiracUtils;
+import com.xiaomi.parts.R;
 
 import java.io.IOException;
 import java.util.List;
@@ -62,6 +64,8 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                     PREF_HUE, HUE_DEFAULT));
         }
 
+        // Dirac
+        context.startService(new Intent(context, DiracService.class));
     }
 
     private void showToast(String toastString, Context context) {
