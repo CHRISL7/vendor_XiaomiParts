@@ -1,0 +1,19 @@
+cc_prebuilt_library_shared {
+	name: "libaudioparsers",
+	owner: "xiaomi",
+	strip: {
+		none: true,
+	},
+	target: {
+		android_arm: {
+			srcs: ["vendor/proprietary/vendor/lib/libaudioparsers.so"],
+		},
+		android_arm64: {
+			srcs: ["vendor/proprietary/vendor/lib64/libaudioparsers.so"],
+		},
+	},
+	compile_multilib: "both",
+	check_elf_files: false,
+	prefer: true,
+	soc_specific: true,
+}
