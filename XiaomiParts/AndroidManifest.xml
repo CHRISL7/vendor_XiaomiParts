@@ -134,10 +134,6 @@
             </intent-filter>
         </service>
 
-        <service android:name="com.xiaomi.parts.SmartChargingService"
-                android:exported="false">
-        </service>
-
         <service
             android:name=".XiaomiPartsTile"
             android:enabled="true"
@@ -148,7 +144,10 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service> 
-
+        <service android:name="com.xiaomi.parts.SmartChargingService"
+                android:exported="false">
+        </service>
+        
         <activity
             android:name=".thermal.ThermalActivity"
             android:label="@string/thermal_profile"

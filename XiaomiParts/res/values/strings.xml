@@ -229,13 +229,6 @@
     <string name="clear_speaker_summary">Play a 30-second audio to clear the speaker</string>
     <string name="clear_speaker_description">Run this feature once or twice if you find that your speaker is lightly blocked by dust. Set media volume to maximum.\n\nIf the speaker is blocked heavily, run this feature 2-5 times while shaking your device with the speaker facing downwards.</string>
 
-    <!-- Charging -->
-    <string name="smart_charging_main_title">Battery</string>
-    <string name="smart_charging_title">Smart Charging</string>
-    <string name="smart_charging_summary">Helps in cooling down &amp; also protects from over charging the device</string>
-    <string name="reset_stats_title">Reset battery stats</string>
-    <string name="reset_stats_summary">Battery stats will get reset when charging limit is reached</string>
-
     <!-- Thermal Profiles -->
     <string name="thermal_profile">Thermal Profiles</string>
     <string name="thermal_summary">Adjust per-app thermal profiles for optimum performance</string>
@@ -251,4 +244,11 @@
     <string name="blur_title">QS Blur</string>
     <string name="blur_on">On</string>
     <string name="blur_off">Off</string>
+
+    <!-- Charging -->
+    <string name="smart_charging_main_title">Battery</string>
+    <string name="smart_charging_title">Smart Charging</string>
+    <string name="smart_charging_summary">Helps in cooling down &amp; also protects from over charging the device</string>
+    <string name="reset_stats_title">Reset battery stats</string>
+    <string name="reset_stats_summary">Battery stats will get reset when charging limit is reached</string>
 </resources>
