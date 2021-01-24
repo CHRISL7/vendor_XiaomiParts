@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018 The Asus-SDM660 Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="advanced_settings">Xiaomi Parts</string>
+    <string name="advanced_settings_summary">Mini Gerenciador de Kernel para o Redmi Note 7/7s</string>
+
+    <string name="display_title">Tela</string>
+
+    <!-- KCal -->
+    <string name="device_kcal_title">Calibração de cores da tela</string>
+    <string name="kcal_enabled_summary">Calibrar exibição usando KCAL</string>
+
+    <!-- Backlight Dimmer -->
+    <string name="backlight_dimmer">Luz de fundo</string>
+    <string name="backlight_summary">Escureça a tela para o valor máximo</string>
+
+    <string name="torch_title">Lanterna</string>
+    <string name="torch_brightness_title">Brilho</string>
+    <string name="yellow_torch_brightness_title">Luz amarela do flash</string>
+    <string name="white_torch_brightness_title">Luz branca da lanterna</string>
+    <string name="cameraflash_title">Flash da câmera</string>
+    <string name="yellowflash_intensity_title">Intensidade de luz amarela</string>
+	
+    <!-- Vibration -->
+    <string name="vibration_title">Vibração</string>
+    <string name="vibration_strength_title">Força da vibração</string>
+
+    <!-- Spectrum Profiles -->
+    <string name="spectrum_profile_title">Spectrum</string>
+    <string name="spectrum_title">Perfis do Spectrum</string>
+    <string name="spectrum_summary">Escolha o perfil do Spectrum</string>
+    <string name="spectrum_dialogTitle">Escolha o perfil do Spectrum</string>
+
+    <!-- Values for Spectrum Presets -->
+    <string name="spectrum_performance">Performance</string>
+    <string name="spectrum_battery">Bateria</string>
+    <string name="spectrum_gaming">Jogo</string>
+    <string name="spectrum_balance">Balanceado</string>
+    <string name="spectrum_ubattery">Ultra economia de bateria</string>
+
+    <string name="audio_title">Àudio</string>
+    <string name="highperfaudio_title">Modo de alto desempenho de áudio</string>
+    <string name="highperfaudio_summary">Ative para obter melhor desempenho de áudio</string>
+
+    <!-- Dirac settings -->
+    <string name="dirac_title">Dirac Sound Enhancer</string>
+    <string name="dirac_summary">Otimize a qualidade do áudio</string>
+    <string name="dirac_headset_title">Escolha o tipo de fone de ouvido</string>
+    <string name="dirac_preset_title">Escolha uma predefinição</string>
+
+    <!-- Dirac settings: Headset types -->
+    <string name="dirac_headset_default">Padrão</string>
+    <string name="dirac_headset_earbuds">Mi Earbuds</string>
+    <string name="dirac_headset_in_ear_2013">Mi In-Ear (2013)</string>
+    <string name="dirac_headset_piston_1">Mi Piston-1</string>
+    <string name="dirac_headset_general">General</string>
+    <string name="dirac_headset_general_inear">General In-Ear</string>
+    <string name="dirac_headset_piston_basic">Basic Edition</string>
+    <string name="dirac_headset_piston_2">Mi Piston-2</string>
+    <string name="dirac_headset_piston_standard">Standard Edition</string>
+    <string name="dirac_headset_headphone">Mi Headphones</string>
+    <string name="dirac_headset_piston_youth">Youth Edition</string>
+    <string name="dirac_headset_piston_color">Color Edition</string>
+    <string name="dirac_headset_in_ear">Mi In-Ear</string>
+    <string name="dirac_headset_capsule">Mi Capsule</string>
+    <string name="dirac_headset_in_ear_pro">Mi In-Ear Pro</string>
+    <string name="dirac_headset_comfort">Mi Comfort</string>
+    <string name="dirac_headset_reduction_noise">Mi Noise Cancelling Type-C</string>
+    <string name="dirac_headset_cancelling">Mi Noise Cancelling 3.5mm</string>
+    <string name="dirac_headset_half_in_ear">Mi Half In-Ear</string>
+    <string name="dirac_headset_in_ear2">Mi In-Ear 2</string>
+    <string name="dirac_headset_earphone_basic">Mi Earphones Basic</string>
+    <string name="dirac_headset_earphone">Mi Earphones</string>
+
+    <!-- Dirac settings: Equalizer presets -->
+    <string name="dirac_preset_default">Padrão</string>
+    <string name="dirac_preset_rock">Rock</string>
+    <string name="dirac_preset_jazz">Jazz</string>
+    <string name="dirac_preset_pop">Pop</string>
+    <string name="dirac_preset_classical">Clássico</string>
+    <string name="dirac_preset_hiphop">Hip Hop</string>
+    <string name="dirac_preset_blues">Blues</string>
+    <string name="dirac_preset_electronic">Eletrônica</string>
+    <string name="dirac_preset_country">Country</string>
+    <string name="dirac_preset_dance">Dance</string>
+    <string name="dirac_preset_metal">Metal</string>
+    <string name="dirac_preset_bass_booster">Bass Booster</string>
+
+    <!-- Audio amplification -->
+    <string name="headphone_gain">Ganho de fone de ouvido</string>
+    <string name="microphone_gain">Ganho de microfone</string>
+    <string name="earpiece_gain">Ganho do fone de ouvido (chamadas)</string>
+    <string name="speaker_gain">Ganho de alto-falante</string>
+
+    <!-- kcal -->
+    <string name="advanced_settings_kcal">Calibração de cores da tela</string>
+    <string name="cat_colormanagement">Configurações de cor</string>
+    <string name="cat_calibration">Calibração de tela</string>
+
+    <string name="kcal_enabled">On</string>
+    <string name="kcal_disabled">Off</string>
+    <string name="set_on_boot">Definido na inicialização</string>
+    <string name="color_red">Vermelho</string>
+    <string name="color_green">Verde</string>
+    <string name="color_blue">Azul</string>
+    <string name="color_minimum">Mínimo</string>
+    <string name="saturation">Saturação</string>
+    <string name="value">Valor</string>
+    <string name="contrast">Contraste</string>
+    <string name="hue">Hue</string>
+    <string name="grayscale">Tela em tons de cinza</string>
+
+    <string name="presets_dialog_title">Selecione uma predefinição</string>
+    <!-- Presets -->
+    <string name="preset_default">Default</string>
+    <string name="preset_version_1">Version 1</string>
+    <string name="preset_version_2">Version 2</string>
+    <string name="preset_version_3">Version 3</string>
+    <string name="preset_triluminous">Triluminous</string>
+    <string name="preset_deep_black_white">Deep Black and White</string>
+    <string name="preset_deep_natural">Deep Natural</string>
+    <string name="preset_cool_amoled">Cool Amoled</string>
+    <string name="preset_extreme_amoled">Extreme Amoled</string>
+    <string name="preset_warm_amoled">Warm Amoled</string>
+    <string name="preset_hybrid_mamba">Hybrid Mamba</string>
+    <string name="preset_sir_banger">Sir Banger</string>
+    <string name="preset_gerard_extrem_cool">Gerard Extreme Cool</string>
+    <string name="preset_yoyoz808">Yoyoz808</string>
+    <string name="preset_purian">Purian</string>
+    <string name="preset_deep_black_colorful">Deep Black Colorful</string>
+    <string name="preset_vomer_deep_rich">Vomer Deep Rich</string>
+    <string name="preset_franco">Franco</string>
+    <string name="preset_wrinklefree_cool">WrinkleFree Cool</string>
+    <string name="preset_harley_tech">Harley-Tech</string>
+    <string name="preset_perfection">Perfection</string>
+    <string name="preset_banged_up">Banged up</string>
+    <string name="preset_sim_cooler">SimCooler</string>
+    <string name="preset_obsanity">Obsanity</string>
+    <string name="preset_obsanity_ips">Obsanity IPS</string>
+
+    <!-- USB fastcharge -->
+    <string name="usb_fastcharge_title">Carga rápida USB</string>
+    <string name="fastcharge_title">Habilitar carga rápida USB</string>
+    <string name="fastcharge_summary">Carregue até 900mA quando conectado a um computador via porta USB 3.0</string>
+
+    <!-- menu -->
+    <string name="kcal_presets" translatable="false">@string/presets_dialog_title</string>
+    <string name="kcal_reset">Redefinir</string>
+
+    <!-- Custom seekbar -->
+    <string name="custom_seekbar_value">Valor: <xliff:g id="v">%s</xliff:g></string>
+    <string name="custom_seekbar_default_value">Padrão</string>
+    <string name="custom_seekbar_default_value_to_set">Valor padrão: <xliff:g id="v">%s</xliff:g>\nLong press to set</string>
+    <string name="custom_seekbar_default_value_is_set">O valor padrão é definido</string>
+
+    <!-- Log Tile -->
+    <string name="quick_settings_log_tile_label">LogTile</string>
+    <string name="quick_settings_log_tile_dialog_title">Opções</string>
+    <string name="cannot_get_su">A ação falhou devido à falta de acesso de superusuário</string>
+
+    <!-- FPS Info -->
+    <string name="fps_info_title">Exibir FPS</string>
+    <string name="fps_info_summary">Mostrar FPS atualizado por segundo</string>
+
+    <!-- Ambient gesture haptic feedback -->
+    <string name="display_gestures">Gestos</string>
+    <string name="ambient_gesture_haptic_feedback">Feedback tátil</string>
+    <string name="ambient_gesture_haptic_feedback_summary">Vibrar quando um gesto de ambiente for detectado</string>
+
+    <!-- Ambient Display -->
+    <string name="ambient_display_enable_title">Gestos de exibição de ambiente</string>
+    <string name="ambient_display_enable_summary">Acorde a tela ao receber notificações</string>
+    <string name="ambient_display_gestures_title">Gestos de exibição de ambiente</string>
+    <string name="ambient_display_gestures_summary">Gestos adicionais para ativar a tela</string>
+    <string name="ambient_display_summary">Acorde a tela ao receber notificações</string>
+    <string name="ambient_display_summary_on">A tela será ativada quando você receber notificações</string>
+    <string name="ambient_display_summary_off">A tela não será ativada quando você receber notificações</string>
+
+    <!-- Doze sensor -->
+    <string name="tilt_sensor_title">Sensor de inclinação</string>
+    <string name="pickup_sensor_title">Pickup sensor</string>
+    <string name="proximity_sensor_title">Sensor de proximidade</string>
+
+    <!-- Hand wave gesture -->
+    <string name="hand_wave_gesture_title">Aceno de mão</string>
+    <string name="hand_wave_gesture_summary">Notificações de pulso em onda</string>
+    <string name="hand_wave_gesture_flat_title">Detectar orientação</string>
+    <string name="hand_wave_gesture_flat_summary">Pulso apenas se o telefone estiver voltado para cima em uma superfície plana</string>
+
+    <!-- Pick-up gesture -->
+    <string name="pick_up_gesture_title">Pegar</string>
+    <string name="pick_up_gesture_summary">Pulsar notificações ao pegar</string>
+
+    <!-- Pocket gesture -->
+    <string name="pocket_gesture_title">Bolso</string>
+    <string name="pocket_gesture_summary">Pulsar notificações ao remover do bolso</string>
+
+    <!-- Proximity wake -->
+    <string name="proximity_wake_title">Despertar por proximidade</string>
+    <string name="proximity_wake_enable_title">Despertar por proximidade</string>
+    <string name="proximity_wake_enable_summary">Despertar dispositivo ao acenar a mão</string>
+
+    <!-- Label for feature switch -->
+    <string name="switch_bar_on">On</string>
+
+    <!-- Label for feature switch -->
+    <string name="switch_bar_off">Off</string>
+
+    <!-- Game Turbo Boost -->
+    <string name="game_turbo_mode_title">Game Turbo para melhor Performance</string>
+
+    <!-- Touchboost -->
+    <string name="boost_title">Impulso do toque na tela</string>
+    <string name="touchboost_title">Habilitar impulso do toque na tela</string>
+    <string name="touchboost_summary">Aumente a CPU quando o toque for detectado para uma experiência suave</string>
+
+    <!-- GPU Boost Profiles -->
+    <string name="gpuboost_title">Impulso de GPU</string>
+    <string name="gpuboost_summary">Aumente seu gpu sem comprometer a eficiência de energia</string>
+    <string name="gpuboost_dialogTitle">Selecione seu nível de impulso de GPU</string>
+
+    <!-- Values for GPU Boost Presets -->
+    <string name="gpuboost_high">Alto</string>
+    <string name="gpuboost_medium">Médio</string>
+    <string name="gpuboost_low">Baixo</string>
+    <string name="gpuboost_disable">Desabilitado</string>
+
+    <!-- CPU Boost Profiles -->
+    <string name="cpuboost_title">Impulso de CPU</string>
+    <string name="cpuboost_summary">Aumente sua CPU para uma melhor experiência</string>
+    <string name="cpuboost_dialogTitle">Selecione seu nível de impulso de CPU</string>
+
+    <!-- Values for CPU Boost Presets -->
+    <string name="cpuboost_high">Alto</string>
+    <string name="cpuboost_medium">Médio</string>
+    <string name="cpuboost_low">Baixo</string>
+    <string name="cpuboost_disable">Desabilitado</string>
+
+    <!-- LED Brightness -->
+    <!--string name="chargingled_title">Charging LED</string>
+    <string name="led_blinking_title">Blinking Intensity</string -->
+
+    <string name="thermal_title">Térmico</string>
+    <string name="msmthermal_title">MSM Térmico</string>
+    <string name="msmthermal_summary">Habilitar controle de driver térmico</string>
+    <string name="corecontrol_title">Controle de Núcleo</string>
+    <string name="corecontrol_summary">Limite dos núcleos</string>
+    <string name="vddrestrict_title">Restrição VDD</string>
+    <string name="vddrestrict_summary">Limita a tensão da CPU</string>
+    <string name="cpucore_title">Núcleo da CPU</string>
+    <string name="cpucore_summary">Controle o núcleo da CPU</string>
+    <string name="cpucore_dialogTitle">Selecione não. do núcleo deseja desativar</string>
+
+    <!-- Values for CPU Boost Presets -->
+    <string name="cpucore_zero">0</string>
+    <string name="cpucore_one">1</string>
+    <string name="cpucore_two">2</string>
+    <string name="cpucore_three">3</string>
+    <string name="cpucore_four">4</string>
+    <string name="cpucore_five">5</string>
+    <string name="cpucore_six">6</string>
+    <string name="cpucore_seven">7</string>
+
+     <!-- LKM Profiles -->
+    <string name="lkmprofile_title">Matador de memória</string>
+    <string name="lkmprofile_summary">Matador de memória</string>
+    <string name="lkmprofile_dialogTitle">Escolha o seu perfil LKM</string>
+
+    <!-- Values for LKM Presets -->
+    <string name="lkmprofile_veryaggressive">Muito agressivo</string>
+    <string name="lkmprofile_aggressive">Agressivo</string>
+    <string name="lkmprofile_light">Leve</string>
+    <string name="lkmprofile_medium">Médio</string>
+    <string name="lkmprofile_verylight">Muito Leve</string>
+    <string name="lkmprofile_default">Padrão</string>
+    <string name="lkmprofile_disable">Desabilitado</string>
+
+    <!-- LKM Profiles -->
+    <string name="tcpcongestion_title">Congestionamento TCP</string>
+    <string name="tcpcongestion_summary">Algoritmo de congestionamento do protocolo de controle de transmissão</string>
+    <string name="tcpcongestion_dialogTitle">Escolha seu Algoritmo de Congestionamento TCP</string>
+
+    <!-- Values for LKM Presets -->
+    <string name="tcpcongestion_westwood">westwood</string>
+    <string name="tcpcongestion_cubic">cubic</string>
+    <string name="tcpcongestion_reno">reno</string>
+    <string name="tcpcongestion_bic">bic</string>
+    <string name="tcpcongestion_highspeed">highspeed</string>
+    <string name="tcpcongestion_htcp">htcp</string>
+
+    <!-- Selinux Switch -->
+    <string name="selinux_category">SELinux</string>
+    <string name="selinux_explanation_summary">SELinux é um conjunto de modificações do kernel e ferramentas de espaço do usuário. Alterar os modos pode causar efeitos indesejados. Use por sua conta e risco.</string>
+    <string name="selinux_mode_title">Modo do SELinux</string>
+    <string name="selinux_permissive_summary">Permissive</string>
+    <string name="selinux_enforcing_summary">Enforcing</string>
+    <string name="selinux_persistence_title">Persistir nas reinicializações</string>
+    <string name="selinux_persistence_summary">Restaure o modo sepolicy acima definido em cada inicialização</string>
+    <string name="selinux_permissive_toast_title">Selinux definido como permissive!</string>
+    <string name="selinux_enforcing_toast_title">Selinux definido como enforcing!</string>
+
+    <!-- Speaker -->
+    <string name="speaker_category">Alto-Falante</string>
+    
+    <!-- Clear Speaker -->
+    <string name="clear_speaker_title">Limpar alto-falante</string>
+    <string name="clear_speaker_summary">Reproduza um áudio de 30 segundos para limpar o alto-falante</string>
+    <string name="clear_speaker_description">Execute este recurso uma ou duas vezes se descobrir que o alto-falante está ligeiramente bloqueado por poeira. Defina o volume da mídia para o máximo. \ N \ nSe o alto-falto-falante estiver fortemente bloqueado, execute este recurso 2 a 5 vezes enquanto agita seu dispositivo com o alto-falante voltado para baixo.</string>
+
+    <!-- Charging -->
+    <string name="smart_charging_main_title">Bateria</string>
+    <string name="smart_charging_title">Carregamento inteligente</string>
+    <string name="smart_charging_summary">Ajuda no resfriamento e também protege contra sobrecarga do dispositivo</string>
+    <string name="reset_stats_title">Redefinir estatísticas da bateria</string>
+    <string name="reset_stats_summary">As estatísticas da bateria serão redefinidas quando o limite de carga for atingido</string>
+</resources>
