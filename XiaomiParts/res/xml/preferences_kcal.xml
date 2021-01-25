@@ -26,28 +26,28 @@
         android:key="cat_colormanagement"
         android:title="@string/cat_colormanagement">
 
-        <com.xiaomi.parts.preferences.CustomSeekBarPreference
+        <com.xiaomi.parts.preferences.SecureSettingCustomSeekBarPreference
             android:defaultValue="255"
             android:dependency="kcal_enabled"
             android:key="color_red"
             android:max="255"
             android:title="@string/color_red" />
 
-        <com.xiaomi.parts.preferences.CustomSeekBarPreference
+        <com.xiaomi.parts.preferences.SecureSettingCustomSeekBarPreference
             android:defaultValue="255"
             android:dependency="kcal_enabled"
             android:key="color_green"
             android:max="255"
             android:title="@string/color_green" />
 
-        <com.xiaomi.parts.preferences.CustomSeekBarPreference
+        <com.xiaomi.parts.preferences.SecureSettingCustomSeekBarPreference
             android:defaultValue="255"
             android:dependency="kcal_enabled"
             android:key="color_blue"
             android:max="255"
             android:title="@string/color_blue" />
 
-        <com.xiaomi.parts.preferences.CustomSeekBarPreference
+        <com.xiaomi.parts.preferences.SecureSettingCustomSeekBarPreference
             android:defaultValue="35"
             android:dependency="kcal_enabled"
             android:key="color_minimum"
@@ -60,28 +60,29 @@
         android:key="cat_calibration"
         android:title="@string/cat_calibration">
 
-        <com.xiaomi.parts.preferences.CustomSeekBarPreference
+        <com.xiaomi.parts.preferences.SecureSettingCustomSeekBarPreference
             android:defaultValue="35"
             android:dependency="kcal_enabled"
             android:key="saturation"
             android:max="158"
             android:title="@string/saturation" />
 
-        <com.xiaomi.parts.preferences.CustomSeekBarPreference
+        <com.xiaomi.parts.preferences.SecureSettingCustomSeekBarPreference
             android:defaultValue="127"
             android:dependency="kcal_enabled"
             android:key="value"
             android:max="255"
             android:title="@string/value" />
 
-        <com.xiaomi.parts.preferences.CustomSeekBarPreference
+        <com.xiaomi.parts.preferences.SecureSettingCustomSeekBarPreference
             android:defaultValue="127"
             android:dependency="kcal_enabled"
             android:key="contrast"
             android:max="255"
             android:title="@string/contrast" />
 
-        <com.xiaomi.parts.preferences.CustomSeekBarPreference
+
+        <com.xiaomi.parts.preferences.SecureSettingCustomSeekBarPreference
             android:defaultValue="0"
             android:dependency="kcal_enabled"
             android:key="hue"
@@ -93,6 +94,5 @@
             android:dependency="kcal_enabled"
             android:key="grayscale"
             android:title="@string/grayscale" />
-
     </PreferenceCategory>
 </PreferenceScreen>
