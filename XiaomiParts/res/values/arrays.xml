@@ -58,7 +58,7 @@
 
     <array name="preset_values">
         <!-- R, G, B, minimum, saturation, value, contrast, hue -->
-        <item>237 237 237 35 33 127 127 0</item>
+        <item>230 220 210 05 35 115 130 1520</item>
         <item>237 237 237 35 40 127 127 0</item>
         <item>250 250 235 35 27 112 132 1520</item>
         <item>240 240 240 35 33 127 127 0</item>
