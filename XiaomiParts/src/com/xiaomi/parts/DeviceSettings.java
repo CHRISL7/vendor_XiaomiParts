@@ -53,16 +53,8 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private static final String TAG = "XiaomiParts";
 
-    public static final String KEY_YELLOW_TORCH_BRIGHTNESS = "yellow_torch_brightness";
     public static final String KEY_WHITE_TORCH_BRIGHTNESS = "white_torch_brightness";
     public static final String TORCH_1_BRIGHTNESS_PATH = "/sys/class/leds/led:torch_0/max_brightness";
-    public static final String TORCH_2_BRIGHTNESS_PATH = "/sys/class/leds/led:torch_1/max_brightness";
-
-    public static final String PREF_CHARGING_LED = "charging_led";
-    public static final String CHARGING_LED_PATH = "/sys/class/leds/charging/max_brightness";
-
-    public static final String PREF_BACKLIGHT_DIMMER = "backlight_dimmer";
-    public static final String BACKLIGHT_DIMMER_PATH = "/sys/module/mdss_fb/parameters/backlight_dimmer";
 
     public static final String KEY_CALL_VIBSTRENGTH = "vib_call_strength";
     public static final String KEY_NOTIF_VIBSTRENGTH = "vib_notif_strength";
@@ -73,9 +65,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String PREF_SPECTRUM = "spectrum";
     public static final String SPECTRUM_SYSTEM_PROPERTY = "persist.spectrum.profile";
 
-    public static final String PREF_ENABLE_DIRAC = "dirac_enabled";
-    public static final String PREF_HEADSET = "dirac_headset_pref";
-    public static final String PREF_PRESET = "dirac_preset_pref";
     public static final String PREF_HEADPHONE_GAIN = "headphone_gain";
     public static final String HEADPHONE_GAIN_PATH = "/sys/kernel/sound_control/headphone_gain";
     public static final String PREF_MICROPHONE_GAIN = "microphone_gain";
@@ -90,9 +79,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
     public static final String PREF_MSM_TOUCHBOOST = "touchboost";
     public static final String MSM_TOUCHBOOST_PATH = "/sys/module/msm_performance/parameters/touchboost";
-
-    public static final String HIGH_PERF_AUDIO = "highperfaudio";
-    public static final String HIGH_AUDIO_PATH = "/sys/module/snd_soc_wcd9330/parameters/high_perf_mode";
 
     public static final String PERF_MSM_THERMAL = "msmthermal";
     public static final String MSM_THERMAL_PATH = "/sys/module/msm_thermal/parameters/enabled";
@@ -112,12 +98,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String PREF_CPUBOOST = "cpuboost";
     public static final String CPUBOOST_SYSTEM_PROPERTY = "persist.cpuboost.profile";
 
-    public static final String PREF_CAMERA = "camera";
-    public static final String CAMERA_SYSTEM_PROPERTY = "persist.camera.profile";
-
-    //public static final String PREF_USB_FASTCHARGE = "fastcharge";
-    //public static final String USB_FASTCHARGE_PATH = "/sys/kernel/fast_charge/force_fast_charge";
-
     private CustomSeekBarPreference mTorchBrightness;
 
     private static final String SELINUX_CATEGORY = "selinux";
@@ -130,8 +110,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String KEY_RESET_STATS = "reset_stats";
 
     private CustomSeekBarPreference mWhiteTorchBrightness;
-    private CustomSeekBarPreference mYellowTorchBrightness;
-    private SecureSettingSwitchPreference mHighAudio;
     private SecureSettingSwitchPreference mMsmThermal;
     private SecureSettingSwitchPreference mCoreControl;
     private SecureSettingSwitchPreference mVddRestrict;
@@ -142,19 +120,14 @@ public class DeviceSettings extends PreferenceFragment implements
     private Preference mKcal;
     private SecureSettingListPreference mSPECTRUM;
     private Preference mAmbientPref;
-    private SecureSettingSwitchPreference mEnableDirac;
-    private SecureSettingListPreference mHeadsetType;
-    private SecureSettingListPreference mPreset;
     private CustomSeekBarPreference mHeadphoneGain;
     private CustomSeekBarPreference mMicrophoneGain;
     private CustomSeekBarPreference mEarpieceGain;
     private CustomSeekBarPreference mSpeakerGain;
 
-    private SecureSettingSwitchPreference mBacklightDimmer;
     private SecureSettingSwitchPreference mTouchboost;
     private SecureSettingListPreference mGPUBOOST;
     private SecureSettingListPreference mCPUBOOST;
-    private SecureSettingListPreference mCamera;
     private static Context mContext;
     private SwitchPreference mSelinuxMode;
     private SwitchPreference mSelinuxPersistence;
@@ -182,10 +155,6 @@ public class DeviceSettings extends PreferenceFragment implements
         mWhiteTorchBrightness = (CustomSeekBarPreference) findPreference(KEY_WHITE_TORCH_BRIGHTNESS);
         mWhiteTorchBrightness.setEnabled(FileUtils.fileWritable(TORCH_1_BRIGHTNESS_PATH));
         mWhiteTorchBrightness.setOnPreferenceChangeListener(this);
-
-        mYellowTorchBrightness = (CustomSeekBarPreference) findPreference(KEY_YELLOW_TORCH_BRIGHTNESS);
-        mYellowTorchBrightness.setEnabled(FileUtils.fileWritable(TORCH_2_BRIGHTNESS_PATH));
-        mYellowTorchBrightness.setOnPreferenceChangeListener(this);
 
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
 
@@ -222,50 +191,10 @@ public class DeviceSettings extends PreferenceFragment implements
         mCamera.setSummary(mCamera.getEntry());
         mCamera.setOnPreferenceChangeListener(this);
 
-        if (FileUtils.fileWritable(BACKLIGHT_DIMMER_PATH)) {
-            mBacklightDimmer = (SecureSettingSwitchPreference) findPreference(PREF_BACKLIGHT_DIMMER);
-            mBacklightDimmer.setEnabled(BacklightDimmer.isSupported());
-            mBacklightDimmer.setChecked(BacklightDimmer.isCurrentlyEnabled(this.getContext()));
-            mBacklightDimmer.setOnPreferenceChangeListener(new BacklightDimmer(getContext()));
-        } else {
-            getPreferenceScreen().removePreference(findPreference(PREF_BACKLIGHT_DIMMER));
-        }
 
         mVibratorStrength = (VibratorStrengthPreference) findPreference(KEY_VIBSTRENGTH);
         if (mVibratorStrength != null) {
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
-        }
-
-        boolean enhancerEnabled;
-        try {
-            enhancerEnabled = DiracService.sDiracUtils.isDiracEnabled();
-        } catch (java.lang.NullPointerException e) {
-            getContext().startService(new Intent(getContext(), DiracService.class));
-            try {
-                enhancerEnabled = DiracService.sDiracUtils.isDiracEnabled();
-            } catch (NullPointerException ne) {
-                // Avoid crash
-                ne.printStackTrace();
-                enhancerEnabled = false;
-            }
-        }
-
-        mEnableDirac = (SecureSettingSwitchPreference) findPreference(PREF_ENABLE_DIRAC);
-        mEnableDirac.setOnPreferenceChangeListener(this);
-        mEnableDirac.setChecked(enhancerEnabled);
-
-        mHeadsetType = (SecureSettingListPreference) findPreference(PREF_HEADSET);
-        mHeadsetType.setOnPreferenceChangeListener(this);
-
-        mPreset = (SecureSettingListPreference) findPreference(PREF_PRESET);
-        mPreset.setOnPreferenceChangeListener(this);
-
-        if (FileUtils.fileWritable(HIGH_AUDIO_PATH)) {
-            mHighAudio = (SecureSettingSwitchPreference) findPreference(HIGH_PERF_AUDIO);
-            mHighAudio.setChecked(FileUtils.getFileValueAsBoolean(HIGH_AUDIO_PATH, true));
-            mHighAudio.setOnPreferenceChangeListener(this);
-        } else {
-            getPreferenceScreen().removePreference(findPreference(HIGH_PERF_AUDIO));
         }
 
         mHeadphoneGain = (CustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
@@ -354,11 +283,6 @@ public class DeviceSettings extends PreferenceFragment implements
         .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE)
         .contains(PREF_SELINUX_MODE));
 
-        mCamera = (SecureSettingListPreference) findPreference(PREF_CAMERA);
-        mCamera.setValue(FileUtils.getStringProp(CAMERA_SYSTEM_PROPERTY, "0"));
-        mCamera.setSummary(mCamera.getEntry());
-        mCamera.setOnPreferenceChangeListener(this);
-
         mSmartChargingSwitch = (TwoStatePreference) findPreference(KEY_CHARGING_SWITCH);
         mSmartChargingSwitch.setChecked(prefs.getBoolean(KEY_CHARGING_SWITCH, false));
         mSmartChargingSwitch.setOnPreferenceChangeListener(new SmartChargingSwitch(getContext()));
@@ -379,10 +303,6 @@ public class DeviceSettings extends PreferenceFragment implements
         switch (key) {
             case KEY_WHITE_TORCH_BRIGHTNESS:
                  FileUtils.setValue(TORCH_1_BRIGHTNESS_PATH, (int) value);
-                break;
-
-            case KEY_YELLOW_TORCH_BRIGHTNESS:
-                FileUtils.setValue(TORCH_2_BRIGHTNESS_PATH, (int) value);
                 break;
 
             case PERF_MSM_THERMAL:
@@ -415,47 +335,10 @@ public class DeviceSettings extends PreferenceFragment implements
                 FileUtils.setStringProp(TCP_SYSTEM_PROPERTY, (String) value);
                 break;
 
-            case PREF_CAMERA:
-                mCamera.setValue((String) value);
-               	mCamera.setSummary(mCamera.getEntry());
-                FileUtils.setStringProp(CAMERA_SYSTEM_PROPERTY, (String) value);
-                break;
-
             case PREF_SPECTRUM:
                 mSPECTRUM.setValue((String) value);
                 mSPECTRUM.setSummary(mSPECTRUM.getEntry());
                 FileUtils.setStringProp(SPECTRUM_SYSTEM_PROPERTY, (String) value);
-                break;
-
-            case HIGH_PERF_AUDIO:
-                FileUtils.setValue(HIGH_AUDIO_PATH, (boolean) value);
-                break;
-
-            case PREF_ENABLE_DIRAC:
-                try {
-                    DiracService.sDiracUtils.setEnabled((boolean) value);
-                } catch (java.lang.NullPointerException e) {
-                    getContext().startService(new Intent(getContext(), DiracService.class));
-                    DiracService.sDiracUtils.setEnabled((boolean) value);
-                }
-                break;
-
-            case PREF_HEADSET:
-                try {
-                    DiracService.sDiracUtils.setHeadsetType(Integer.parseInt(value.toString()));
-                } catch (java.lang.NullPointerException e) {
-                    getContext().startService(new Intent(getContext(), DiracService.class));
-                    DiracService.sDiracUtils.setHeadsetType(Integer.parseInt(value.toString()));
-                }
-                break;
-
-            case PREF_PRESET:
-                try {
-                    DiracService.sDiracUtils.setLevel(String.valueOf(value));
-                } catch (java.lang.NullPointerException e) {
-                    getContext().startService(new Intent(getContext(), DiracService.class));
-                    DiracService.sDiracUtils.setLevel(String.valueOf(value));
-                }
                 break;
 
             case PREF_HEADPHONE_GAIN:

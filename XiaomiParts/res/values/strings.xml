@@ -20,16 +20,11 @@
     <string name="device_kcal_title">Display Color Calibration</string>
     <string name="kcal_enabled_summary">Calibrate Display Using KCAL</string>
 
-    <!-- Backlight Dimmer -->
-    <string name="backlight_dimmer">Backlight Dimmer</string>
-    <string name="backlight_summary">Dim the display to the maximum value</string>
-
+    <!-- Torch -->
     <string name="torch_title">Torch</string>
     <string name="torch_brightness_title">Brightness</string>
-    <string name="yellow_torch_brightness_title">Yellow Torch Brightness</string>
     <string name="white_torch_brightness_title">White Torch Brightness</string>
     <string name="cameraflash_title">Camera Flash</string>
-    <string name="yellowflash_intensity_title">Yellow Light Intensity</string>
 	
     <!-- Vibration -->
     <string name="vibration_title">Vibration feedback</string>
@@ -54,54 +49,8 @@
     <string name="highperfaudio_title">Audio High Performance Mode</string>
     <string name="highperfaudio_summary">Enable to get bettter performing audio</string>
 
-    <!-- QS tile title -->
-    <string name="dirac_qs_tile_title">Dirac sound</string>
-
-    <!-- Dirac settings -->
-    <string name="dirac_title">Dirac Sound Enhancer</string>
-    <string name="dirac_summary">Optimize audio quality</string>
-    <string name="dirac_headset_title">Choose headphones type</string>
-    <string name="dirac_preset_title">Choose a preset</string>
-
-    <!-- Dirac settings: Headset types -->
-    <string name="dirac_headset_default">Default</string>
-    <string name="dirac_headset_earbuds">Mi Earbuds</string>
-    <string name="dirac_headset_in_ear_2013">Mi In-Ear (2013)</string>
-    <string name="dirac_headset_piston_1">Mi Piston-1</string>
-    <string name="dirac_headset_general">General</string>
-    <string name="dirac_headset_general_inear">General In-Ear</string>
-    <string name="dirac_headset_piston_basic">Basic Edition</string>
-    <string name="dirac_headset_piston_2">Mi Piston-2</string>
-    <string name="dirac_headset_piston_standard">Standard Edition</string>
-    <string name="dirac_headset_headphone">Mi Headphones</string>
-    <string name="dirac_headset_piston_youth">Youth Edition</string>
-    <string name="dirac_headset_piston_color">Color Edition</string>
-    <string name="dirac_headset_in_ear">Mi In-Ear</string>
-    <string name="dirac_headset_capsule">Mi Capsule</string>
-    <string name="dirac_headset_in_ear_pro">Mi In-Ear Pro</string>
-    <string name="dirac_headset_comfort">Mi Comfort</string>
-    <string name="dirac_headset_reduction_noise">Mi Noise Cancelling Type-C</string>
-    <string name="dirac_headset_cancelling">Mi Noise Cancelling 3.5mm</string>
-    <string name="dirac_headset_half_in_ear">Mi Half In-Ear</string>
-    <string name="dirac_headset_in_ear2">Mi In-Ear 2</string>
-    <string name="dirac_headset_earphone_basic">Mi Earphones Basic</string>
-    <string name="dirac_headset_earphone">Mi Earphones</string>
-
-    <!-- Dirac settings: Equalizer presets -->
-    <string name="dirac_preset_default">Default</string>
-    <string name="dirac_preset_rock">Rock</string>
-    <string name="dirac_preset_jazz">Jazz</string>
-    <string name="dirac_preset_pop">Pop</string>
-    <string name="dirac_preset_classical">Classical</string>
-    <string name="dirac_preset_hiphop">Hip Hop</string>
-    <string name="dirac_preset_blues">Blues</string>
-    <string name="dirac_preset_electronic">Electronic</string>
-    <string name="dirac_preset_country">Country</string>
-    <string name="dirac_preset_dance">Dance</string>
-    <string name="dirac_preset_metal">Metal</string>
-    <string name="dirac_preset_bass_booster">Bass Booster</string>
-
     <!-- Audio amplification -->
+    <string name="audio_title">Audio</string>
     <string name="headphone_gain">Headphone gain</string>
     <string name="microphone_gain">Microphone gain</string>
     <string name="earpiece_gain">Earpiece gain (Calls)</string>
@@ -252,10 +201,6 @@
     <string name="cpuboost_low">Low</string>
     <string name="cpuboost_disable">Disable</string>
 
-    <!-- LED Brightness -->
-    <!--string name="chargingled_title">Charging LED</string>
-    <string name="led_blinking_title">Blinking Intensity</string -->
-
     <string name="thermal_title">Thermal</string>
     <string name="msmthermal_title">MSM Thermal</string>
     <string name="msmthermal_summary">Enable Thermal driver control</string>
@@ -336,14 +281,4 @@
     <string name="smart_charging_summary">Helps in cooling down &amp; also protects from over charging the device</string>
     <string name="reset_stats_title">Reset battery stats</string>
     <string name="reset_stats_summary">Battery stats will get reset when charging limit is reached</string>
-
-    <!-- HAL3 | HAL1 Switch button profiles -->
-    <string name="camera_category">Camera</string>
-    <string name="camera_explanation_summary">HAL3 | HAL1 Switch button.</string>
-    <string name="camera_title">Camera Mode</string>
-    <string name="camera_hal1_summary">HAL1</string>
-    <string name="camera_hal3_summary">HAL3</string>
-    <string name="camera_hal1_toast_title">Selinux set to Hal1!</string>
-    <string name="camera_hal3_toast_title">Selinux set to Hal3!</string>
-    <string name="camera_dialogTitle">Select your HAL camera</string>
 </resources>

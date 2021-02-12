@@ -104,9 +104,6 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
 
         VibratorStrengthPreference.restore(context);
 
-        FileUtils.setValue(DeviceSettings.BACKLIGHT_DIMMER_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PREF_BACKLIGHT_DIMMER, 0));
-
         if (Settings.Secure.getInt(context.getContentResolver(), PREF_ENABLED, 0) == 1) {
             FileUtils.setValue(KCAL_ENABLE, Settings.Secure.getInt(context.getContentResolver(),
                     PREF_ENABLED, 0));
@@ -136,9 +133,6 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
         FileUtils.setValue(DeviceSettings.TORCH_1_BRIGHTNESS_PATH,
                 Settings.Secure.getInt(context.getContentResolver(),
                         DeviceSettings.KEY_WHITE_TORCH_BRIGHTNESS, 100));
-        FileUtils.setValue(DeviceSettings.TORCH_2_BRIGHTNESS_PATH,
-                Settings.Secure.getInt(context.getContentResolver(),
-                        DeviceSettings.KEY_YELLOW_TORCH_BRIGHTNESS, 100));
         FileUtils.setValue(DeviceSettings.MSM_THERMAL_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PERF_MSM_THERMAL, 0));
         FileUtils.setValue(DeviceSettings.CORE_CONTROL_PATH, Settings.Secure.getInt(context.getContentResolver(),
@@ -154,16 +148,10 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                 DeviceSettings.PREF_EARPIECE_GAIN, 0));
         FileUtils.setValue(DeviceSettings.SPEAKER_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_SPEAKER_GAIN, 0));
-        FileUtils.setValue(DeviceSettings.HIGH_AUDIO_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.HIGH_PERF_AUDIO, 0));
         FileUtils.setValue(DeviceSettings.USB_FASTCHARGE_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_USB_FASTCHARGE, 0));
         FileUtils.setValue(DeviceSettings.MSM_TOUCHBOOST_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_MSM_TOUCHBOOST, 0));
-        // Dirac
-        context.startService(new Intent(context, DiracService.class));
-       // FileUtils.setValue(DeviceSettings.USB_FASTCHARGE_PATH, Settings.Secure.getInt(context.getContentResolver(),
-       //         DeviceSettings.PREF_USB_FASTCHARGE, 0));
 
        // Ambient
         context.startService(new Intent(context, SensorsDozeService.class));
