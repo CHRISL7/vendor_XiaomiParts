@@ -1,0 +1,11 @@
+# Earpiece Gain
+genfscon sysfs /kernel/sound_control/earpiece_gain                                       u:object_r:sysfs_egain:s0
+
+# Headphone Gain
+genfscon sysfs /kernel/sound_control/headphone_gain                                      u:object_r:sysfs_hgain:s0
+
+# Microphone Gain
+genfscon sysfs /kernel/sound_control/mic_gain                                            u:object_r:sysfs_mgain:s0
+
+# Speaker Gain
+genfscon sysfs /kernel/sound_control/speaker_gain                                        u:object_r:sysfs_sgain:s0

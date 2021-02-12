@@ -1,0 +1,13 @@
+# CPU/GPU Boosts
+allow init sysfs_kgsl:lnk_file { read };
+allow init sysfs_kgsl:file { write open };
+
+# SELinux
+allow init su:process { rlimitinh  siginh  transition };
+allow init vendor_file:file { execute };
+
+# Smart charging
+allow init sysfs_battery_supply:file { setattr };
+
+# Vibrator
+allow init sysfs_leds: file { open };

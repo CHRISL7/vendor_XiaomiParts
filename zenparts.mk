@@ -26,3 +26,6 @@ PRODUCT_COPY_FILES += \
     packages/apps/ZenParts/init/init.zenparts.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.zenparts.sh \
     packages/apps/ZenParts/init/init.spectrum.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.spectrum.rc \
     packages/apps/ZenParts/init/init.spectrum.sh:$(TARGET_COPY_OUT_VENDOR)/bin/init.spectrum.sh
+
+PRODUCT_COPY_FILES += \
+    packages/apps/ZenParts/privapp-permissions-parts.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-parts.xml

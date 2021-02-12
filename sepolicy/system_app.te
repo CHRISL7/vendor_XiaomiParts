@@ -1,0 +1,52 @@
+# HAL3
+get_prop(system_app, camera_prop);
+allow system_app camera_prop:property_service set;
+
+# Headphone Gain
+allow system_app sysfs_hgain:file { open read getattr write };
+
+# KCAL
+allow system_app kcal_dev:file rw_file_perms;
+allow system_app kcal_dev:dir search;
+
+# Microphone Gain
+allow system_app sysfs_mgain:file { open read getattr write };
+
+# Notification LED
+allow system_app sysfs_graphics:dir search;
+allow system_app sysfs_graphics:file rw_file_perms;
+
+# SELinux
+allow system_app selinuxfs:file { read open };
+
+# Smart Charging
+allow system_app sysfs_scharge:file { getattr open write };
+
+# Spectrum
+get_prop(system_app, spectrum_prop);
+allow system_app spectrum_prop:property_service set;
+
+# Touchboost
+allow system_app sysfs_touchboost:file { open read getattr write };
+allow system_app sysfs_msm_perf:dir { search };
+
+# USB Fastcharge
+allow system_app sysfs_fcharge:file { open read getattr write };
+
+# Vibrator
+allow system_app sysfs_vibrator:file { getattr open read write };
+allow system_app sysfs_vibrator:dir search;
+
+# FPS Info Overlay
+allow system_app sysfs_fps:file { open read getattr write };
+
+# Backlight Dimmer
+allow system_app sysfs_backlight:file { open read getattr write };
+
+# CPU/GPU Boosts
+set_prop(system_app, boosts_prop);
+get_prop(system_app, boosts_prop);
+allow system_app boosts_prop:property_service set;
+
+# Earpiece Gain
+allow system_app sysfs_egain:file { open read getattr write };

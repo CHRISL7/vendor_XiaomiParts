@@ -1,0 +1,30 @@
+# Backlight Dimmer
+/sys/module/mdss_fb/parameters/backlight_dimmer                                                                                     u:object_r:sysfs_backlight:s0
+
+# FPS Info
+/sys/devices/virtual/graphics/fb0/measured_fps                                                                                      u:object_r:sysfs_fps:s0
+
+# Kcal
+/sys/devices/platform/kcal_ctrl.0(/.*)?                                                                                             u:object_r:kcal_dev:s0
+/sys/bus/platform/drivers/kcal_ctrl(/.*)?                                                                                           u:object_r:kcal_dev:s0
+
+# Notification LED
+/sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/blue/max_brightness          u:object_r:sysfs_graphics:s0
+/sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/red/max_brightness           u:object_r:sysfs_graphics:s0
+/sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/green/max_brightness         u:object_r:sysfs_graphics:s0
+/sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/blue/brightness              u:object_r:sysfs_graphics:s0
+/sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/red/brightness               u:object_r:sysfs_graphics:s0
+/sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d000/leds/green/brightness             u:object_r:sysfs_graphics:s0
+
+# Smart Charging
+/sys/class/power_supply/battery/charging_enabled                                                                                    u:object_r:sysfs_scharge:s0
+
+# Torch Brightness Control
+/sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d300/leds/led:torch_0/max_brightness   u:object_r:sysfs_tbrightness:s0
+/sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d300/leds/led:torch_1/max_brightness   u:object_r:sysfs_tbrightness:s0
+
+# Touchboost
+/sys/module/msm_performance/parameters/touchboost		                                                                    u:object_r:sysfs_touchboost:s0
+
+# Vibrator
+/sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator(/.*)?             u:object_r:sysfs_vibrator:s0

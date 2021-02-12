@@ -1,0 +1,29 @@
+# Backlight Dimmer
+type sysfs_backlight, sysfs_type, fs_type;
+
+# Earpiece Gain
+type sysfs_egain, sysfs_type, fs_type;
+
+# Headphone Gain
+type sysfs_hgain, sysfs_type, fs_type;
+
+# Kcal
+type kcal_dev, sysfs_type, fs_type;
+
+# Microphone Gain
+type sysfs_mgain, sysfs_type, fs_type;
+
+# Smart Charging
+type sysfs_scharge, sysfs_type, fs_type;
+
+# Speaker Gain
+type sysfs_sgain, sysfs_type, fs_type;
+
+# Torch Brightness Control
+type sysfs_tbrightness, sysfs_type, fs_type;
+
+# Touchboost
+type sysfs_touchboost, sysfs_type, fs_type;
+
+# USB Fastcharge
+type sysfs_fcharge, sysfs_type, fs_type;
