@@ -186,12 +186,6 @@ public class DeviceSettings extends PreferenceFragment implements
         mSPECTRUM.setSummary(mSPECTRUM.getEntry());
         mSPECTRUM.setOnPreferenceChangeListener(this);
 
-        mCamera = (SecureSettingListPreference) findPreference(PREF_CAMERA);
-        mCamera.setValue(FileUtils.getStringProp(CAMERA_SYSTEM_PROPERTY, "0"));
-        mCamera.setSummary(mCamera.getEntry());
-        mCamera.setOnPreferenceChangeListener(this);
-
-
         mVibratorStrength = (VibratorStrengthPreference) findPreference(KEY_VIBSTRENGTH);
         if (mVibratorStrength != null) {
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
