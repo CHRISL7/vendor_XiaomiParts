@@ -65,22 +65,6 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="spectrum_profile"
-        android:title="@string/spectrum_profile_title">
-
-        <com.xiaomi.parts.preferences.SecureSettingListPreference
-            android:defaultValue="0"
-            android:dialogTitle="@string/spectrum_dialogTitle"
-            android:entries="@array/spectrum_profiles"
-            android:entryValues="@array/spectrum_values"
-            android:key="spectrum"
-            android:summary="@string/spectrum_summary"
-            android:icon="@drawable/ic_spectrum" 
-            android:title="@string/spectrum_title" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
             android:title="@string/display_gestures">
 
         <PreferenceScreen

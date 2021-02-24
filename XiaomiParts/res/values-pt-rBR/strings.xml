@@ -30,19 +30,6 @@
     <string name="vibration_title">Vibração</string>
     <string name="vibration_strength_title">Força da vibração</string>
 
-    <!-- Spectrum Profiles -->
-    <string name="spectrum_profile_title">Spectrum</string>
-    <string name="spectrum_title">Perfis do Spectrum</string>
-    <string name="spectrum_summary">Escolha o perfil do Spectrum</string>
-    <string name="spectrum_dialogTitle">Escolha o perfil do Spectrum</string>
-
-    <!-- Values for Spectrum Presets -->
-    <string name="spectrum_performance">Performance</string>
-    <string name="spectrum_battery">Bateria</string>
-    <string name="spectrum_gaming">Jogo</string>
-    <string name="spectrum_balance">Balanceado</string>
-    <string name="spectrum_ubattery">Ultra economia de bateria</string>
-
     <!-- Audio amplification -->
     <string name="audio_title">Àudio</string>
     <string name="headphone_gain">Ganho de fone de ouvido</string>

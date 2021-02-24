@@ -32,19 +32,6 @@
     <string name="vibration_call_strength_title">Call Strength</string>
     <string name="vibration_notif_strength_title">Notification Strength</string>
 
-    <!-- Spectrum Profiles -->
-    <string name="spectrum_profile_title">Spectrum</string>
-    <string name="spectrum_title">Spectrum Profiles</string>
-    <string name="spectrum_summary">Choose your Spectrum Profiles</string>
-    <string name="spectrum_dialogTitle">Choose your Spectrum Profiles</string>
-
-    <!-- Values for Spectrum Presets -->
-    <string name="spectrum_performance">Performance</string>
-    <string name="spectrum_battery">Battery</string>
-    <string name="spectrum_gaming">Gaming</string>
-    <string name="spectrum_balance">Balance</string>
-    <string name="spectrum_ubattery">Ultra Battery</string>
-
     <!-- Audio amplification -->
     <string name="audio_title">Audio</string>
     <string name="headphone_gain">Headphone gain</string>
