@@ -32,6 +32,7 @@
         <item name="android:textColor">#ff4285f4</item>
     </style>
 
+    <style name="TextAppearance.Medium" parent="@android:style/TextAppearance.Material.Medium" />
     <style name="DeviceSettings.SwitchBar" parent="@android:style/ThemeOverlay.Material.ActionBar">
     </style>
 </resources>

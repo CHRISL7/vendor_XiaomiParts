@@ -21,6 +21,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INJECT_EVENTS"/>
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
 
     <uses-sdk android:minSdkVersion="27" />
 
@@ -147,5 +148,28 @@
                 <action android:name="android.service.quicksettings.action.QS_TILE"/>
             </intent-filter>
         </service> 
+
+        <activity
+            android:name=".thermal.ThermalActivity"
+            android:label="@string/thermal_title"
+            android:theme="@style/CustomOptionsTheme">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.battery" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/thermal_summary" />
+            <meta-data
+                android:name="com.android.settings.order"
+                android:value="1" />
+        </activity>
+
+        <service
+            android:name=".thermal.ThermalService" 
+            android:permission="ThermalService">
+        </service>
     </application>
 </manifest>
