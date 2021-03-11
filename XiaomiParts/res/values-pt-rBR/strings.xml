@@ -57,7 +57,7 @@
 
     <string name="presets_dialog_title">Selecione uma predefinição</string>
     <!-- Presets -->
-    <string name="preset_default">Default</string>
+    <string name="preset_default">Punch Saturated Colors</string>
     <string name="preset_version_1">Version 1</string>
     <string name="preset_version_2">Version 2</string>
     <string name="preset_version_3">Version 3</string>
