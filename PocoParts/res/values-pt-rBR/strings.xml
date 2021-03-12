@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2018 The Asus-SDM660 Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Parts - Homepage -->
+    <string name="advanced_settings">Poco Parts</string>
+    <string name="advanced_settings_summary">Customizações específicas do dispositivo</string>
+    <!-- Audio and Vibration-->
+    <string name="audio_category">Áudio e Vibração</string>
+    <!-- Display and Touch -->
+    <string name="display_title">Display e Toque de tela</string>
+
+    <!-- Display - Kcal -->
+    <string name="device_kcal_title">Calibração de cores da tela</string>
+    <string name="kcal_enabled_summary">Calibrar exibição usando KCAL</string>
+    <string name="advanced_settings_kcal">Calibração de cores da tela</string>
+    <string name="cat_colormanagement">Configurações de cor</string>
+    <string name="cat_calibration">Calibração do display</string>
+    <string name="kcal_enabled">Ativado</string>
+    <string name="kcal_disabled">Desativado</string>
+    <string name="set_on_boot">Definido na inicialização</string>
+    <string name="color_red">Vermelho</string>
+    <string name="color_green">Verde</string>
+    <string name="color_blue">Azul</string>
+    <string name="color_minimum">Mínimo</string>
+    <string name="saturation">Saturação</string>
+    <string name="value">Valor</string>
+    <string name="contrast">Contraste</string>
+    <string name="hue">Matiz</string>
+    <string name="grayscale">Tela em tons de cinza</string>
+    <string name="presets_dialog_title">Selecione uma predefinição</string>
+    <string name="preset_default">Padrão</string>
+    <string name="preset_version_1">Versão 1</string>
+    <string name="preset_version_2">Versão 2</string>
+    <string name="preset_version_3">Versão 3</string>
+    <string name="preset_retention">Correção de retenção</string>
+    <string name="preset_triluminous">Triluminoso</string>
+
+    <!-- Display - FPS Info -->
+    <string name="fps_info_title">FPS Info Overlay</string>
+    <string name="fps_info_summary">Mostrar FPS com quadros atuais por segundo</string>    
+
+    <!-- Audio - Clear Speaker -->
+    <string name="clear_speaker_title">Limpar auto-falante</string>
+    <string name="clear_speaker_summary">Reproduza um áudio de 30 segundos para limpar o alto-falante</string>
+    <string name="clear_speaker_description">Execute esse recurso uma ou duas vezes se descobrir que o alto-falante está ligeiramente bloqueado por poeira. Defina o volume da mídia para o máximo.\n\nSe o alto-falante estiver muito bloqueado, execute este recurso 2 a 5 vezes enquanto agita o dispositivo com o alto-falante voltado para baixo.\n\nAVISO: verifique se todos os fones de ouvido estão desconectados.</string>
+
+    <!-- Haptic Level Settings -->
+    <string name="haptic_level_title">Nível de força de vibração</string>
+    <string name="haptic_level_summary">Ajuste o nível de força do feedback tátil geral</string>
+
+    <!-- LCD Features -->
+    <string name="lcd_features_title">LCD features</string>
+    <string name="lcd_features_summary">Modo de Alto Brilho, CABC</string>
+
+    <!-- Refresh Rate -->
+    <string name="enable_high_refresh_rate_title">Alta taxa de atualização</string>
+    <string name="enable_high_refresh_rate_summary">Ative a alta taxa de atualização para uma experiência mais suave</string>
+
+    <!-- Thermal Profiles -->
+    <string name="thermal_title">Perfis térmicos e modo de jogo</string>
+    <string name="thermal_summary">Ajuste perfis térmicos e a sensibilidade do toque na tela por app</string>
+
+    <!-- Touch Sampling -->
+    <string name="htsr_enable_title">Alta taxa de pesquisa de toque</string>
+    <string name="htsr_enable_summary">Aumenta a taxa de pesquisa por toque para diminuir a latência</string>
+
+    <!-- Dirac settings -->
+    <string name="dirac_title">Mi Sound Enhancer</string>
+    <string name="dirac_summary">Otimize a qualidade do áudio</string>
+    <string name="dirac_headset_title">Escolha o tipo de fone de ouvido</string>
+    <string name="dirac_preset_title">Escolha uma predefinição</string>
+
+    <!-- Dirac settings: Headset types -->
+    <string name="dirac_headset_default">Padrão</string>
+
+    <!-- Dirac settings: Equalizer presets -->
+    <string name="dirac_preset_default">Padrão</string>
+    <string name="dirac_preset_classical">Clássico</string>
+    <string name="dirac_preset_electronic">Electrônica</string>
+
+</resources>

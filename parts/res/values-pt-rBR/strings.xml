@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2018 The LineageOS Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Thermal Profiles -->
+    <string name="thermal_title">Perfis térmicos e modo de jogo</string>
+    <string name="thermal_summary">Ajustar perfis térmicos e a sensibilidade do toque na tela por app</string>
+    <string name="thermal_default">Padrão</string>
+    <string name="thermal_benchmark">Benchmark</string>
+    <string name="thermal_camera">Câmera</string>
+    <string name="thermal_dialer">Chamadas</string>
+    <string name="thermal_gaming">Jogos</string>
+
+    <!-- Touch Control Settings -->
+    <string name="touch_game_mode_title">Habilitar modo de jogo</string>
+    <string name="touch_game_mode_summary">Ative os controles manuais do recurso de resposta ao toque e aumente o desempenho da CPU e GPU</string>
+    <string name="touch_response_title">Resposta ao toque</string>
+    <string name="touch_response_summary">Controle de resposta ao toque</string>
+    <string name="touch_sensitivity_title">Sensibilidade ao toque</string>
+    <string name="touch_sensitivity_summary">Controle a sensibilidade do toque para toques sequências</string>
+    <string name="touch_resistant_title">Área resistente ao toque</string>
+    <string name="touch_resistant_summary">Reduza a sensibilidade do toque perto das bordas para evitar o acionamento acidental do controle de toque</string>
+
+    <!-- Touch Sampling -->
+    <string name="htsr_enable_title">Aumente a capacidade de resposta ao toque</string>
+    <string name="htsr_enable_summary">Aumenta a taxa de pesquisa de toque para diminuir a latência</string>
+    <string name="htsr_footer">Driver construído com base no sysfs do sensor de toque da Xiaomi.\nOs valores do modo foram selecionados lendo o logcat da MIUI quando o modo de jogo foi ativado.</string>
+
+    <!-- LCD Features -->
+    <string name="lcd_features_title">LCD features</string>
+    <string name="lcd_features_summary">Modo de Alto Brilho, CABC</string>
+    <string name="lcd_hbm_title">Modo de Alto brilho (HBM)</string>
+    <string name="lcd_hbm_tile_title">HBM</string>
+    <string name="lcd_cabc_title">Modo de Controle de luz de fundo adaptável de conteúdo (CABC)</string>
+    <string name="lcd_features_info">HBM aumenta o brilho máximo da tela para melhorar a visibilidade sob a luz solar.\n\nCABC Ajusta o brilho da tela e da luz de fundo com base no conteúdo mostrado atualmente.</string>
+    
+    <!-- Refresh Rate tile -->
+    <string name="refresh_rate_tile_title">Taxa de atualização</string>
+    <string name="refresh_rate_title">Taxa de atualização dinâmica</string>
+    <string name="refresh_rate_summary">Altere a taxa de atualização da tela do seu dispositivo para uma melhor experiência</string>
+    <string name="enable_high_refresh_rate_title">Alta taxa de atualização</string>
+    <string name="enable_high_refresh_rate_summary">Ative a alta taxa de atualização para uma experiência mais suave</string>
+    <string name="current_refresh_rate_info">Taxa de atualização máxima / mínima: <xliff:g id="version">%1$s</xliff:g>Hz - <xliff:g id="version">%2$s</xliff:g>Hz</string>
+
+    <!-- Haptic Level Settings -->
+    <string name="haptic_title">Controlador de vibração</string>
+    <string name="haptic_level_title">Nível de força de vibração</string>
+    <string name="haptic_level_summary">Ajuste o nível de força do feedback tátil geral</string>
+    <string name="haptic_level_summary_incompatible">Seu kernel não suporta o nível de força tátil QTI personalizado</string>
+
+    <!-- Raise to wake strings-->
+    <string name="raise_to_wake_gesture_title">Pegar para despertar</string>
+    <string name="raise_to_wake_gesture_summary">Desperte o dispositivo em vez de pulsar a notificação ao pega-lo</string>
+
+</resources>
