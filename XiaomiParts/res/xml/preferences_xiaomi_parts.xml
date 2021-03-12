@@ -260,14 +260,6 @@
             android:icon="@drawable/ic_earpiece"
             android:title="@string/earpiece_gain" />
 
-        <com.xiaomi.parts.preferences.SecureSettingCustomSeekBarPreference 
-            android:defaultValue="5"
-            android:key="speaker_gain" 
-            android:max="20"
-            app:min="-40" 
-            android:icon="@drawable/ic_speaker"
-            android:title="@string/speaker_gain" />
-
     </PreferenceCategory>
 
     <PreferenceCategory

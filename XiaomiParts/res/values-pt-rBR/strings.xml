@@ -35,7 +35,6 @@
     <string name="headphone_gain">Ganho de fone de ouvido</string>
     <string name="microphone_gain">Ganho de microfone</string>
     <string name="earpiece_gain">Ganho do fone de ouvido (chamadas)</string>
-    <string name="speaker_gain">Ganho de alto-falante</string>
 
     <!-- kcal -->
     <string name="advanced_settings_kcal">Calibração de cores da tela</string>
