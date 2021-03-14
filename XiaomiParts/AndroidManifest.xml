@@ -133,25 +133,6 @@
             </intent-filter>
         </service>
 
-        <service
-            android:name=".CpuboostTileService"
-            android:icon="@drawable/ic_cpuboost_qs"
-            android:label="@string/cpuboost_title"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
-
-        <service
-            android:name=".GpuboostTileService"
-            android:icon="@drawable/ic_gpuboost_qs"
-            android:label="@string/gpuboost_title"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
         <service android:name="com.xiaomi.parts.SmartChargingService"
                 android:exported="false">
         </service>

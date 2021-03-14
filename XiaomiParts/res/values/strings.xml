@@ -152,37 +152,7 @@
     <!-- Label for feature switch -->
     <string name="switch_bar_off">Off</string>
 
-    <!-- Game Turbo Boost -->
-    <string name="game_turbo_mode_title">Game Turbo Boost Performance</string>
-
-    <!-- Touchboost -->
-    <string name="boost_title">Touchboost</string>
-    <string name="touchboost_title">Enable Touchboost</string>
-    <string name="touchboost_summary">Boost cpu when touch detected for soomth experience</string>
-
-    <!-- GPU Boost Profiles -->
-    <string name="gpuboost_title">GPU Boost</string>
-    <string name="gpuboost_summary">Boost your gpu without compromising power efficiency</string>
-    <string name="gpuboost_dialogTitle">Select your GPU boost level</string>
-
-    <!-- Values for GPU Boost Presets -->
-    <string name="gpuboost_high">High</string>
-    <string name="gpuboost_medium">Medium</string>
-    <string name="gpuboost_low">Low</string>
-    <string name="gpuboost_disable">Disable</string>
-
-    <!-- CPU Boost Profiles -->
-    <string name="cpuboost_title">CPU Boost</string>
-    <string name="cpuboost_summary">Boost your cpu for better Experience</string>
-    <string name="cpuboost_dialogTitle">Select your CPU Boost level</string>
-
-    <!-- Values for CPU Boost Presets -->
-    <string name="cpuboost_extreme">Extreme</string>
-    <string name="cpuboost_high">High</string>
-    <string name="cpuboost_medium">Medium</string>
-    <string name="cpuboost_low">Low</string>
-    <string name="cpuboost_disable">Disable</string>
-
+    <!-- Parallax -->
     <string name="thermal_title">Thermal</string>
     <string name="msmthermal_title">MSM Thermal</string>
     <string name="msmthermal_summary">Enable Thermal driver control</string>

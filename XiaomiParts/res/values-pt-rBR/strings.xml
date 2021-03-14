@@ -150,36 +150,7 @@
     <!-- Label for feature switch -->
     <string name="switch_bar_off">Off</string>
 
-    <!-- Game Turbo Boost -->
-    <string name="game_turbo_mode_title">Game Turbo para melhor Performance</string>
-
-    <!-- Touchboost -->
-    <string name="boost_title">Impulso do toque na tela</string>
-    <string name="touchboost_title">Habilitar impulso do toque na tela</string>
-    <string name="touchboost_summary">Aumente a CPU quando o toque for detectado para uma experiência suave</string>
-
-    <!-- GPU Boost Profiles -->
-    <string name="gpuboost_title">Impulso de GPU</string>
-    <string name="gpuboost_summary">Aumente seu gpu sem comprometer a eficiência de energia</string>
-    <string name="gpuboost_dialogTitle">Selecione seu nível de impulso de GPU</string>
-
-    <!-- Values for GPU Boost Presets -->
-    <string name="gpuboost_high">Alto</string>
-    <string name="gpuboost_medium">Médio</string>
-    <string name="gpuboost_low">Baixo</string>
-    <string name="gpuboost_disable">Desabilitado</string>
-
-    <!-- CPU Boost Profiles -->
-    <string name="cpuboost_title">Impulso de CPU</string>
-    <string name="cpuboost_summary">Aumente sua CPU para uma melhor experiência</string>
-    <string name="cpuboost_dialogTitle">Selecione seu nível de impulso de CPU</string>
-
-    <!-- Values for CPU Boost Presets -->
-    <string name="cpuboost_high">Alto</string>
-    <string name="cpuboost_medium">Médio</string>
-    <string name="cpuboost_low">Baixo</string>
-    <string name="cpuboost_disable">Desabilitado</string>
-
+    <!-- Parallax -->
     <string name="thermal_title">Térmico</string>
     <string name="msmthermal_title">MSM Térmico</string>
     <string name="msmthermal_summary">Habilitar controle de driver térmico</string>

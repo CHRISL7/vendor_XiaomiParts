@@ -69,34 +69,6 @@
         <item>245 240 256 35 33 127 127 0</item>
     </array>
 
-    <string-array name="gpuboost_profiles">
-        <item>@string/gpuboost_disable</item>
-        <item>@string/gpuboost_low</item>
-        <item>@string/gpuboost_medium</item>
-        <item>@string/gpuboost_high</item>
-    </string-array>
-    <string-array name="gpuboost_values">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
-
-    <string-array name="cpuboost_profiles">
-        <item>@string/cpuboost_disable</item>
-        <item>@string/cpuboost_low</item>
-        <item>@string/cpuboost_medium</item>
-        <item>@string/cpuboost_high</item>
-        <item>@string/cpuboost_extreme</item>
-    </string-array>
-    <string-array name="cpuboost_values">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-    </string-array>
-
     <string-array name="cpucore_profiles">
         <item>@string/cpucore_zero</item>
         <item>@string/cpucore_one</item>

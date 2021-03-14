@@ -46,7 +46,6 @@ import com.xiaomi.parts.SuShell;
 import com.xiaomi.parts.SuTask;
 import com.xiaomi.parts.ModeSwitch.SmartChargingSwitch;
 import com.xiaomi.parts.Fastcharge;
-import com.xiaomi.parts.Touchboost;
 
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -72,9 +71,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String USB_FASTCHARGE_PATH = "/sys/kernel/fast_charge/force_fast_charge";
     public static final String PREF_KEY_FPS_INFO = "fps_info";
 
-    public static final String PREF_MSM_TOUCHBOOST = "touchboost";
-    public static final String MSM_TOUCHBOOST_PATH = "/sys/module/msm_performance/parameters/touchboost";
-
     public static final String PERF_MSM_THERMAL = "msmthermal";
     public static final String MSM_THERMAL_PATH = "/sys/module/msm_thermal/parameters/enabled";
     public static final String PERF_CORE_CONTROL = "corecontrol";
@@ -87,11 +83,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String LKM_SYSTEM_PROPERTY = "persist.lkm.profile";
     public static final String PREF_TCP = "tcpcongestion";
     public static final String TCP_SYSTEM_PROPERTY = "persist.tcp.profile";
-
-    public static final String PREF_GPUBOOST = "gpuboost";
-    public static final String GPUBOOST_SYSTEM_PROPERTY = "persist.gpuboost.profile";
-    public static final String PREF_CPUBOOST = "cpuboost";
-    public static final String CPUBOOST_SYSTEM_PROPERTY = "persist.cpuboost.profile";
 
     private CustomSeekBarPreference mTorchBrightness;
 
@@ -118,9 +109,6 @@ public class DeviceSettings extends PreferenceFragment implements
     private CustomSeekBarPreference mMicrophoneGain;
     private CustomSeekBarPreference mEarpieceGain;
 
-    private SecureSettingSwitchPreference mTouchboost;
-    private SecureSettingListPreference mGPUBOOST;
-    private SecureSettingListPreference mCPUBOOST;
     private static Context mContext;
     private SwitchPreference mSelinuxMode;
     private SwitchPreference mSelinuxPersistence;
@@ -187,24 +175,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
         mEarpieceGain = (CustomSeekBarPreference) findPreference(PREF_EARPIECE_GAIN);
         mEarpieceGain.setOnPreferenceChangeListener(this);
-
-        if (FileUtils.fileWritable(MSM_TOUCHBOOST_PATH)) {
-            mTouchboost = (SecureSettingSwitchPreference) findPreference(PREF_MSM_TOUCHBOOST);
-            mTouchboost.setChecked(FileUtils.getFileValueAsBoolean(MSM_TOUCHBOOST_PATH, true));
-            mTouchboost.setOnPreferenceChangeListener(this);
-        } else {
-            getPreferenceScreen().removePreference(findPreference(PREF_MSM_TOUCHBOOST));
-        }
-
-        mGPUBOOST = (SecureSettingListPreference) findPreference(PREF_GPUBOOST);
-        mGPUBOOST.setValue(FileUtils.getStringProp(GPUBOOST_SYSTEM_PROPERTY, "0"));
-        mGPUBOOST.setSummary(mGPUBOOST.getEntry());
-        mGPUBOOST.setOnPreferenceChangeListener(this);
-
-        mCPUBOOST = (SecureSettingListPreference) findPreference(PREF_CPUBOOST);
-        mCPUBOOST.setValue(FileUtils.getStringProp(CPUBOOST_SYSTEM_PROPERTY, "0"));
-        mCPUBOOST.setSummary(mCPUBOOST.getEntry());
-        mCPUBOOST.setOnPreferenceChangeListener(this);
 
         if (FileUtils.fileWritable(MSM_THERMAL_PATH)) {
             mMsmThermal = (SecureSettingSwitchPreference) findPreference(PERF_MSM_THERMAL);
@@ -326,20 +296,8 @@ public class DeviceSettings extends PreferenceFragment implements
                 FileUtils.setValue(EARPIECE_GAIN_PATH, (int) value);
                 break;
 
-            case PREF_GPUBOOST:
-                mGPUBOOST.setValue((String) value);
-                mGPUBOOST.setSummary(mGPUBOOST.getEntry());
-                FileUtils.setStringProp(GPUBOOST_SYSTEM_PROPERTY, (String) value);
-                break;
-
             case PREF_USB_FASTCHARGE:
                 FileUtils.setValue(USB_FASTCHARGE_PATH, (boolean) value);
-                break;
-
-            case PREF_CPUBOOST:
-                mCPUBOOST.setValue((String) value);
-                mCPUBOOST.setSummary(mCPUBOOST.getEntry());
-                FileUtils.setStringProp(CPUBOOST_SYSTEM_PROPERTY, (String) value);
                 break;
 
             case PREF_SELINUX_MODE:
