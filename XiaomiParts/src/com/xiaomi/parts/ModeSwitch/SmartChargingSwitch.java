@@ -40,7 +40,7 @@ public class SmartChargingSwitch implements OnPreferenceChangeListener {
         mContext = context;
     }
 
-    private static final String FILE = "/sys/class/power_supply/battery/input_suspend";
+    private static final String FILE = "/sys/class/power_supply/battery/charging_enabled";
 
     public static String getFile() {
         if (Utils.fileWritable(FILE)) {
