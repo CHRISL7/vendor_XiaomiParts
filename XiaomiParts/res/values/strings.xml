@@ -62,6 +62,7 @@
     <string name="preset_version_1">Version 1</string>
     <string name="preset_version_2">Version 2</string>
     <string name="preset_version_3">Version 3</string>
+    <string name="preset_retention">Retention Fix</string>
     <string name="preset_triluminous">Triluminous</string>
     <string name="preset_deep_black_white">Deep Black and White</string>
     <string name="preset_deep_natural">Deep Natural</string>
