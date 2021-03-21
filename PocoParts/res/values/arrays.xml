@@ -41,6 +41,7 @@
         <item>@string/preset_sim_cooler</item>
         <item>@string/preset_obsanity</item>
         <item>@string/preset_obsanity_ips</item>
+        <item>@string/preset_retention</item>
     </array>
 
     <array name="preset_values">
@@ -70,5 +71,6 @@
         <item>240 245 255 35 33 127 127 0</item>
         <item>245 245 256 35 33 127 127 0</item>
         <item>245 240 256 35 33 127 127 0</item>
+        <item>210 210 210 35 33 127 127 0</item>
     </array>
 </resources>
