@@ -1,6 +1,8 @@
+VENDOR_PATH := vendor/xiaomi/XiaomiParts
+
 # XiaomiParts
 PRODUCT_SOONG_NAMESPACES += \
-    packages/apps/XiaomiParts
+   vendor/xiaomi/XiaomiParts
 
 PRODUCT_PACKAGES += \
     XiaomiParts \
@@ -8,4 +10,4 @@ PRODUCT_PACKAGES += \
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-   $(LOCAL_PATH)/overlay
+   $(VENDOR_PATH)/overlay
