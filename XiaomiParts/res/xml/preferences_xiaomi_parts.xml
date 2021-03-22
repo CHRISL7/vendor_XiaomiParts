@@ -14,32 +14,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <PreferenceCategory
-        android:key="torch"
-        android:title="@string/torch_title">
-
-        <com.xiaomi.parts.preferences.CustomSeekBarPreference
-            android:defaultValue="150"
-            android:key="white_torch_brightness"
-            android:max="255"
-            app:min="1"
-            android:icon="@drawable/ic_torch"
-            android:title="@string/white_torch_brightness_title" />
-	
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="vibration"
-        android:title="@string/vibration_title">
-
-        <com.xiaomi.parts.preferences.VibratorStrengthPreference
-            android:defaultValue="50"
-            android:key="vibration_strength"
-            android:icon="@drawable/ic_vibrate"
-            android:title="@string/vibration_strength_title" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
         android:key="display"
         android:title="@string/display_title">
 
@@ -77,6 +51,29 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+    android:key="selinux"
+    android:title="@string/selinux_category">
+
+    <Preference
+        android:summary="@string/selinux_explanation_summary"
+        android:selectable="false"/>
+
+    <SwitchPreference
+        android:key="selinux_mode"
+        android:title="@string/selinux_mode_title"
+        android:summaryOn="@string/selinux_enforcing_summary"
+        android:summaryOff="@string/selinux_permissive_summary"
+        android:icon="@drawable/ic_linux" />
+
+    <SwitchPreference
+        android:key="selinux_persistence"
+        android:title="@string/selinux_persistence_title"
+        android:summary="@string/selinux_persistence_summary"
+        android:defaultValue="false"
+        android:icon="@drawable/ic_power" />
+</PreferenceCategory>
+
+    <PreferenceCategory
         android:key="charging"
         android:title="@string/smart_charging_main_title">
 
@@ -102,6 +99,12 @@
             android:title="@string/reset_stats_title"
             android:summary="@string/reset_stats_summary" />
 
+        <SwitchPreference
+            android:key="fastcharge"
+            android:defaultValue="false"
+            android:title="@string/fastcharge_title"
+            android:icon="@drawable/ic_usb_fastcharge"
+            android:summary="@string/fastcharge_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -161,32 +164,8 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-    android:key="selinux"
-    android:title="@string/selinux_category">
-
-    <Preference
-        android:summary="@string/selinux_explanation_summary"
-        android:selectable="false"/>
-
-    <SwitchPreference
-        android:key="selinux_mode"
-        android:title="@string/selinux_mode_title"
-        android:summaryOn="@string/selinux_enforcing_summary"
-        android:summaryOff="@string/selinux_permissive_summary"
-        android:icon="@drawable/ic_linux" />
-
-    <SwitchPreference
-        android:key="selinux_persistence"
-        android:title="@string/selinux_persistence_title"
-        android:summary="@string/selinux_persistence_summary"
-        android:defaultValue="false"
-        android:icon="@drawable/ic_power" />
-
-</PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="speaker"
-        android:title="@string/speaker_category">
+        android:key="audio"
+        android:title="@string/audio_title">
 
         <Preference
             android:key="clear_speaker_settings" 
@@ -197,11 +176,6 @@
                 android:targetClass="com.xiaomi.parts.speaker.ClearSpeakerActivity"
                 android:targetPackage="com.xiaomi.parts.speaker" />
         </Preference>
-      </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="audio"
-        android:title="@string/audio_title">
 
         <com.xiaomi.parts.preferences.SecureSettingCustomSeekBarPreference
             android:defaultValue="5"
@@ -226,17 +200,30 @@
             app:min="-40"
             android:icon="@drawable/ic_earpiece"
             android:title="@string/earpiece_gain" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:key="usb_fastcharge"
-        android:title="@string/usb_fastcharge_title" >
-    <SwitchPreference
-            android:key="fastcharge"
-            android:defaultValue="false"
-            android:title="@string/fastcharge_title"
-            android:icon="@drawable/ic_usb_fastcharge"
-            android:summary="@string/fastcharge_summary" />
+        android:key="torch"
+        android:title="@string/torch_title">
+
+        <com.xiaomi.parts.preferences.CustomSeekBarPreference
+            android:defaultValue="150"
+            android:key="white_torch_brightness"
+            android:max="255"
+            app:min="1"
+            android:icon="@drawable/ic_torch"
+            android:title="@string/white_torch_brightness_title" />
+	
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="vibration"
+        android:title="@string/vibration_title">
+
+        <com.xiaomi.parts.preferences.VibratorStrengthPreference
+            android:defaultValue="50"
+            android:key="vibration_strength"
+            android:icon="@drawable/ic_vibrate"
+            android:title="@string/vibration_strength_title" />
     </PreferenceCategory>
 </PreferenceScreen>
