@@ -36,10 +36,17 @@
             android:summary="@string/fps_info_summary"
             android:persistent="true" />
 
-    </PreferenceCategory>
-
-    <PreferenceCategory
-            android:title="@string/display_gestures">
+        <Preference
+            android:key="device_doze"
+            android:persistent="false"
+            android:summary="@string/advanced_doze_summary"
+            android:title="@string/ambient_display_xiaomi"
+            android:icon="@drawable/ic_xiaomidoze">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="org.lineageos.settings.doze.DozeSettingsActivity"
+                android:targetPackage="org.lineageos.settings.doze" />
+        </Preference>
 
         <PreferenceScreen
             android:key="ambient_display_gestures"
@@ -47,7 +54,6 @@
             android:summary="@string/ambient_display_gestures_summary"
             android:icon="@drawable/ic_doze"
             android:title="@string/ambient_display_gestures_title" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
