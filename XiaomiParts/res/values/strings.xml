@@ -237,7 +237,7 @@
     <string name="reset_stats_summary">Battery stats will get reset when charging limit is reached</string>
 
     <!-- Thermal Profiles -->
-    <string name="thermal_title">Thermal Profiles</string>
+    <string name="thermal_profile">Thermal Profiles</string>
     <string name="thermal_summary">Adjust per-app thermal profiles for optimum performance</string>
     <string name="thermal_default">Default</string>
     <string name="thermal_benchmark">Benchmark</string>

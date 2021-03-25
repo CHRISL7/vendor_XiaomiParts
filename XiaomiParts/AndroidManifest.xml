@@ -151,7 +151,7 @@
 
         <activity
             android:name=".thermal.ThermalActivity"
-            android:label="@string/thermal_title"
+            android:label="@string/thermal_profile"
             android:icon="@drawable/ic_thermal_settings"
             android:theme="@style/CustomOptionsTheme">
             <intent-filter>
