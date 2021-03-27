@@ -1,8 +1,8 @@
-VENDOR_PATH := vendor/xiaomi/XiaomiParts
+VENDOR_PATH := vendor/XiaomiParts
 
 # XiaomiParts
 PRODUCT_SOONG_NAMESPACES += \
-   vendor/xiaomi/XiaomiParts
+   vendor/XiaomiParts
 
 PRODUCT_PACKAGES += \
     XiaomiParts \
