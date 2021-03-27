@@ -245,4 +245,10 @@
     <string name="thermal_dialer">Dialer</string>
     <string name="thermal_gaming">Gaming</string>
     <string name="thermal_youtube">Youtube</string>
+
+    <!-- Blur  -->
+    <string name="blur_category">Blur</string>
+    <string name="blur_title">QS Blur</string>
+    <string name="blur_on">On</string>
+    <string name="blur_off">Off</string>
 </resources>

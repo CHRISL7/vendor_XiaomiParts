@@ -172,5 +172,15 @@
             android:name=".thermal.ThermalService" 
             android:permission="ThermalService">
         </service>
+
+        <service
+            android:name=".BlurTileService"
+            android:icon="@drawable/ic_blur"
+            android:label="@string/blur_title"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE"/>
+            </intent-filter>
+        </service>
     </application>
 </manifest>
