@@ -43,6 +43,7 @@
 
 	    <activity
             android:name=".DiracActivity"
+            android:icon="@drawable/ic_dirac"
             android:label="@string/dirac_title"
             android:theme="@style/Theme.Main">
             <intent-filter>
