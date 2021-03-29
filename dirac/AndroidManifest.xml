@@ -31,6 +31,7 @@
         android:targetSdkVersion="24"/>
 
     <application
+        android:icon="@mipmap/ic_launcher"
         android:label="@string/device_settings_app_name"
         android:persistent="true">
 
@@ -47,7 +48,8 @@
             android:label="@string/dirac_title"
             android:theme="@style/Theme.Main">
             <intent-filter>
-		        <action android:name="com.android.settings.action.IA_SETTINGS" />
+		       <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" /> 
+                       <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
             <meta-data android:name="com.android.settings.category"
                        android:value="com.android.settings.category.ia.system" />
