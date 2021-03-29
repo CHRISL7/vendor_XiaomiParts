@@ -17,7 +17,7 @@
         android:title="@string/kcal_disabled" />
 
     <com.xiaomi.parts.preferences.SecureSettingSwitchPreference
-        android:defaultValue="false"
+        android:defaultValue="true"
         android:dependency="kcal_enabled"
         android:key="set_on_boot"
         android:title="@string/set_on_boot" />
@@ -27,21 +27,21 @@
         android:title="@string/cat_colormanagement">
 
         <com.xiaomi.parts.preferences.SecureSettingCustomSeekBarPreference
-            android:defaultValue="255"
+            android:defaultValue="230"
             android:dependency="kcal_enabled"
             android:key="color_red"
             android:max="255"
             android:title="@string/color_red" />
 
         <com.xiaomi.parts.preferences.SecureSettingCustomSeekBarPreference
-            android:defaultValue="255"
+            android:defaultValue="230"
             android:dependency="kcal_enabled"
             android:key="color_green"
             android:max="255"
             android:title="@string/color_green" />
 
         <com.xiaomi.parts.preferences.SecureSettingCustomSeekBarPreference
-            android:defaultValue="255"
+            android:defaultValue="210"
             android:dependency="kcal_enabled"
             android:key="color_blue"
             android:max="255"
