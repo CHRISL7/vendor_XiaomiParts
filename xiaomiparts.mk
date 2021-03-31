@@ -29,3 +29,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 # Sepolicy
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
+
+# Vendor properties
+-include $(VENDOR_PATH)/vendor_prop.mk
