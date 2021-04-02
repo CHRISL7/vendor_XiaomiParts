@@ -16,7 +16,6 @@
 *
 */
 package com.xiaomi.parts;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -24,12 +23,9 @@ import android.content.SharedPreferences;
 import android.provider.Settings;
 import android.text.TextUtils;
 import androidx.preference.PreferenceManager;
-
 public class Startup extends BroadcastReceiver {
-
     private static final String TAG = "BootReceiver";
     private static final String ONE_TIME_TUNABLE_RESTORE = "hardware_tunable_restored";
-
     @Override
     public void onReceive(final Context context, final Intent bootintent) {
         boolean enabled = false;
@@ -38,17 +34,12 @@ public class Startup extends BroadcastReceiver {
         if (enabled) {
             context.startService(new Intent(context, FPSInfoService.class));
         }
-        enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_CHARGING_SWITCH, false);
-        if (enabled) {
-            context.startService(new Intent(context, SmartChargingService.class));
-        }
-    }
+     }
 
     private boolean hasRestoredTunable(Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         return preferences.getBoolean(ONE_TIME_TUNABLE_RESTORE, false);
     }
-
     private void setRestoredTunable(Context context) {
         SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
         preferences.edit().putBoolean(ONE_TIME_TUNABLE_RESTORE, true).apply();

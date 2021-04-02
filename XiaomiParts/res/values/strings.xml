@@ -240,13 +240,6 @@
     <string name="thermal_gaming">Gaming</string>
     <string name="thermal_youtube">Youtube</string>
 
-    <!-- Charging -->
-    <string name="smart_charging_main_title">Battery</string>
-    <string name="smart_charging_title">Smart Charging</string>
-    <string name="smart_charging_summary">Helps in cooling down &amp; also protects from over charging the device</string>
-    <string name="reset_stats_title">Reset battery stats</string>
-    <string name="reset_stats_summary">Battery stats will get reset when charging limit is reached</string>
-
     <!-- Dirac settings -->
     <string name="dirac_summary">Optimize audio quality</string>
 </resources>

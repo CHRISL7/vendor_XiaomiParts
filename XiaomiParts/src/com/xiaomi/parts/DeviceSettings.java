@@ -26,7 +26,6 @@ import android.os.Handler;
 import androidx.preference.PreferenceFragment;
 import androidx.preference.PreferenceManager;
 import androidx.preference.SwitchPreference;
-import androidx.preference.TwoStatePreference;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceCategory;
 import android.content.Context;
@@ -46,8 +45,6 @@ import com.xiaomi.parts.preferences.SeekBarPreference;
 import com.xiaomi.parts.SuShell;
 import com.xiaomi.parts.SuTask;
 import com.xiaomi.parts.Fastcharge;
-
-import com.xiaomi.parts.ModeSwitch.SmartChargingSwitch;
 
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -102,18 +99,11 @@ public class DeviceSettings extends PreferenceFragment implements
     private SecureSettingListPreference mLKM;
     private SecureSettingListPreference mTCP;
     private VibratorStrengthPreference mVibratorStrength;
-    public static final String KEY_CHARGING_SWITCH = "smart_charging";
-    public static final String KEY_RESET_STATS = "reset_stats";
-
     private Preference mKcal;
     private Preference mAmbientPref;
     private CustomSeekBarPreference mHeadphoneGain;
     private CustomSeekBarPreference mMicrophoneGain;
     private CustomSeekBarPreference mEarpieceGain;
-
-    private static TwoStatePreference mSmartChargingSwitch;
-    public static TwoStatePreference mResetStats;
-    public static SeekBarPreference mSeekBarPreference;
 
     private static Context mContext;
     private SwitchPreference mSelinuxMode;
@@ -234,18 +224,7 @@ public class DeviceSettings extends PreferenceFragment implements
         .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE)
         .contains(PREF_SELINUX_MODE));
 
-        mSmartChargingSwitch = (TwoStatePreference) findPreference(KEY_CHARGING_SWITCH);
-        mSmartChargingSwitch.setChecked(prefs.getBoolean(KEY_CHARGING_SWITCH, false));
-        mSmartChargingSwitch.setOnPreferenceChangeListener(new SmartChargingSwitch(getContext()));
-
-        mResetStats = (TwoStatePreference) findPreference(KEY_RESET_STATS);
-        mResetStats.setChecked(prefs.getBoolean(KEY_RESET_STATS, false));
-        mResetStats.setEnabled(mSmartChargingSwitch.isChecked());
-        mResetStats.setOnPreferenceChangeListener(this);
-
-        mSeekBarPreference = (SeekBarPreference) findPreference("seek_bar");
-        mSeekBarPreference.setEnabled(mSmartChargingSwitch.isChecked());
-    }
+  }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object value) {
