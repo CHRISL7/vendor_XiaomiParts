@@ -167,14 +167,6 @@
             android:summary="@string/tcpcongestion_summary"
             android:icon="@drawable/ic_tcp" 
             android:title="@string/tcpcongestion_title" />
-
-            <com.xiaomi.parts.preferences.SecureSettingListPreference
-            android:key="blur"
-            android:title="@string/blur_title"
-            android:icon="@drawable/ic_blur"
-            android:persistent="false"
-            android:entries="@array/blur_profiles"
-            android:entryValues="@array/blur_values" />
     </PreferenceCategory>
 
     <PreferenceCategory

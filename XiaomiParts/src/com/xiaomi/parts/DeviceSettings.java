@@ -94,10 +94,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private static final String PREF_CLEAR_SPEAKER = "clear_speaker_settings";
 
-    public static final String PREF_BLUR = "blur";
-    public static final String BLUR_SYSTEM_PROPERTY = "persist.blur.profile";
-
-    private SecureSettingListPreference mBlur;
     private CustomSeekBarPreference mWhiteTorchBrightness;
     private SecureSettingSwitchPreference mMsmThermal;
     private SecureSettingSwitchPreference mCoreControl;
@@ -225,11 +221,6 @@ public class DeviceSettings extends PreferenceFragment implements
         fpsInfo.setChecked(prefs.getBoolean(PREF_KEY_FPS_INFO, false));
         fpsInfo.setOnPreferenceChangeListener(this);
 
-        // Blur
-        mBlur = (SecureSettingListPreference) findPreference(PREF_BLUR);
-        mBlur.setValue(FileUtils.getStringProp(BLUR_SYSTEM_PROPERTY, "1"));
-        mBlur.setOnPreferenceChangeListener(this);
-
         // SELinux
         Preference selinuxCategory = findPreference(SELINUX_CATEGORY);
         mSelinuxMode = (SwitchPreference) findPreference(PREF_SELINUX_MODE);
@@ -260,11 +251,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object value) {
         final String key = preference.getKey();
         switch (key) {
-            case PREF_BLUR:
-                mBlur.setValue((String) value);
-                FileUtils.setStringProp(BLUR_SYSTEM_PROPERTY, (String) value);
-                break;
-
             case KEY_WHITE_TORCH_BRIGHTNESS:
                  FileUtils.setValue(TORCH_1_BRIGHTNESS_PATH, (int) value);
                 break;
