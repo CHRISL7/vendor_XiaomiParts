@@ -24,6 +24,9 @@ PRODUCT_PACKAGES += \
     Dirac \
     libaudioparsers
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/XiaomiParts/privapp-permissions-parts.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-parts.xml
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
    $(VENDOR_PATH)/overlay
