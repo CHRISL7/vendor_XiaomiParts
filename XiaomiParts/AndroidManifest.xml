@@ -171,5 +171,11 @@
             android:name=".thermal.ThermalService" 
             android:permission="ThermalService">
         </service>
+
+        <receiver android:name="com.xiaomi.parts.Startup" >
+            <intent-filter android:priority="100" >
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
     </application>
 </manifest>
