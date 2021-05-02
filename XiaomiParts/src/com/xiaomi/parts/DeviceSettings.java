@@ -315,7 +315,7 @@ public class DeviceSettings extends PreferenceFragment implements
 
             case PREF_KEY_FPS_INFO:
                 boolean enabled = (Boolean) value;
-                Intent fpsinfo = new Intent(this.getContext(), FPSInfoService.class);
+                Intent fpsinfo = new Intent(this.getContext(), com.xiaomi.parts.FPSInfoService.class);
                 if (enabled) {
                     this.getContext().startService(fpsinfo);
                 } else {

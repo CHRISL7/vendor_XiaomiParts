@@ -120,7 +120,7 @@
         </service>
 
         <service
-            android:name=".FPSInfoService"
+            android:name="com.xiaomi.parts.FPSInfoService"
             android:exported="false">
         </service>
         <service
