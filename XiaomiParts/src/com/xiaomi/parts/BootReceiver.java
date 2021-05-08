@@ -27,7 +27,6 @@ import android.content.SharedPreferences;
 import android.os.SELinux;
 import android.util.Log;
 import android.widget.Toast;
-import com.xiaomi.parts.preferences.VibratorStrengthPreference;
 
 import com.xiaomi.parts.R;
 
@@ -103,7 +102,6 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
 
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
 
-        VibratorStrengthPreference.restore(context);
 
         if (Settings.Secure.getInt(context.getContentResolver(), PREF_ENABLED, 0) == 1) {
             FileUtils.setValue(KCAL_ENABLE, Settings.Secure.getInt(context.getContentResolver(),
@@ -131,9 +129,6 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                     PREF_HUE, HUE_DEFAULT));
         }
 
-        FileUtils.setValue(DeviceSettings.TORCH_1_BRIGHTNESS_PATH,
-                Settings.Secure.getInt(context.getContentResolver(),
-                        DeviceSettings.KEY_WHITE_TORCH_BRIGHTNESS, 100));
         FileUtils.setValue(DeviceSettings.MSM_THERMAL_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PERF_MSM_THERMAL, 0));
         FileUtils.setValue(DeviceSettings.CORE_CONTROL_PATH, Settings.Secure.getInt(context.getContentResolver(),

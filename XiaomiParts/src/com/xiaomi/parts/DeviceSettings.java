@@ -40,26 +40,16 @@ import com.xiaomi.parts.ambient.AmbientGesturePreferenceActivity;
 import com.xiaomi.parts.preferences.CustomSeekBarPreference;
 import com.xiaomi.parts.preferences.SecureSettingListPreference;
 import com.xiaomi.parts.preferences.SecureSettingSwitchPreference;
-import com.xiaomi.parts.preferences.VibratorStrengthPreference;
-import com.xiaomi.parts.preferences.SeekBarPreference;
 
 import com.xiaomi.parts.SuShell;
 import com.xiaomi.parts.SuTask;
 import com.xiaomi.parts.Fastcharge;
-
-import com.xiaomi.parts.ModeSwitch.SmartChargingSwitch;
 
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "XiaomiParts";
 
-    public static final String KEY_WHITE_TORCH_BRIGHTNESS = "white_torch_brightness";
-    public static final String TORCH_1_BRIGHTNESS_PATH = "/sys/class/leds/led:torch_0/max_brightness";
-
-    public static final String KEY_CALL_VIBSTRENGTH = "vib_call_strength";
-    public static final String KEY_NOTIF_VIBSTRENGTH = "vib_notif_strength";
-    public static final String KEY_VIBSTRENGTH = "vib_strength";
     public static final String CATEGORY_DISPLAY = "display";
     public static final String PREF_DEVICE_KCAL = "device_kcal";
 
@@ -86,34 +76,24 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String PREF_TCP = "tcpcongestion";
     public static final String TCP_SYSTEM_PROPERTY = "persist.tcp.profile";
 
-    private CustomSeekBarPreference mTorchBrightness;
-
     private static final String SELINUX_CATEGORY = "selinux";
     private static final String PREF_SELINUX_MODE = "selinux_mode";
     private static final String PREF_SELINUX_PERSISTENCE = "selinux_persistence";
 
     private static final String PREF_CLEAR_SPEAKER = "clear_speaker_settings";
 
-    private CustomSeekBarPreference mWhiteTorchBrightness;
     private SecureSettingSwitchPreference mMsmThermal;
     private SecureSettingSwitchPreference mCoreControl;
     private SecureSettingSwitchPreference mVddRestrict;
     private SecureSettingListPreference mCPUCORE;
     private SecureSettingListPreference mLKM;
     private SecureSettingListPreference mTCP;
-    private VibratorStrengthPreference mVibratorStrength;
-    public static final String KEY_CHARGING_SWITCH = "smart_charging";
-    public static final String KEY_RESET_STATS = "reset_stats";
 
     private Preference mKcal;
     private Preference mAmbientPref;
     private CustomSeekBarPreference mHeadphoneGain;
     private CustomSeekBarPreference mMicrophoneGain;
     private CustomSeekBarPreference mEarpieceGain;
-
-    private static TwoStatePreference mSmartChargingSwitch;
-    public static TwoStatePreference mResetStats;
-    public static SeekBarPreference mSeekBarPreference;
 
     private static Context mContext;
     private SwitchPreference mSelinuxMode;
@@ -134,10 +114,6 @@ public class DeviceSettings extends PreferenceFragment implements
             startActivity(intent);
             return true;
         });
-
-        mWhiteTorchBrightness = (CustomSeekBarPreference) findPreference(KEY_WHITE_TORCH_BRIGHTNESS);
-        mWhiteTorchBrightness.setEnabled(FileUtils.fileWritable(TORCH_1_BRIGHTNESS_PATH));
-        mWhiteTorchBrightness.setOnPreferenceChangeListener(this);
 
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
 
@@ -163,11 +139,6 @@ public class DeviceSettings extends PreferenceFragment implements
                 return true;
             }
         });
-
-        mVibratorStrength = (VibratorStrengthPreference) findPreference(KEY_VIBSTRENGTH);
-        if (mVibratorStrength != null) {
-            mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
-        }
 
         mHeadphoneGain = (CustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
         mHeadphoneGain.setOnPreferenceChangeListener(this);
@@ -233,28 +204,12 @@ public class DeviceSettings extends PreferenceFragment implements
         mSelinuxPersistence.setChecked(getContext()
         .getSharedPreferences("selinux_pref", Context.MODE_PRIVATE)
         .contains(PREF_SELINUX_MODE));
-
-        mSmartChargingSwitch = (TwoStatePreference) findPreference(KEY_CHARGING_SWITCH);
-        mSmartChargingSwitch.setChecked(prefs.getBoolean(KEY_CHARGING_SWITCH, false));
-        mSmartChargingSwitch.setOnPreferenceChangeListener(new SmartChargingSwitch(getContext()));
-
-        mResetStats = (TwoStatePreference) findPreference(KEY_RESET_STATS);
-        mResetStats.setChecked(prefs.getBoolean(KEY_RESET_STATS, false));
-        mResetStats.setEnabled(mSmartChargingSwitch.isChecked());
-        mResetStats.setOnPreferenceChangeListener(this);
-
-        mSeekBarPreference = (SeekBarPreference) findPreference("seek_bar");
-        mSeekBarPreference.setEnabled(mSmartChargingSwitch.isChecked());
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object value) {
         final String key = preference.getKey();
         switch (key) {
-            case KEY_WHITE_TORCH_BRIGHTNESS:
-                 FileUtils.setValue(TORCH_1_BRIGHTNESS_PATH, (int) value);
-                break;
-
             case PERF_MSM_THERMAL:
                 FileUtils.setValue(MSM_THERMAL_PATH, (boolean) value);
                 break;
