@@ -177,6 +177,17 @@
         android:key="audio"
         android:title="@string/audio_title">
 
+         <Preference
+            android:summary="@string/dirac_summary"
+            android:icon="@drawable/ic_dirac"
+            android:key="dirac_enabled"
+            android:title="Xiaomi Dirac">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.xiaomi.dirac"
+                android:targetClass="com.xiaomi.dirac.DiracActivity" />
+        </Preference>
+
         <Preference
             android:key="clear_speaker_settings" 
             android:title="@string/clear_speaker_title"
