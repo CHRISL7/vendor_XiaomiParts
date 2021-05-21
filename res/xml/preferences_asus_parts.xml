@@ -287,26 +287,19 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="vibration"
-        android:title="@string/vibration_title">
-
-        <com.asus.zenparts.preferences.VibratorStrengthPreference
-            android:key="vib_strength"
+    <!-- Vibration control screen -->
+    <PreferenceCategory android:title="@string/category_vibration">
+        <Preference
             android:icon="@drawable/ic_vibrate"
-            android:title="@string/vib_strength_title"
-            android:summary="@string/vib_strength_summary_head" />
-
-        <com.asus.zenparts.preferences.VibratorCallStrengthPreference
-            android:key="vib_call_strength"
-            android:title="@string/vib_call_strength_title_head"
-            android:summary="@string/vib_call_strength_summary_head" />
-
-        <com.asus.zenparts.preferences.VibratorNotifStrengthPreference
-            android:key="vib_notif_strength"
-            android:title="@string/vib_notif_strength_title_head"
-            android:summary="@string/vib_notif_strength_summary_head" />
-
+            android:key="vibration"
+            android:persistent="false"
+            android:summary="@string/vibration_summary"
+            android:title="@string/vibration_title">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.asus.zenparts.preferences.vibration.VibrationActivity"
+                android:targetPackage="com.asus.zenparts" />
+        </Preference>
     </PreferenceCategory>
 
 </PreferenceScreen>

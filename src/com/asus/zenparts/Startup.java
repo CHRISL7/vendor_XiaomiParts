@@ -25,33 +25,13 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import androidx.preference.PreferenceManager;
 
-import com.asus.zenparts.preferences.*;
-
 public class Startup extends BroadcastReceiver {
 
     private static final String TAG = "BootReceiver";
     private static final String ONE_TIME_TUNABLE_RESTORE = "hardware_tunable_restored";
 
-    private static void restore(String file, boolean enabled) {
-        if (file == null) {
-            return;
-        }
-        Utils.writeValue(file, enabled ? "1" : "0");
-    }
-
-    private static void restore(String file, String value) {
-        if (file == null) {
-            return;
-        }
-        Utils.writeValue(file, value);
-    }
-
     @Override
     public void onReceive(final Context context, final Intent bootintent) {
-        VibratorStrengthPreference.restore(context);
-        VibratorCallStrengthPreference.restore(context);
-        VibratorNotifStrengthPreference.restore(context);
-
         boolean enabled = false;
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(context);
         enabled = sharedPrefs.getBoolean(DeviceSettings.KEY_CHARGING_SWITCH, false);

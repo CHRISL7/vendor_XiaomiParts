@@ -41,9 +41,6 @@ import com.asus.zenparts.preferences.SecureSettingListPreference;
 import com.asus.zenparts.preferences.SecureSettingSwitchPreference;
 import com.asus.zenparts.preferences.NotificationLedSeekBarPreference;
 import com.asus.zenparts.preferences.SeekBarPreference;
-import com.asus.zenparts.preferences.VibratorStrengthPreference;
-import com.asus.zenparts.preferences.VibratorCallStrengthPreference;
-import com.asus.zenparts.preferences.VibratorNotifStrengthPreference;
 
 import com.asus.zenparts.SuShell;
 import com.asus.zenparts.SuTask;
@@ -66,10 +63,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String PREF_BACKLIGHT_DIMMER = "backlight_dimmer";
     public static final String BACKLIGHT_DIMMER_PATH = "/sys/module/mdss_fb/parameters/backlight_dimmer";
 
-    public static final String KEY_VIBSTRENGTH = "vib_strength";
-    public static final String KEY_CALL_VIBSTRENGTH = "vib_call_strength";
-    public static final String KEY_NOTIF_VIBSTRENGTH = "vib_notif_strength";
-
     public static final String CATEGORY_DISPLAY = "display";
     public static final String PREF_DEVICE_KCAL = "device_kcal";
 
@@ -87,11 +80,9 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String EARPIECE_GAIN_PATH = "/sys/kernel/sound_control/earpiece_gain";
     public static final String PREF_SPEAKER_GAIN = "speaker_gain";
     public static final String SPEAKER_GAIN_PATH = "/sys/kernel/sound_control/speaker_gain";
-
     public static final String CATEGORY_FASTCHARGE = "usb_fastcharge";
     public static final String PREF_USB_FASTCHARGE = "fastcharge";
     public static final String USB_FASTCHARGE_PATH = "/sys/kernel/fast_charge/force_fast_charge";
-
     public static final String PREF_KEY_FPS_INFO = "fps_info";
 
     public static final String PREF_GPUBOOST = "gpuboost";
@@ -122,9 +113,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String KEY_RESET_STATS = "reset_stats";
 
     private CustomSeekBarPreference mTorchBrightness;
-    private VibratorStrengthPreference mVibratorStrength;
-    private VibratorCallStrengthPreference mVibratorCallStrength;
-    private VibratorNotifStrengthPreference mVibratorNotifStrength;
     private NotificationLedSeekBarPreference mLEDBrightness;
     private Preference mKcal;
     private Preference mClearSpeakerPref;
@@ -218,17 +206,6 @@ public class DeviceSettings extends PreferenceFragment implements
             mBacklightDimmer.setOnPreferenceChangeListener(new BacklightDimmer(getContext()));
         } else {
             getPreferenceScreen().removePreference(findPreference(PREF_BACKLIGHT_DIMMER));
-        }
-
-        mVibratorStrength = (VibratorStrengthPreference) findPreference(KEY_VIBSTRENGTH);
-        if (mVibratorStrength != null) {
-            mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
-        mVibratorCallStrength = (VibratorCallStrengthPreference) findPreference(KEY_CALL_VIBSTRENGTH);
-        if (mVibratorCallStrength != null)
-            mVibratorCallStrength.setEnabled(VibratorCallStrengthPreference.isSupported());
-        mVibratorNotifStrength = (VibratorNotifStrengthPreference) findPreference(KEY_NOTIF_VIBSTRENGTH);
-        if (mVibratorNotifStrength != null)
-            mVibratorNotifStrength.setEnabled(VibratorNotifStrengthPreference.isSupported());
         }
 
         if (FileUtils.fileWritable(MSM_TOUCHBOOST_PATH)) {

@@ -151,12 +151,12 @@ on property:persist.zenparts.cpu_profile=4
   chmod 0660 /sys/kernel/fast_charge/force_fast_charge
 
 # Vibrator permissions
-  chown system system /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_override
-  write /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_override 1
-  chown system system /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_mv_user
-  chown system system /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_mv_call
-  chown system system /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_mv_strong
-  chmod 0660 /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_override
-  chown 0660 /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_mv_user
-  chmod 0660 /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_mv_call
-  chmod 0660 /sys/devices/soc/800f000.qcom,spmi/spmi-0/spmi0-01/800f000.qcom,spmi:qcom.pm660@1:qcom,haptics@c000/leds/vibrator/vmax_mv_strong
+    chown system system /sys/class/leds/vibrator/vmax_override
+    write /sys/class/leds/vibrator/vmax_override 1
+    chown system system /sys/class/leds/vibrator/vmax_mv_strong
+    chown system system /sys/class/leds/vibrator/vmax_mv_call
+    chown system system /sys/class/leds/vibrator/vmax_mv_user
+    chmod 0660 /sys/class/leds/vibrator/vmax_override
+    chmod 0660 /sys/class/leds/vibrator/vmax_mv_strong
+    chmod 0660 /sys/class/leds/vibrator/vmax_mv_call
+    chown 0660 /sys/class/leds/vibrator/vmax_mv_user

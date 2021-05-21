@@ -33,13 +33,12 @@
     <string name="torch_brightness_title">Brightness</string>
 
     <!-- Vibration -->
-    <string name="vibration_title">Vibration</string>
-    <string name="vib_strength_title">Strength</string>
-    <string name="vib_strength_summary_head">Define the strength of the vibrator</string>
-    <string name="vib_call_strength_title_head">Call strength</string>
-    <string name="vib_call_strength_summary_head">Define the strength of the vibrator during an incoming call</string>
-    <string name="vib_notif_strength_title_head">Notification strength</string>
-    <string name="vib_notif_strength_summary_head">Define the strength of the vibrator during an incoming notification</string>
+    <string name="vibration_title">Vibration And Haptics Control Center</string>
+    <string name="vibration_summary">Set Vibration Strength For System, Calls and Notifications</string>
+    <string name="vibration_strength_system_ui">Vibration Strength - System UI</string>
+    <string name="vibration_strength_call">Vibration Strength - Call</string>
+    <string name="vibration_strength_system_notification">Vibration Strength - Notification</string>
+    <string name="category_vibration">Vibration Strength</string>
 
     <!-- Notification LED brightness -->
     <string name="notification_title">Notification LED</string>

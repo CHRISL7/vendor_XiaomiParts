@@ -28,7 +28,8 @@ import android.os.SELinux;
 import android.util.Log;
 import android.widget.Toast;
 import com.asus.zenparts.R;
-import com.asus.zenparts.preferences.VibratorStrengthPreference;
+import com.asus.zenparts.preferences.vibration.VibrationConstants;
+import com.asus.zenparts.preferences.vibration.VibrationUtils;
 
 import com.asus.zenparts.kcal.Utils;
 import com.asus.zenparts.ambient.SensorsDozeService;
@@ -46,8 +47,11 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
     private static final String TAG = "SettingsOnBoot";
     private boolean mSetupRunning = false;
     private Context mContext;
-
+    private VibrationUtils vibrationUtils;
+    private SharedPreferences sharedPrefs;
     public void onReceive(Context context, Intent intent) {
+        if (!intent.getAction().equals(Intent.ACTION_BOOT_COMPLETED))
+            return;
 
     mContext = context;
     ActivityManager activityManager =
@@ -130,7 +134,9 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                     PREF_CONTRAST, CONTRAST_DEFAULT) + CONTRAST_OFFSET);
             FileUtils.setValue(KCAL_HUE, Settings.Secure.getInt(context.getContentResolver(),
                     PREF_HUE, HUE_DEFAULT));
-        VibratorStrengthPreference.restore(context);
+        mContext = context;
+        vibrationUtils = new VibrationUtils(context);
+        sharedPrefs = PreferenceManager.getDefaultSharedPreferences(mContext);
         }
 
         FileUtils.setValue(DeviceSettings.TORCH_1_BRIGHTNESS_PATH,
@@ -176,5 +182,11 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
     private void showToast(String toastString, Context context) {
     Toast.makeText(context, toastString, Toast.LENGTH_SHORT)
             .show();
+    }
+
+    private void restoreVibrationStrength() {
+        for (int i = 0; i <= VibrationConstants.vibrationPaths.length - 1; i++) {
+            vibrationUtils.restore(VibrationConstants.vibrationPaths[i], VibrationConstants.vibrationKeys[i]);
+        }
     }
 }
