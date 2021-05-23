@@ -11,7 +11,14 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <Preference
+        android:key="doze_animation"
+	settings:allowDividerBelow="false"
+        android:layout="@layout/doze_animation" />
 
     <SwitchPreference
         android:key="gesture_hand_wave"
