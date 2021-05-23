@@ -18,6 +18,8 @@
     <SwitchPreference
         android:key="always_on_display"
         android:disableDependentsState="true"
+        android:title="@string/aod_setting_title"
+        android:summary="@string/aod_setting_summary"
         android:icon="@drawable/ic_doze_aod"
         android:persistent="false" />
 

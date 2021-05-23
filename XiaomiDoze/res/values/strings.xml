@@ -63,4 +63,6 @@
     <!-- Pick-up to wake gesture-->
     <string name="wake_gesture_title">Wake up</string>
     <string name="wake_gesture_summary">Wake up the device instead of pulsing notifications</string>
+    <string name="aod_setting_title">Always on</string>
+    <string name="aod_setting_summary">Show time, notification icons and other info. Increased battery usage.</string>
 </resources>

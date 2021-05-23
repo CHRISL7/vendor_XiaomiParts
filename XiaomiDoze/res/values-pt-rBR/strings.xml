@@ -61,4 +61,8 @@
     <string name="wake_on_gesture_title">Despertar com gestos</string>
     <string name="wake_on_gesture_summary">Desperte o dispositivo em vez de pulsar notificações em eventos de gestos</string>
 
+    <string name="wake_gesture_title">Levantar para ligar tela</string>
+    <string name="wake_gesture_summary">Pegue seu telefone para acordar o dispositivo em vez de pulsar as notificações</string>
+    <string name="aod_setting_title">Sempre Ligado</string>
+    <string name="aod_setting_summary">Mostrar hora, ícones de notificação e outras informações. Aumenta o uso de bateria.</string>
 </resources>
