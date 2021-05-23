@@ -58,6 +58,20 @@
             android:summary="@string/ambient_display_gestures_summary"
             android:icon="@drawable/ic_doze"
             android:title="@string/ambient_display_gestures_title" />
+
+        <Preference
+            android:key="thermal_profiles"
+            android:name=".thermal.ThermalActivity"
+            android:label="@string/thermal_profile"
+            android:icon="@drawable/ic_thermal_settings"
+            android:theme="@style/CustomOptionsTheme"
+            android:summary="@string/thermal_summary"
+            android:title="@string/thermal_title">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="com.xiaomi.parts"
+                android:targetClass="com.xiaomi.parts.thermal.ThermalActivity" />
+        </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory
