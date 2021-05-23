@@ -39,7 +39,6 @@ import com.asus.zenparts.ambient.AmbientGesturePreferenceActivity;
 import com.asus.zenparts.preferences.CustomSeekBarPreference;
 import com.asus.zenparts.preferences.SecureSettingListPreference;
 import com.asus.zenparts.preferences.SecureSettingSwitchPreference;
-import com.asus.zenparts.preferences.NotificationLedSeekBarPreference;
 import com.asus.zenparts.preferences.SeekBarPreference;
 
 import com.asus.zenparts.SuShell;
@@ -53,12 +52,6 @@ public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "ZenParts";
-
-    final static String PREF_TORCH_BRIGHTNESS = "torch_brightness";
-    public static final String TORCH_1_BRIGHTNESS_PATH = "/sys/devices/soc/800f000.qcom," +
-            "spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d300/leds/led:torch_0/max_brightness";
-    public static final String TORCH_2_BRIGHTNESS_PATH = "/sys/devices/soc/800f000.qcom," +
-            "spmi/spmi-0/spmi0-03/800f000.qcom,spmi:qcom,pm660l@3:qcom,leds@d300/leds/led:torch_1/max_brightness";
 
     public static final String PREF_BACKLIGHT_DIMMER = "backlight_dimmer";
     public static final String BACKLIGHT_DIMMER_PATH = "/sys/module/mdss_fb/parameters/backlight_dimmer";
@@ -80,9 +73,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String EARPIECE_GAIN_PATH = "/sys/kernel/sound_control/earpiece_gain";
     public static final String PREF_SPEAKER_GAIN = "speaker_gain";
     public static final String SPEAKER_GAIN_PATH = "/sys/kernel/sound_control/speaker_gain";
-    public static final String CATEGORY_FASTCHARGE = "usb_fastcharge";
-    public static final String PREF_USB_FASTCHARGE = "fastcharge";
-    public static final String USB_FASTCHARGE_PATH = "/sys/kernel/fast_charge/force_fast_charge";
     public static final String PREF_KEY_FPS_INFO = "fps_info";
 
     public static final String PREF_GPUBOOST = "gpuboost";
@@ -93,12 +83,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
     public static final String PREF_MSM_TOUCHBOOST = "touchboost";
     public static final String MSM_TOUCHBOOST_PATH = "/sys/module/msm_performance/parameters/touchboost";
-
-    public static final String CATEGORY_NOTIF = "notification_led";
-    public static final String PREF_NOTIF_LED = "notification_led_brightness";
-    public static final String NOTIF_LED_BLUE_PATH = "/sys/class/leds/blue/max_brightness";
-    public static final String NOTIF_LED_RED_PATH = "/sys/class/leds/red/max_brightness";
-    public static final String NOTIF_LED_GREEN_PATH = "/sys/class/leds/green/max_brightness";
 
     public static final int MIN_LED = 1;
     public static final int MAX_LED = 255;
@@ -112,8 +96,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String KEY_CHARGING_SWITCH = "smart_charging";
     public static final String KEY_RESET_STATS = "reset_stats";
 
-    private CustomSeekBarPreference mTorchBrightness;
-    private NotificationLedSeekBarPreference mLEDBrightness;
     private Preference mKcal;
     private Preference mClearSpeakerPref;
     private SecureSettingListPreference mSPECTRUM;
@@ -125,7 +107,6 @@ public class DeviceSettings extends PreferenceFragment implements
     private CustomSeekBarPreference mMicrophoneGain;
     private CustomSeekBarPreference mEarpieceGain;
     private CustomSeekBarPreference mSpeakerGain;
-    private SecureSettingSwitchPreference mFastcharge;
     private SecureSettingListPreference mGPUBOOST;
     private SecureSettingListPreference mCPUBOOST;
     private SecureSettingSwitchPreference mBacklightDimmer;
@@ -145,17 +126,6 @@ public class DeviceSettings extends PreferenceFragment implements
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(mContext);
 
         String device = FileUtils.getStringProp("ro.build.product", "unknown");
-
-        mLEDBrightness = (NotificationLedSeekBarPreference) findPreference(PREF_NOTIF_LED);
-        mLEDBrightness.setEnabled(FileUtils.fileWritable(NOTIF_LED_BLUE_PATH) &&
-              FileUtils.fileWritable(NOTIF_LED_RED_PATH) &&
-                  FileUtils.fileWritable(NOTIF_LED_GREEN_PATH));
-        mLEDBrightness.setOnPreferenceChangeListener(this);
-
-        mTorchBrightness = (CustomSeekBarPreference) findPreference(PREF_TORCH_BRIGHTNESS);
-        mTorchBrightness.setEnabled(FileUtils.fileWritable(TORCH_1_BRIGHTNESS_PATH) &&
-                FileUtils.fileWritable(TORCH_2_BRIGHTNESS_PATH));
-        mTorchBrightness.setOnPreferenceChangeListener(this);
 
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
 
@@ -253,15 +223,6 @@ public class DeviceSettings extends PreferenceFragment implements
         mSpeakerGain = (CustomSeekBarPreference) findPreference(PREF_SPEAKER_GAIN);
         mSpeakerGain.setOnPreferenceChangeListener(this);
 
-        if (FileUtils.fileWritable(USB_FASTCHARGE_PATH)) {
-            mFastcharge = (SecureSettingSwitchPreference) findPreference(PREF_USB_FASTCHARGE);
-            mFastcharge.setEnabled(Fastcharge.isSupported());
-            mFastcharge.setChecked(Fastcharge.isCurrentlyEnabled(this.getContext()));
-            mFastcharge.setOnPreferenceChangeListener(new Fastcharge(getContext()));
-        } else {
-            getPreferenceScreen().removePreference(findPreference(CATEGORY_FASTCHARGE));
-        }
-
         SwitchPreference fpsInfo = (SwitchPreference) findPreference(PREF_KEY_FPS_INFO);
         fpsInfo.setChecked(prefs.getBoolean(PREF_KEY_FPS_INFO, false));
         fpsInfo.setOnPreferenceChangeListener(this);
@@ -296,10 +257,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object value) {
         final String key = preference.getKey();
         switch (key) {
-            case PREF_TORCH_BRIGHTNESS:
-                FileUtils.setValue(TORCH_1_BRIGHTNESS_PATH, (int) value);
-                FileUtils.setValue(TORCH_2_BRIGHTNESS_PATH, (int) value);
-                break;
 
             case PREF_SPECTRUM:
                 mSPECTRUM.setValue((String) value);
@@ -370,12 +327,6 @@ public class DeviceSettings extends PreferenceFragment implements
                 mCPUBOOST.setValue((String) value);
                 mCPUBOOST.setSummary(mCPUBOOST.getEntry());
                 FileUtils.setStringProp(CPUBOOST_SYSTEM_PROPERTY, (String) value);
-                break;
-
-            case PREF_NOTIF_LED:
-                FileUtils.setValue(NOTIF_LED_BLUE_PATH, (1 + Math.pow(1.05694, (int) value )));
-                FileUtils.setValue(NOTIF_LED_RED_PATH, (1 + Math.pow(1.05694, (int) value )));
-                FileUtils.setValue(NOTIF_LED_GREEN_PATH, (1 + Math.pow(1.05694, (int) value )));
                 break;
 
             case PREF_SELINUX_MODE:

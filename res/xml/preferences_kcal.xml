@@ -13,7 +13,9 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto">
 
     <com.asus.zenparts.preferences.SecureSettingSwitchPreference
         android:defaultValue="false"
@@ -23,6 +25,7 @@
     <com.asus.zenparts.preferences.SecureSettingSwitchPreference
         android:defaultValue="false"
         android:dependency="kcal_enabled"
+	settings:allowDividerBelow="false"
         android:key="set_on_boot"
         android:title="@string/set_on_boot" />
 
@@ -55,6 +58,7 @@
             android:defaultValue="35"
             android:dependency="kcal_enabled"
             android:key="color_minimum"
+	    settings:allowDividerBelow="false"
             android:max="255"
             android:title="@string/color_minimum" />
 

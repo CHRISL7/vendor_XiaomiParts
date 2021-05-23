@@ -13,11 +13,14 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <Preference
         android:key="header"
+	settings:allowDividerBelow="false"
         android:layout="@layout/header_animation" />
 
     <PreferenceCategory
@@ -46,6 +49,7 @@
             android:dependency="dirac_enabled"
             android:entries="@array/dirac_preset_pref_entries"
             android:entryValues="@array/dirac_preset_pref_values"
+	    settings:allowDividerBelow="false"
             android:key="dirac_preset_pref"
             android:summary="%s"
             android:icon="@drawable/ic_preset"
@@ -85,7 +89,8 @@
             android:key="speaker_gain"
             android:max="20"
             app:min="-10"
-            android:icon="@drawable/ic_speaker"
+            settings:allowDividerBelow="false"            
+	    android:icon="@drawable/ic_speaker"
             android:title="@string/speaker_gain" />
 
     </PreferenceCategory>
@@ -115,6 +120,7 @@
             android:dialogTitle="@string/cpuboost_dialogTitle"
             android:entries="@array/cpuboost_profiles"
             android:entryValues="@array/cpuboost_values"
+            settings:allowDividerBelow="false"
             android:icon="@drawable/ic_cpuboost"
             android:defaultValue="0"
             android:title="@string/cpuboost_title" />
@@ -144,6 +150,7 @@
         <SwitchPreference
             android:key="reset_stats"
             android:icon="@drawable/ic_info_outline_24dp"
+            settings:allowDividerBelow="false"
             android:title="@string/reset_stats_title"
             android:summary="@string/reset_stats_summary" />
 
@@ -175,6 +182,7 @@
         <com.asus.zenparts.preferences.SecureSettingSwitchPreference
             android:defaultValue="false"
             android:key="backlight_dimmer"
+            settings:allowDividerBelow="false"
             android:icon="@drawable/ic_backlight"
             android:title="@string/backlight_dimmer"
             android:summary="@string/backlight_summary" />
@@ -187,24 +195,10 @@
         <PreferenceScreen
             android:key="ambient_display_gestures"
             android:fragment="com.asus.zenparts.ambient.AmbientGesturePreferenceActivity"
+            settings:allowDividerBelow="false"
             android:summary="@string/ambient_display_gestures_summary"
             android:icon="@drawable/ic_doze"
             android:title="@string/ambient_display_gestures_title" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="notification_led"
-        android:title="@string/notification_title">
-
-        <com.asus.zenparts.preferences.NotificationLedSeekBarPreference
-            android:key="notification_led_brightness"
-            android:title="@string/notification_led_title"
-            android:icon="@drawable/ic_led"
-            android:max="100"
-            app:min="1"
-            app:units="%"
-            android:defaultValue="100" />
 
     </PreferenceCategory>
 
@@ -226,6 +220,7 @@
     <SwitchPreference
         android:key="selinux_persistence"
         android:title="@string/selinux_persistence_title"
+        settings:allowDividerBelow="false"
         android:summary="@string/selinux_persistence_summary"
         android:defaultValue="true"
         android:icon="@drawable/ic_power" />
@@ -239,6 +234,7 @@
         <Preference
             android:key="clear_speaker_settings"
             android:title="@string/clear_speaker_title"
+            settings:allowDividerBelow="false"
             android:icon="@drawable/ic_speaker_cleaner_icon" >
          <intent
                 android:action="android.intent.action.MAIN"
@@ -250,6 +246,7 @@
 
     <PreferenceCategory
         android:key="spectrum_profile"
+        settings:allowDividerBelow="false"
         android:title="@string/spectrum_profile_title">
 
         <com.asus.zenparts.preferences.SecureSettingListPreference
@@ -259,41 +256,18 @@
             android:entryValues="@array/spectrum_values"
             android:key="spectrum"
             android:summary="@string/spectrum_summary"
+	    settings:allowDividerBelow="false"
             android:icon="@drawable/ic_spectrum"
             android:title="@string/spectrum_title" />
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:key="torch"
-        android:title="@string/torch_title">
-
-        <com.asus.zenparts.preferences.CustomSeekBarPreference
-            android:key="torch_brightness"
-            android:defaultValue="100"
-            android:max="255"
-            app:min="1"
-            android:icon="@drawable/ic_torch"
-            android:title="@string/torch_brightness_title" />
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="usb_fastcharge"
-        android:title="@string/usb_fastcharge_title" >
-
-    <com.asus.zenparts.preferences.SecureSettingSwitchPreference
-            android:key="fastcharge"
-            android:defaultValue="true"
-            android:title="@string/fastcharge_title"
-            android:icon="@drawable/ic_usb_fastcharge"
-            android:summary="@string/fastcharge_summary" />
-
-    </PreferenceCategory>
-
     <!-- Vibration control screen -->
-    <PreferenceCategory android:title="@string/category_vibration">
-        <Preference
+    <PreferenceCategory
+	android:title="@string/category_vibration"
+	settings:allowDividerAbove="false">
+        
+	<Preference
             android:icon="@drawable/ic_vibrate"
             android:key="vibration"
             android:persistent="false"
