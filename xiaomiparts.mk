@@ -19,7 +19,7 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     XiaomiParts \
     XiaomiDoze \
-    Dirac
+    XiaomiDirac
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/XiaomiParts/privapp-permissions-parts.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-parts.xml
