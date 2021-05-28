@@ -85,11 +85,6 @@
     <string name="preset_obsanity">Obsanity</string>
     <string name="preset_obsanity_ips">Obsanity IPS</string>
 
-    <!-- USB fastcharge -->
-    <string name="usb_fastcharge_title">USB Fastcharge</string>
-    <string name="fastcharge_title">Enable USB Fastcharge</string>
-    <string name="fastcharge_summary">Charge upto 900mA when connected to a computer via USB 3.0 port</string>
-
     <!-- menu -->
     <string name="kcal_presets" translatable="false">@string/presets_dialog_title</string>
     <string name="kcal_reset">Reset</string>
@@ -155,62 +150,6 @@
     <!-- Label for feature switch -->
     <string name="switch_bar_off">Off</string>
 
-    <!-- Parallax -->
-    <string name="thermal_title">Thermal</string>
-    <string name="msmthermal_title">MSM Thermal</string>
-    <string name="msmthermal_summary">Enable Thermal driver control</string>
-    <string name="corecontrol_title">Core Control</string>
-    <string name="corecontrol_summary">Limit the cores</string>
-    <string name="vddrestrict_title">VDD Restriction</string>
-    <string name="vddrestrict_summary">Limits CPU voltage</string>
-    <string name="cpucore_title">CPU Core</string>
-    <string name="cpucore_summary">Control Your CPU core</string>
-    <string name="cpucore_dialogTitle">Select no. of core want to disable</string>
-
-    <!-- Values for CPU Boost Presets -->
-    <string name="cpucore_zero">0</string>
-    <string name="cpucore_one">1</string>
-    <string name="cpucore_two">2</string>
-    <string name="cpucore_three">3</string>
-    <string name="cpucore_four">4</string>
-    <string name="cpucore_five">5</string>
-    <string name="cpucore_six">6</string>
-    <string name="cpucore_seven">7</string>
-
-     <!-- LKM Profiles -->
-    <string name="lkmprofile_title">Low Memory Killer</string>
-    <string name="lkmprofile_summary">Low Memory Killer</string>
-    <string name="lkmprofile_dialogTitle">Choose your LKM profile</string>
-
-    <!-- Values for LKM Presets -->
-    <string name="lkmprofile_veryaggressive">Very Aggressive</string>
-    <string name="lkmprofile_aggressive">Aggressive</string>
-    <string name="lkmprofile_light">Light</string>
-    <string name="lkmprofile_medium">Medium</string>
-    <string name="lkmprofile_verylight">Very Light</string>
-    <string name="lkmprofile_default">Default</string>
-    <string name="lkmprofile_disable">Disable</string>
-
-    <!-- LKM Profiles -->
-    <string name="tcpcongestion_title">TCP Congestion</string>
-    <string name="tcpcongestion_summary">Transmission Control Protocol Congestion Algorithm</string>
-    <string name="tcpcongestion_dialogTitle">Choose your TCP Congestion Algorithm</string>
-
-    <!-- Values for LKM Presets -->
-    <string name="tcpcongestion_bbr">bbr</string>
-    <string name="tcpcongestion_cubic">cubic</string>
-    <string name="tcpcongestion_reno">reno</string>
-    <string name="tcpcongestion_bic">bic</string>
-    <string name="tcpcongestion_highspeed">highspeed</string>
-    <string name="tcpcongestion_htcp">htcp</string>
-    <string name="tcpcongestion_westwood">westwood</string>
-    <string name="tcpcongestion_cdg">cdg</string>
-    <string name="tcpcongestion_dctcp">dctcp</string>
-    <string name="tcpcongestion_hybla">hybla</string>
-    <string name="tcpcongestion_vegas">vegas</string>
-    <string name="tcpcongestion_nv">nv</string>
-    <string name="tcpcongestion_ip">ip</string>
-
     <!-- Selinux Switch -->
     <string name="selinux_category">SELinux</string>
     <string name="selinux_explanation_summary">SELinux is a set of kernel modifications and user-space tools. Changing modes can cause unwanted effects. Use at your own risk.</string>
@@ -231,7 +170,7 @@
     <string name="clear_speaker_description">Run this feature once or twice if you find that your speaker is lightly blocked by dust. Set media volume to maximum.\n\nIf the speaker is blocked heavily, run this feature 2-5 times while shaking your device with the speaker facing downwards.</string>
 
     <!-- Thermal Profiles -->
-    <string name="thermal_profile">Thermal Profiles</string>
+    <string name="thermal_title">Thermal Profiles and Game Mode</string>
     <string name="thermal_summary">Adjust per-app thermal profiles for optimum performance</string>
     <string name="thermal_default">Default</string>
     <string name="thermal_benchmark">Benchmark</string>

@@ -82,11 +82,6 @@
     <string name="preset_obsanity">Obsanity</string>
     <string name="preset_obsanity_ips">Obsanity IPS</string>
 
-    <!-- USB fastcharge -->
-    <string name="usb_fastcharge_title">Carga rápida USB</string>
-    <string name="fastcharge_title">Habilitar carga rápida USB</string>
-    <string name="fastcharge_summary">Carregue até 900mA quando conectado a um computador via porta USB 3.0</string>
-
     <!-- menu -->
     <string name="kcal_presets" translatable="false">@string/presets_dialog_title</string>
     <string name="kcal_reset">Redefinir</string>
@@ -150,55 +145,6 @@
     <!-- Label for feature switch -->
     <string name="switch_bar_off">Off</string>
 
-    <!-- Parallax -->
-    <string name="thermal_title">Térmico</string>
-    <string name="msmthermal_title">MSM Térmico</string>
-    <string name="msmthermal_summary">Habilitar controle de driver térmico</string>
-    <string name="corecontrol_title">Controle de Núcleo</string>
-    <string name="corecontrol_summary">Limite dos núcleos</string>
-    <string name="vddrestrict_title">Restrição VDD</string>
-    <string name="vddrestrict_summary">Limita a tensão da CPU</string>
-    <string name="cpucore_title">Núcleo da CPU</string>
-    <string name="cpucore_summary">Controle o núcleo da CPU</string>
-    <string name="cpucore_dialogTitle">Selecione não. do núcleo deseja desativar</string>
-
-    <!-- Values for CPU Boost Presets -->
-    <string name="cpucore_zero">0</string>
-    <string name="cpucore_one">1</string>
-    <string name="cpucore_two">2</string>
-    <string name="cpucore_three">3</string>
-    <string name="cpucore_four">4</string>
-    <string name="cpucore_five">5</string>
-    <string name="cpucore_six">6</string>
-    <string name="cpucore_seven">7</string>
-
-     <!-- LKM Profiles -->
-    <string name="lkmprofile_title">Matador de memória</string>
-    <string name="lkmprofile_summary">Matador de memória</string>
-    <string name="lkmprofile_dialogTitle">Escolha o seu perfil LKM</string>
-
-    <!-- Values for LKM Presets -->
-    <string name="lkmprofile_veryaggressive">Muito agressivo</string>
-    <string name="lkmprofile_aggressive">Agressivo</string>
-    <string name="lkmprofile_light">Leve</string>
-    <string name="lkmprofile_medium">Médio</string>
-    <string name="lkmprofile_verylight">Muito Leve</string>
-    <string name="lkmprofile_default">Padrão</string>
-    <string name="lkmprofile_disable">Desabilitado</string>
-
-    <!-- LKM Profiles -->
-    <string name="tcpcongestion_title">Congestionamento TCP</string>
-    <string name="tcpcongestion_summary">Algoritmo de congestionamento do protocolo de controle de transmissão</string>
-    <string name="tcpcongestion_dialogTitle">Escolha seu Algoritmo de Congestionamento TCP</string>
-
-    <!-- Values for LKM Presets -->
-    <string name="tcpcongestion_westwood">westwood</string>
-    <string name="tcpcongestion_cubic">cubic</string>
-    <string name="tcpcongestion_reno">reno</string>
-    <string name="tcpcongestion_bic">bic</string>
-    <string name="tcpcongestion_highspeed">highspeed</string>
-    <string name="tcpcongestion_htcp">htcp</string>
-
     <!-- Selinux Switch -->
     <string name="selinux_category">SELinux</string>
     <string name="selinux_explanation_summary">SELinux é um conjunto de modificações do kernel e ferramentas de espaço do usuário. Alterar os modos pode causar efeitos indesejados. Use por sua conta e risco.</string>
@@ -216,6 +162,17 @@
     <!-- Clear Speaker -->
     <string name="clear_speaker_title">Limpar alto-falante</string>
     <string name="clear_speaker_summary">Reproduza um áudio de 30 segundos para limpar o alto-falante</string>
-    <string name="clear_speaker_description">Execute este recurso uma ou duas vezes se descobrir que o alto-falante está ligeiramente bloqueado por poeira. Defina o volume da mídia para o máximo. \ N \ nSe o alto-falto-falante estiver fortemente bloqueado, execute este recurso 2 a 5 vezes enquanto agita seu dispositivo com o alto-falante voltado para baixo.</string>
+    <string name="clear_speaker_description">Execute este recurso uma ou duas vezes se descobrir que o alto-falante está ligeiramente bloqueado por poeira. Defina o volume da mídia para o máximo. Se o alto-falto-falante estiver fortemente bloqueado, execute este recurso 2 a 5 vezes enquanto agita seu dispositivo com o alto-falante voltado para baixo.</string>
 
+    <!-- Dirac settings -->
+    <string name="dirac_summary">Otimizar qualidade de áudio</string>
+
+    <!-- Thermal Profiles -->
+    <string name="thermal_title">Perfis Térmicos e Modo Game</string>
+    <string name="thermal_summary">Ajuste os perfis térmicos para obter o desempenho ideal</string>
+    <string name="thermal_default">Padrão</string>
+    <string name="thermal_benchmark">Benchmark</string>
+    <string name="thermal_camera">Câmera</string>
+    <string name="thermal_dialer">Discador</string>
+    <string name="thermal_gaming">Jogos</string>
 </resources>

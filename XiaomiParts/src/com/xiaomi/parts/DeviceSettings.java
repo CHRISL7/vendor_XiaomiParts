@@ -40,11 +40,9 @@ import com.xiaomi.parts.preferences.CustomSeekBarPreference;
 import com.xiaomi.parts.preferences.SecureSettingListPreference;
 import com.xiaomi.parts.preferences.SecureSettingSwitchPreference;
 import com.xiaomi.parts.preferences.VibratorStrengthPreference;
-import com.xiaomi.parts.preferences.SeekBarPreference;
 
 import com.xiaomi.parts.SuShell;
 import com.xiaomi.parts.SuTask;
-import com.xiaomi.parts.Fastcharge;
 
 public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -57,6 +55,7 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String KEY_CALL_VIBSTRENGTH = "vib_call_strength";
     public static final String KEY_NOTIF_VIBSTRENGTH = "vib_notif_strength";
     public static final String KEY_VIBSTRENGTH = "vib_strength";
+
     public static final String CATEGORY_DISPLAY = "display";
     public static final String PREF_DEVICE_KCAL = "device_kcal";
 
@@ -66,24 +65,8 @@ public class DeviceSettings extends PreferenceFragment implements
     public static final String MICROPHONE_GAIN_PATH = "/sys/kernel/sound_control/mic_gain";
     public static final String PREF_EARPIECE_GAIN = "earpiece_gain";
     public static final String EARPIECE_GAIN_PATH = "/sys/kernel/sound_control/earpiece_gain";
-    public static final String PREF_USB_FASTCHARGE = "fastcharge";
-    public static final String USB_FASTCHARGE_PATH = "/sys/kernel/fast_charge/force_fast_charge";
+
     public static final String PREF_KEY_FPS_INFO = "fps_info";
-
-    public static final String PERF_MSM_THERMAL = "msmthermal";
-    public static final String MSM_THERMAL_PATH = "/sys/module/msm_thermal/parameters/enabled";
-    public static final String PERF_CORE_CONTROL = "corecontrol";
-    public static final String CORE_CONTROL_PATH = "/sys/module/msm_thermal/core_control/enabled";
-    public static final String PERF_VDD_RESTRICTION = "vddrestrict";
-    public static final String VDD_RESTRICTION_PATH = "/sys/module/msm_thermal/vdd_restriction/enabled";
-    public static final String PREF_CPUCORE = "cpucore";
-    public static final String CPUCORE_SYSTEM_PROPERTY = "persist.cpucore.profile";
-    public static final String PREF_LKM = "lkmprofile";
-    public static final String LKM_SYSTEM_PROPERTY = "persist.lkm.profile";
-    public static final String PREF_TCP = "tcpcongestion";
-    public static final String TCP_SYSTEM_PROPERTY = "persist.tcp.profile";
-
-    private CustomSeekBarPreference mTorchBrightness;
 
     private static final String SELINUX_CATEGORY = "selinux";
     private static final String PREF_SELINUX_MODE = "selinux_mode";
@@ -91,13 +74,8 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private static final String PREF_CLEAR_SPEAKER = "clear_speaker_settings";
 
+    private CustomSeekBarPreference mTorchBrightness;
     private CustomSeekBarPreference mWhiteTorchBrightness;
-    private SecureSettingSwitchPreference mMsmThermal;
-    private SecureSettingSwitchPreference mCoreControl;
-    private SecureSettingSwitchPreference mVddRestrict;
-    private SecureSettingListPreference mCPUCORE;
-    private SecureSettingListPreference mLKM;
-    private SecureSettingListPreference mTCP;
     private VibratorStrengthPreference mVibratorStrength;
     private Preference mKcal;
     private Preference mAmbientPref;
@@ -131,11 +109,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
 
-        SwitchPreference usbfastCharger = (SwitchPreference) findPreference(PREF_USB_FASTCHARGE);
-        usbfastCharger.setEnabled(FileUtils.fileWritable(USB_FASTCHARGE_PATH));
-        usbfastCharger.setChecked(FileUtils.getFileValueAsBoolean(USB_FASTCHARGE_PATH, true));
-        usbfastCharger.setOnPreferenceChangeListener(this);
-
         mKcal = findPreference(PREF_DEVICE_KCAL);
 
         mKcal.setOnPreferenceClickListener(preference -> {
@@ -168,45 +141,6 @@ public class DeviceSettings extends PreferenceFragment implements
         mEarpieceGain = (CustomSeekBarPreference) findPreference(PREF_EARPIECE_GAIN);
         mEarpieceGain.setOnPreferenceChangeListener(this);
 
-        if (FileUtils.fileWritable(MSM_THERMAL_PATH)) {
-            mMsmThermal = (SecureSettingSwitchPreference) findPreference(PERF_MSM_THERMAL);
-            mMsmThermal.setChecked(FileUtils.getFilesValueAsBoolean(MSM_THERMAL_PATH, true));
-            mMsmThermal.setOnPreferenceChangeListener(this);
-        } else {
-            getPreferenceScreen().removePreference(findPreference(PERF_MSM_THERMAL));
-        }
-
-        if (FileUtils.fileWritable(CORE_CONTROL_PATH)) {
-            mCoreControl = (SecureSettingSwitchPreference) findPreference(PERF_CORE_CONTROL);
-            mCoreControl.setChecked(FileUtils.getFileValueAsBoolean(CORE_CONTROL_PATH, true));
-            mCoreControl.setOnPreferenceChangeListener(this);
-        } else {
-            getPreferenceScreen().removePreference(findPreference(PERF_CORE_CONTROL));
-        }
-
-        if (FileUtils.fileWritable(VDD_RESTRICTION_PATH)) {
-            mVddRestrict = (SecureSettingSwitchPreference) findPreference(PERF_VDD_RESTRICTION);
-            mVddRestrict.setChecked(FileUtils.getFileValueAsBoolean(VDD_RESTRICTION_PATH, true));
-            mVddRestrict.setOnPreferenceChangeListener(this);
-        } else {
-            getPreferenceScreen().removePreference(findPreference(PERF_VDD_RESTRICTION));
-        }
-
-        mCPUCORE = (SecureSettingListPreference) findPreference(PREF_CPUCORE);
-        mCPUCORE.setValue(FileUtils.getStringProp(CPUCORE_SYSTEM_PROPERTY, "0"));
-        mCPUCORE.setSummary(mCPUCORE.getEntry());
-        mCPUCORE.setOnPreferenceChangeListener(this);
-
-        mLKM = (SecureSettingListPreference) findPreference(PREF_LKM);
-        mLKM.setValue(FileUtils.getStringProp(LKM_SYSTEM_PROPERTY, "0"));
-        mLKM.setSummary(mLKM.getEntry());
-        mLKM.setOnPreferenceChangeListener(this);
-
-        mTCP = (SecureSettingListPreference) findPreference(PREF_TCP);
-        mTCP.setValue(FileUtils.getStringProp(TCP_SYSTEM_PROPERTY, "0"));
-        mTCP.setSummary(mTCP.getEntry());
-        mTCP.setOnPreferenceChangeListener(this);
-
         SwitchPreference fpsInfo = (SwitchPreference) findPreference(PREF_KEY_FPS_INFO);
         fpsInfo.setChecked(prefs.getBoolean(PREF_KEY_FPS_INFO, false));
         fpsInfo.setOnPreferenceChangeListener(this);
@@ -234,36 +168,6 @@ public class DeviceSettings extends PreferenceFragment implements
                  FileUtils.setValue(TORCH_1_BRIGHTNESS_PATH, (int) value);
                 break;
 
-            case PERF_MSM_THERMAL:
-                FileUtils.setValue(MSM_THERMAL_PATH, (boolean) value);
-                break;
-
-            case PERF_CORE_CONTROL:
-                FileUtils.setValue(CORE_CONTROL_PATH, (boolean) value);
-                break;
-
-            case PERF_VDD_RESTRICTION:
-                FileUtils.setValue(VDD_RESTRICTION_PATH, (boolean) value);
-                break;
-
-            case PREF_CPUCORE:
-                mCPUCORE.setValue((String) value);
-                mCPUCORE.setSummary(mCPUCORE.getEntry());
-                FileUtils.setStringProp(CPUCORE_SYSTEM_PROPERTY, (String) value);
-                break;
-
-            case PREF_LKM:
-                mLKM.setValue((String) value);
-                mLKM.setSummary(mLKM.getEntry());
-                FileUtils.setStringProp(LKM_SYSTEM_PROPERTY, (String) value);
-                break;
-
-            case PREF_TCP:
-                mTCP.setValue((String) value);
-                mTCP.setSummary(mTCP.getEntry());
-                FileUtils.setStringProp(TCP_SYSTEM_PROPERTY, (String) value);
-                break;
-
             case PREF_HEADPHONE_GAIN:
                 FileUtils.setValue(HEADPHONE_GAIN_PATH, value + " " + value);
                 break;
@@ -274,10 +178,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
             case PREF_EARPIECE_GAIN:
                 FileUtils.setValue(EARPIECE_GAIN_PATH, (int) value);
-                break;
-
-            case PREF_USB_FASTCHARGE:
-                FileUtils.setValue(USB_FASTCHARGE_PATH, (boolean) value);
                 break;
 
             case PREF_SELINUX_MODE:

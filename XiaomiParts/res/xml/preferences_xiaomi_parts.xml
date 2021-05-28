@@ -62,7 +62,6 @@
         <Preference
             android:key="thermal_profiles"
             android:name=".thermal.ThermalActivity"
-            android:label="@string/thermal_profile"
             android:icon="@drawable/ic_thermal_settings"
             android:theme="@style/CustomOptionsTheme"
             android:summary="@string/thermal_summary"
@@ -96,74 +95,6 @@
         android:defaultValue="false"
         android:icon="@drawable/ic_power" />
 </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="charging"
-        android:title="@string/smart_charging_main_title">
-
-        <SwitchPreference
-            android:key="fastcharge"
-            android:defaultValue="false"
-            android:title="@string/fastcharge_title"
-            android:icon="@drawable/ic_usb_fastcharge"
-            android:summary="@string/fastcharge_summary" />
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:key="thermal"
-        android:title="@string/thermal_title">
-
-        <com.xiaomi.parts.preferences.SecureSettingSwitchPreference
-            android:key="msmthermal"
-            android:defaultValue="false"
-            android:title="@string/msmthermal_title"
-            android:icon="@drawable/ic_mtherm"
-            android:summary="@string/msmthermal_summary" />
-
-        <com.xiaomi.parts.preferences.SecureSettingSwitchPreference
-            android:key="corecontrol"
-            android:defaultValue="false"
-            android:title="@string/corecontrol_title"
-            android:icon="@drawable/ic_ccontrol"
-            android:summary="@string/corecontrol_summary" />
-
-        <com.xiaomi.parts.preferences.SecureSettingSwitchPreference
-            android:key="vddrestrict"
-            android:defaultValue="false"
-            android:title="@string/vddrestrict_title"
-            android:icon="@drawable/ic_vddres"
-            android:summary="@string/vddrestrict_summary" />
-
-        <com.xiaomi.parts.preferences.SecureSettingListPreference
-            android:defaultValue="0"
-            android:dialogTitle="@string/cpucore_dialogTitle"
-            android:entries="@array/cpucore_profiles"
-            android:entryValues="@array/cpucore_values"
-            android:key="cpucore"
-            android:summary="@string/cpucore_summary"
-            android:icon="@drawable/ic_cpucore" 
-            android:title="@string/cpucore_title" />
-
-        <com.xiaomi.parts.preferences.SecureSettingListPreference
-            android:defaultValue="0"
-            android:dialogTitle="@string/lkmprofile_dialogTitle"
-            android:entries="@array/lkmprofile_profiles"
-            android:entryValues="@array/lkmprofile_values"
-            android:key="lkmprofile"
-            android:summary="@string/lkmprofile_summary"
-            android:icon="@drawable/ic_lkm" 
-            android:title="@string/lkmprofile_title" />
-
-        <com.xiaomi.parts.preferences.SecureSettingListPreference
-            android:defaultValue="0"
-            android:dialogTitle="@string/tcpcongestion_dialogTitle"
-            android:entries="@array/tcpcongestion_profiles"
-            android:entryValues="@array/tcpcongestion_values"
-            android:key="tcpcongestion"
-            android:summary="@string/tcpcongestion_summary"
-            android:icon="@drawable/ic_tcp" 
-            android:title="@string/tcpcongestion_title" />
-    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="audio"

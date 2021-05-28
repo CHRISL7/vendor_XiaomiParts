@@ -134,12 +134,6 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
         FileUtils.setValue(DeviceSettings.TORCH_1_BRIGHTNESS_PATH,
                 Settings.Secure.getInt(context.getContentResolver(),
                         DeviceSettings.KEY_WHITE_TORCH_BRIGHTNESS, 100));
-        FileUtils.setValue(DeviceSettings.MSM_THERMAL_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PERF_MSM_THERMAL, 0));
-        FileUtils.setValue(DeviceSettings.CORE_CONTROL_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PERF_CORE_CONTROL, 0));
-        FileUtils.setValue(DeviceSettings.VDD_RESTRICTION_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PERF_VDD_RESTRICTION, 0));
         int gain = Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_HEADPHONE_GAIN, 4);
         FileUtils.setValue(DeviceSettings.HEADPHONE_GAIN_PATH, gain + " " + gain);
@@ -147,8 +141,6 @@ public class BootReceiver extends BroadcastReceiver implements Utils {
                 DeviceSettings.PREF_MICROPHONE_GAIN, 0));
         FileUtils.setValue(DeviceSettings.EARPIECE_GAIN_PATH, Settings.Secure.getInt(context.getContentResolver(),
                 DeviceSettings.PREF_EARPIECE_GAIN, 0));
-        FileUtils.setValue(DeviceSettings.USB_FASTCHARGE_PATH, Settings.Secure.getInt(context.getContentResolver(),
-                DeviceSettings.PREF_USB_FASTCHARGE, 0));
 
        // Ambient
         context.startService(new Intent(context, SensorsDozeService.class));
