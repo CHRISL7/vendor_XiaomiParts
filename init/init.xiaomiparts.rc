@@ -1,0 +1,69 @@
+on boot
+# Audio gain permissions
+  chown system system /sys/kernel/sound_control/earpiece_gain
+  chown system system /sys/kernel/sound_control/headphone_gain
+  chown system system /sys/kernel/sound_control/mic_gain
+  chown system system /sys/kernel/sound_control/speaker_gain
+  chmod 0660 /sys/kernel/sound_control/earpiece_gain
+  chmod 0660 /sys/kernel/sound_control/headphone_gain
+  chmod 0660 /sys/kernel/sound_control/mic_gain
+  chmod 0660 /sys/kernel/sound_control/speaker_gain
+
+# FPS Info
+  chown system graphics /sys/class/graphics/fb0/measured_fps
+  chmod 0666 /sys/class/graphics/fb0/measured_fps
+
+# KCAL permissions
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_enable
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_cont
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_sat
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_hue
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_min
+  chown system system /sys/devices/platform/kcal_ctrl.0/kcal_val
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_enable
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_cont
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_sat
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_hue
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_min
+  chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_val
+
+  # Torch
+    chown root system /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/led:torch_0/max_brightness
+    chmod 0660 /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/led:torch_0/max_brightness
+    chown root system /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/led:torch_1/max_brightness
+    chmod 0660 /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/led:torch_1/max_brightness
+    chown root system /sys/class/leds/led:torch_0/max_brightness
+    chmod 0660 /sys/class/leds/led:torch_0/max_brightness
+    chown root system /sys/class/leds/led:torch_1/max_brightness
+    chmod 0660 /sys/class/leds/led:torch_1/max_brightness
+    chown root system /sys/devices/platform/soc/soc:qcom,camera-flash/leds/torch-light1/max_brightness
+    chmod 0660 /sys/devices/platform/soc/soc:qcom,camera-flash/leds/torch-light1/max_brightness
+    write /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,leds@d300/leds/led:torch_1/max_brightness 0
+
+# USB fastcharge permissions
+  chown system system /sys/kernel/fast_charge/force_fast_charge
+  chmod 0660 /sys/kernel/fast_charge/force_fast_charge
+
+# Vibrator permissions
+
+  chown system system /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,haptics@c000/leds/vibrator/vmax_override
+  chmod 0660 /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,haptics@c000/leds/vibrator/vmax_override
+  write /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,haptics@c000/leds/vibrator/vmax_override 1
+  chown system system /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,haptics@c000/leds/vibrator/vmax_mv_user
+  chown system system /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,haptics@c000/leds/vibrator/vmax_mv_call
+  chown system system /sys/devices/platform/soc/200f000.qcom,spmi/spmi-0/spmi0-03/200f000.qcom,spmi:qcom,pmi8950@3:qcom,haptics@c000/leds/vibrator/vmax_mv_strong
+  chown system system /sys/class/leds/vibrator/vmax_override
+  write /sys/class/leds/vibrator/vmax_override 1
+  chown system system /sys/class/leds/vibrator/vmax_mv_user
+  chown system system /sys/class/leds/vibrator/vmax_mv_call
+  chown system system /sys/class/leds/vibrator/vmax_mv_strong
+  chown system system sys/class/leds/vibrator/vmax_override
+  chmod 0660 /sys/class/leds/vibrator/vmax_override
+  write /sys/class/leds/vibrator/vmax_override 1
+  chown root system /sys/class/timed_output/vibrator/vtg_level
+  chmod 0660 /sys/class/timed_output/vibrator/vtg_level
+  chown system system /sys/devices/virtual/timed_output/vibrator/vtg_level
+  chmod 0660 /sys/devices/virtual/timed_output/vibrator/vtg_level
+

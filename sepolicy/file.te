@@ -1,0 +1,19 @@
+# Audio gan
+# Earpiece Gain
+type sysfs_egain, sysfs_type, fs_type;
+
+# Headphone Gain
+type sysfs_hgain, sysfs_type, fs_type;
+
+# Microphone Gain
+type sysfs_mgain, sysfs_type, fs_type;
+
+# FPS Info
+type sysfs_fps, sysfs_type, fs_type;
+
+# Kcal
+type kcal_dev, sysfs_type, fs_type;
+
+# Torch Brightness Control
+ktype sysfs_torch, sysfs_type, fs_type;
+type sysfs_tbrightness, sysfs_type, fs_type;

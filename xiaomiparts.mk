@@ -24,6 +24,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/XiaomiParts/privapp-permissions-parts.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-parts.xml
 
+PRODUCT_COPY_FILES += \
+    vendor/XiaomiParts/init/init.xiaomiparts.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.xiaomiparts.rc
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
    $(VENDOR_PATH)/overlay
