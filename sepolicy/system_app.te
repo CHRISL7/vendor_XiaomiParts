@@ -12,15 +12,6 @@ allow system_app sysfs_mgain:file { open read getattr write };
 allow system_app sysfs_fps:dir search;
 allow system_app sysfs_fps:file rw_file_perms;
 
-# Vibrator
-allow system_app sysfs_vibrator:file file rw_file_perms;
-allow system_app sysfs_vibrator:dir search;
-
 # Thermal Profiles 
 allow system_app sysfs_thermal:file w_file_perms;
 allow system_app sysfs_thermal:file rw_file_perms;
-
-# Torch & led
-allow system_app sysfs_torch:dir search;
-allow system_app sysfs_torch:file rw_file_perms;
-allow system_app sysfs_tbrightness:file { open getattr write };

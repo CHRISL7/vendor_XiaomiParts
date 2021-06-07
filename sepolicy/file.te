@@ -13,7 +13,3 @@ type sysfs_fps, sysfs_type, fs_type;
 
 # Kcal
 type kcal_dev, sysfs_type, fs_type;
-
-# Torch Brightness Control
-ktype sysfs_torch, sysfs_type, fs_type;
-type sysfs_tbrightness, sysfs_type, fs_type;

@@ -1,5 +1,2 @@
-# Torch
-allow platform_app sysfs_leds:dir search;
-
 # FPS Info
 allow platform_app sysfs_fps:file rw_file_perms;

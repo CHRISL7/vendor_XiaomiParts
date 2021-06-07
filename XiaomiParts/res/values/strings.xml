@@ -20,18 +20,6 @@
     <string name="device_kcal_title">Display Color Calibration</string>
     <string name="kcal_enabled_summary">Calibrate Display Using KCAL</string>
 
-    <!-- Torch -->
-    <string name="torch_title">Torch</string>
-    <string name="torch_brightness_title">Brightness</string>
-    <string name="white_torch_brightness_title">White Torch Brightness</string>
-    <string name="cameraflash_title">Camera Flash</string>
-	
-    <!-- Vibration -->
-    <string name="vibration_title">Vibration feedback</string>
-    <string name="vibration_strength_title">System Strength</string>
-    <string name="vibration_call_strength_title">Call Strength</string>
-    <string name="vibration_notif_strength_title">Notification Strength</string>
-
     <!-- Audio amplification -->
     <string name="audio_title">Audio</string>
     <string name="headphone_gain">Headphone gain</string>

@@ -20,16 +20,6 @@
     <string name="device_kcal_title">Calibração de cores da tela</string>
     <string name="kcal_enabled_summary">Calibrar exibição usando KCAL</string>
 
-    <!-- Torch -->
-    <string name="torch_title">Lanterna</string>
-    <string name="torch_brightness_title">Brilho</string>
-    <string name="white_torch_brightness_title">Luz branca da lanterna</string>
-    <string name="cameraflash_title">Flash da câmera</string>
-	
-    <!-- Vibration -->
-    <string name="vibration_title">Vibração</string>
-    <string name="vibration_strength_title">Força da vibração</string>
-
     <!-- Audio amplification -->
     <string name="audio_title">Àudio</string>
     <string name="headphone_gain">Ganho de fone de ouvido</string>

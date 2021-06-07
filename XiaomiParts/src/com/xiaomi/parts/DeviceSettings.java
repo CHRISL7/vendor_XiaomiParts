@@ -39,7 +39,6 @@ import com.xiaomi.parts.ambient.AmbientGesturePreferenceActivity;
 import com.xiaomi.parts.preferences.CustomSeekBarPreference;
 import com.xiaomi.parts.preferences.SecureSettingListPreference;
 import com.xiaomi.parts.preferences.SecureSettingSwitchPreference;
-import com.xiaomi.parts.preferences.VibratorStrengthPreference;
 
 import com.xiaomi.parts.SuShell;
 import com.xiaomi.parts.SuTask;
@@ -48,13 +47,6 @@ public class DeviceSettings extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String TAG = "XiaomiParts";
-
-    public static final String KEY_WHITE_TORCH_BRIGHTNESS = "white_torch_brightness";
-    public static final String TORCH_1_BRIGHTNESS_PATH = "/sys/class/leds/led:torch_0/max_brightness";
-
-    public static final String KEY_CALL_VIBSTRENGTH = "vib_call_strength";
-    public static final String KEY_NOTIF_VIBSTRENGTH = "vib_notif_strength";
-    public static final String KEY_VIBSTRENGTH = "vib_strength";
 
     public static final String CATEGORY_DISPLAY = "display";
     public static final String PREF_DEVICE_KCAL = "device_kcal";
@@ -74,9 +66,6 @@ public class DeviceSettings extends PreferenceFragment implements
 
     private static final String PREF_CLEAR_SPEAKER = "clear_speaker_settings";
 
-    private CustomSeekBarPreference mTorchBrightness;
-    private CustomSeekBarPreference mWhiteTorchBrightness;
-    private VibratorStrengthPreference mVibratorStrength;
     private Preference mKcal;
     private Preference mAmbientPref;
     private CustomSeekBarPreference mHeadphoneGain;
@@ -103,10 +92,6 @@ public class DeviceSettings extends PreferenceFragment implements
             return true;
         });
 
-        mWhiteTorchBrightness = (CustomSeekBarPreference) findPreference(KEY_WHITE_TORCH_BRIGHTNESS);
-        mWhiteTorchBrightness.setEnabled(FileUtils.fileWritable(TORCH_1_BRIGHTNESS_PATH));
-        mWhiteTorchBrightness.setOnPreferenceChangeListener(this);
-
         PreferenceCategory displayCategory = (PreferenceCategory) findPreference(CATEGORY_DISPLAY);
 
         mKcal = findPreference(PREF_DEVICE_KCAL);
@@ -126,11 +111,6 @@ public class DeviceSettings extends PreferenceFragment implements
                 return true;
             }
         });
-
-        mVibratorStrength = (VibratorStrengthPreference) findPreference(KEY_VIBSTRENGTH);
-        if (mVibratorStrength != null) {
-            mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
-        }
 
         mHeadphoneGain = (CustomSeekBarPreference) findPreference(PREF_HEADPHONE_GAIN);
         mHeadphoneGain.setOnPreferenceChangeListener(this);
@@ -164,10 +144,6 @@ public class DeviceSettings extends PreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object value) {
         final String key = preference.getKey();
         switch (key) {
-            case KEY_WHITE_TORCH_BRIGHTNESS:
-                 FileUtils.setValue(TORCH_1_BRIGHTNESS_PATH, (int) value);
-                break;
-
             case PREF_HEADPHONE_GAIN:
                 FileUtils.setValue(HEADPHONE_GAIN_PATH, value + " " + value);
                 break;
