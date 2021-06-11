@@ -1,0 +1,2 @@
+allow untrusted_app_27 sysfs_graphics:dir search;
+allow untrusted_app_27 sysfs_graphics:file r_file_perms;

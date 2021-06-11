@@ -11,6 +11,8 @@ allow system_app sysfs_mgain:file { open read getattr write };
 # FPS Info
 allow system_app sysfs_fps:dir search;
 allow system_app sysfs_fps:file rw_file_perms;
+allow system_app sysfs_graphics:dir search;
+allow system_app sysfs_graphics:file r_file_perms;
 
 # Thermal Profiles 
 allow system_app sysfs_thermal:file w_file_perms;
