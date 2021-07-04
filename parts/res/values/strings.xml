@@ -31,6 +31,10 @@
     <string name="touch_resistant_title">Touch-resistant area</string>
     <string name="touch_resistant_summary">Reduce touch sensitivity near the edges to avoid triggering touch controls</string>
 
+    <!-- Touch Sampling -->
+    <string name="htsr_enable_title">Increase Touch Responsiveness</string>
+    <string name="htsr_enable_summary">Increases touch polling rate to decrease latency</string>
+
     <!-- LCD Features -->
     <string name="lcd_features_title">LCD features</string>
     <string name="lcd_features_summary">High Brightness Mode, CABC</string>

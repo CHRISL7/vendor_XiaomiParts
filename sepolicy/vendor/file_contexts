@@ -2,3 +2,6 @@
 
 # Haptic
 /sys/devices/platform/soc/884000.i2c/i2c-3/3-005a/ulevel             u:object_r:sysfs_vibrator:s0
+
+# Touch Sampling
+/sys/devices/virtual/touch/touch_dev/bump_sample_rate                    u:object_r:sysfs_htsr:s0

@@ -32,6 +32,10 @@ on boot
   chmod 0666 /sys/class/thermal/thermal_message/temp_state
   chown system system /sys/class/thermal/thermal_message/temp_state
 
+# Touch Sampling Rate
+  chown system system /sys/devices/virtual/touch/touch_dev/bump_sample_rate
+  chmod 0664 /sys/devices/virtual/touch/touch_dev/bump_sample_rate
+
 on property:sys.perf_profile=1
     write /dev/stune/top-app/schedtune.boost 10
     write /sys/class/kgsl/kgsl-3d0/devfreq/adrenoboost 2

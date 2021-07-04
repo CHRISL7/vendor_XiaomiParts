@@ -1,3 +1,4 @@
 type sysfs_kcal, sysfs_type, fs_type;
 type proc_nvt_feature, proc_type, fs_type;
 type sysfs_lcd_feature, sysfs_type, fs_type;
+type sysfs_htsr, sysfs_type, fs_type;
