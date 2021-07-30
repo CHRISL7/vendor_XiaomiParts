@@ -76,9 +76,7 @@ public class FPSInfoService extends Service {
                 if(msg.obj == null || msg.what != 1) {
                     return;
                 }
-                String msgData = (String) msg.obj;
-                msgData = msgData.trim().split("\\s+")[1];
-                mFps = msgData + " FPS";
+                mFps = parseMeasuredFps((String) msg.obj);
                 mDataAvail = true;
                 updateDisplay();
             }
@@ -105,6 +103,9 @@ public class FPSInfoService extends Service {
             mAscent = mOnlinePaint.ascent();
             float descent = mOnlinePaint.descent();
             mFH = (int)(descent - mAscent + .5f);
+
+            final String maxWidthStr = "FPS: XYZ";
+            mMaxWidth = (int)mOnlinePaint.measureText(maxWidthStr);
 
             updateDisplay();
         }
@@ -150,6 +151,17 @@ public class FPSInfoService extends Service {
             canvas.drawText(s, RIGHT-mPaddingLeft-mMaxWidth,
                     y-1, mOnlinePaint);
             y += mFH;
+        }
+
+        private String parseMeasuredFps(String data) {
+            String result = "err";
+            try {
+                float fps = Float.parseFloat(data.trim().split("\\s+")[1]);
+                result = String.valueOf(Math.round(fps));
+            } catch (NumberFormatException e) {
+                Log.e(TAG, "NumberFormatException occured at parsing FPS data");
+            }
+            return "FPS: " + result;
         }
 
         void updateDisplay() {
