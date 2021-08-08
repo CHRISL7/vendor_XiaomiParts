@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright (C) 2018 The Asus-SDM660 Project
      Licensed under the Apache License, Version 2.0 (the "License");
@@ -71,6 +72,25 @@
                 android:targetPackage="com.xiaomi.parts"
                 android:targetClass="com.xiaomi.parts.thermal.ThermalActivity" />
         </Preference>
+
+        <Preference
+            android:key="popupcamera_enable"
+            android:title="popupcamera">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="org.lineageos.settings"
+                android:targetClass="org.lineageos.settings.popupcamera.PopupCameraSettingsActivity" />
+        </Preference>
+   
+        <Preference
+            android:key="dimming_enable"
+            android:title="dimming">
+            <intent
+                android:action="android.intent.action.MAIN"
+                android:targetPackage="org.lineageos.settings"
+                android:targetClass="org.lineageos.settings.display.DcDimmingSettingsActivity" />
+        </Preference>
+
     </PreferenceCategory>
 
     <PreferenceCategory
