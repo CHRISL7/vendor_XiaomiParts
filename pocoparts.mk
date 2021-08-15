@@ -12,6 +12,9 @@ PRODUCT_COPY_FILES += \
     $(VENDOR_PATH)/init/init.pocoparts.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/init.pocoparts.rc \
     $(VENDOR_PATH)/init/init.pocoparts.rc:$(TARGET_COPY_OUT_PRODUCT)/etc/init/init.pocoparts.rc
 
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.lcd.cabc_mode=1
+
 # Sepolicy
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/private
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
