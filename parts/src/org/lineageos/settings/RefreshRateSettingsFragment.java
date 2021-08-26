@@ -29,7 +29,7 @@ import org.lineageos.settings.Constants;
 import org.lineageos.settings.R;
 import org.lineageos.settings.utils.DisplayUtils;
 
-public class MainSettingsFragment extends PreferenceFragment {
+public class RefreshRateSettingsFragment extends PreferenceFragment {
 
     private Preference mPrefRefreshRateInfo;
     private ListPreference mPrefRefreshRateConfig;
@@ -42,7 +42,7 @@ public class MainSettingsFragment extends PreferenceFragment {
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.main_settings);
+        addPreferencesFromResource(R.xml.refresh_rate_settings);
         mPrefRefreshRateConfig = (ListPreference) findPreference(Constants.KEY_REFRESH_RATE_CONFIG);
         mPrefRefreshRateConfig.setOnPreferenceChangeListener(PrefListener);
         mPrefRefreshRateInfo = (Preference) findPreference(Constants.KEY_REFRESH_RATE_INFO);

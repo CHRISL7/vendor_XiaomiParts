@@ -94,19 +94,18 @@
         </service>
 
         <activity
-            android:name=".MainSettingsActivity"
-            android:label="@string/device_settings_title"
-            android:icon="@drawable/ic_main_settings"
+            android:name=".RefreshRateSettingsActivity"
+            android:label="@string/enable_high_refresh_rate_title"
             android:theme="@style/Theme.Main">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
             <meta-data
                 android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.system" />
+                android:value="com.android.settings.category.ia.display" />
             <meta-data
                 android:name="com.android.settings.summary"
-                android:resource="@string/device_settings_summary" />
+                android:resource="@string/refresh_rate_summary" />
         </activity>
 
     </application>
