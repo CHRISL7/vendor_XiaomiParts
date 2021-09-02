@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (C) 2020 The dotOS Project
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+       http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<resources>
+    <style name="DotPreferenceFullCard">
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:background">@drawable/dot_pref_full</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+
+    <style name="DotPreferenceTopCard">
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:background">@drawable/dot_pref_top</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+
+    <style name="DotPreferenceMiddleCard">
+        <item name="android:layout_marginTop">-2dp</item>
+        <item name="android:layout_marginBottom">-2dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:background">@drawable/dot_pref_middle</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+
+    <style name="DotPreferenceBottomCard">
+        <item name="android:layout_marginBottom">4dp</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:background">@drawable/dot_pref_bottom</item>
+        <item name="android:clipToPadding">false</item>
+    </style>
+</resources>
