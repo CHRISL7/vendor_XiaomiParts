@@ -35,6 +35,7 @@
     <com.android.settingslib.widget.FooterPreference
         android:key="lcd_features_footer"
         android:title="@string/lcd_features_info"
-        android:selectable="false" />
+        android:selectable="false"
+        android:layout="@layout/preference_footer" />
 
 </PreferenceScreen>
