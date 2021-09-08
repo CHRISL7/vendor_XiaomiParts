@@ -1,0 +1,3 @@
+allow ueventd sysfs_kcal:dir r_dir_perms;
+allow ueventd sysfs_kcal:file rw_file_perms;
+allow ueventd sysfs_kcal:lnk_file r_file_perms;

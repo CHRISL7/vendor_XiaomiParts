@@ -1,0 +1,2 @@
+/sys/devices/platform/kcal_ctrl.0(/.*)?                      u:object_r:sysfs_kcal:s0
+/sys/bus/platform/drivers/kcal_ctrl(/.*)?                    u:object_r:sysfs_kcal:s0
