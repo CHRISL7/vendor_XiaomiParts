@@ -16,6 +16,7 @@
 -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/lcd_features_title" >
 
     <ListPreference
@@ -23,6 +24,7 @@
         android:title="@string/lcd_hbm_title"
         android:entries="@array/lcd_hbm_modes"
         android:entryValues="@array/lcd_hbm_values"
+        app:iconSpaceReserved="false"
         android:defaultValue="0" />
 
     <ListPreference
@@ -30,12 +32,14 @@
         android:title="@string/lcd_cabc_title"
         android:entries="@array/lcd_cabc_modes"
         android:entryValues="@array/lcd_cabc_values"
+        app:iconSpaceReserved="false"
         android:defaultValue="0" />
 
     <com.android.settingslib.widget.FooterPreference
         android:key="lcd_features_footer"
         android:title="@string/lcd_features_info"
         android:selectable="false"
+        app:iconSpaceReserved="false"
         android:layout="@layout/preference_footer" />
 
 </PreferenceScreen>

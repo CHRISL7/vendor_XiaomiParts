@@ -12,17 +12,23 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="@string/htsr_enable_title">
+
     <SwitchPreference
         android:defaultValue="false"
         android:key="htsr_enable"
         android:summary="@string/htsr_enable_summary"
+        app:iconSpaceReserved="false"
         android:title="@string/htsr_enable_title" />
 
     <com.android.settingslib.widget.FooterPreference
         android:key="footer_preference"
         android:title="@string/htsr_footer"
         android:selectable="false"
+        app:iconSpaceReserved="false"
         android:layout="@layout/preference_footer" />
 
 </PreferenceScreen>

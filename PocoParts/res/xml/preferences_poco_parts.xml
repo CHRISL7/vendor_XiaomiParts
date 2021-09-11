@@ -23,8 +23,8 @@
         <Preference
             android:key="device_kcal"
             android:persistent="false"
-            android:icon="@drawable/ic_kcal"
             android:title="@string/device_kcal_title"
+            app:iconSpaceReserved="false"
             android:summary="@string/kcal_enabled_summary">
             <intent
                 android:action="android.intent.action.MAIN"
@@ -35,6 +35,7 @@
         <Preference
             android:key="lcd_features_settings"
             android:summary="@string/lcd_features_summary"
+            app:iconSpaceReserved="false" 
             android:title="@string/lcd_features_title">
             <intent
                 android:action="android.intent.action.MAIN"
@@ -45,6 +46,7 @@
         <Preference
             android:key="pref_refresh_rate_config"
             android:summary="@string/enable_high_refresh_rate_summary"
+            app:iconSpaceReserved="false" 
             android:title="@string/enable_high_refresh_rate_title">
             <intent
                 android:action="android.intent.action.MAIN"
@@ -55,6 +57,7 @@
         <Preference
             android:key="htsr_enable"
             android:title="@string/htsr_enable_title"
+            app:iconSpaceReserved="false" 
             android:summary="@string/htsr_enable_summary">
             <intent
                 android:action="android.intent.action.MAIN"
@@ -65,6 +68,7 @@
         <Preference
             android:key="thermal_profiles"
             android:summary="@string/thermal_summary"
+            app:iconSpaceReserved="false" 
             android:title="@string/thermal_title">
             <intent
                 android:action="android.intent.action.MAIN"
@@ -74,9 +78,9 @@
   
      <SwitchPreference
         android:key="fps_info"
-        android:icon="@drawable/ic_fps_info"
         android:title="@string/fps_info_title"
         android:summary="@string/fps_info_summary"
+        app:iconSpaceReserved="false" 
         android:persistent="true" />
 
     </PreferenceCategory>
@@ -89,7 +93,7 @@
             android:key="clear_speaker_settings" 
             android:title="@string/clear_speaker_title"
             android:summary="@string/clear_speaker_summary"
-            android:icon="@drawable/ic_speaker_cleaner_icon" >
+            app:iconSpaceReserved="false" >
             <intent
                 android:action="android.intent.action.MAIN"
                 android:targetClass="com.xiaomi.parts.speaker.ClearSpeakerActivity"
@@ -99,6 +103,7 @@
         <Preference
             android:key="vibrator_control"
             android:title="@string/haptic_level_title"
+            app:iconSpaceReserved="false" 
             android:summary="@string/haptic_level_summary">
             <intent
                 android:action="android.intent.action.MAIN"

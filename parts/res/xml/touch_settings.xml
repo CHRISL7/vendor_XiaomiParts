@@ -14,12 +14,15 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <SwitchPreference
         android:defaultValue="false"
         android:key="touch_game_mode"
         android:summary="@string/touch_game_mode_summary"
+        app:iconSpaceReserved="false"
         android:title="@string/touch_game_mode_title" />
 
     <org.lineageos.settings.widget.SeekBarPreference
@@ -28,6 +31,7 @@
         android:summary="@string/touch_response_summary"
         android:layout="@layout/preference_slider"
         android:defaultValue="@integer/touch_response_default"
+        app:iconSpaceReserved="false"
         android:max="@integer/touch_response_max" />
 
     <org.lineageos.settings.widget.SeekBarPreference
@@ -36,6 +40,7 @@
         android:summary="@string/touch_sensitivity_summary"
         android:layout="@layout/preference_slider"
         android:defaultValue="@integer/touch_sensitivity_default"
+        app:iconSpaceReserved="false"
         android:max="@integer/touch_sensitivity_max" />
 
     <org.lineageos.settings.widget.SeekBarPreference
@@ -44,6 +49,7 @@
         android:summary="@string/touch_resistant_summary"
         android:layout="@layout/preference_slider"
         android:defaultValue="@integer/touch_resistant_default"
+        app:iconSpaceReserved="false"
         android:max="@integer/touch_resistant_max" />
 
 </PreferenceScreen>
