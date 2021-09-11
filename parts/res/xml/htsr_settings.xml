@@ -18,4 +18,11 @@
         android:key="htsr_enable"
         android:summary="@string/htsr_enable_summary"
         android:title="@string/htsr_enable_title" />
+
+    <com.android.settingslib.widget.FooterPreference
+        android:key="footer_preference"
+        android:title="@string/htsr_footer"
+        android:selectable="false"
+        android:layout="@layout/preference_footer" />
+
 </PreferenceScreen>
