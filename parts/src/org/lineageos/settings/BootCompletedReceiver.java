@@ -31,6 +31,7 @@ import androidx.preference.PreferenceManager;
 import org.lineageos.settings.Constants;
 import org.lineageos.settings.utils.DisplayUtils;
 import org.lineageos.settings.utils.FileUtils;
+import org.lineageos.settings.doze.DozeUtils;
 import org.lineageos.settings.haptic.HapticUtils;
 import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.touchsampling.TouchSamplingUtils;
@@ -50,5 +51,8 @@ public class BootCompletedReceiver extends BroadcastReceiver {
 
         // Touch Sampling
         TouchSamplingUtils.restoreSamplingValue(context);
+
+        // Doze
+        DozeUtils.checkDozeService(context);
     }
 }
