@@ -93,7 +93,7 @@
 
     <!-- Thermal Profiles -->
     <string name="thermal_title">Thermal Profiles and Game Mode</string>
-    <string name="thermal_summary">Adjust per-app thermal profiles for optimum performance</string>
+    <string name="thermal_summary">Adjust per-app thermal and touchscreen profiles</string>
 
     <!-- Touch Sampling -->
     <string name="htsr_enable_title">High Touch Polling Rate</string>
