@@ -95,6 +95,7 @@
     <PreferenceCategory
         android:key="audio"
         android:layout="@layout/dot_preference_category"
+        app:allowDividerAbove="false"
         android:title="@string/audio_category">
 
         <com.xiaomi.parts.preferences.SecureSettingSwitchPreference
