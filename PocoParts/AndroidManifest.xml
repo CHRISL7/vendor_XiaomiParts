@@ -29,7 +29,7 @@
     <application
         android:label="@string/advanced_settings"
         android:supportsRtl="true"
-        android:theme="@style/CustomOptionsTheme">
+        android:theme="@style/Theme.Main">
 
         <receiver
             android:name=".BootReceiver">
