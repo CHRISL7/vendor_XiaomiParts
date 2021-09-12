@@ -34,7 +34,7 @@
     <!-- Touch Sampling -->
     <string name="htsr_enable_title">Increase Touch Responsiveness</string>
     <string name="htsr_enable_summary">Increases touch polling rate to decrease latency</string>
-    <string name="htsr_footer">Driver constructed based on palm_sensor sysfs node by Xiaomi.\n Mode Values were picked by reading logcat from MIUI when game_mode was enabled.</string>
+    <string name="htsr_footer">Driver constructed based on palm sensor sysfs node by Xiaomi.\n Mode Values were picked by reading logcat from MIUI when game mode was enabled.</string>
 
     <!-- LCD Features -->
     <string name="lcd_features_title">LCD features</string>
