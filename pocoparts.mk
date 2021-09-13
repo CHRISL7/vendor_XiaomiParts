@@ -22,6 +22,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PRODUCT_PROPERTIES += \
     persist.lcd.cabc_mode=1
 
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += \
+   $(VENDOR_PATH)/overlay
+
 # Properties
 TARGET_VENDOR_PROP += $(VENDOR_PATH)/vendor.prop
 
