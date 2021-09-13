@@ -28,11 +28,8 @@ import android.os.Handler;
 
 import androidx.preference.PreferenceManager;
 
-import org.lineageos.settings.Constants;
-import org.lineageos.settings.utils.DisplayUtils;
 import org.lineageos.settings.utils.FileUtils;
 import org.lineageos.settings.doze.DozeUtils;
-import org.lineageos.settings.haptic.HapticUtils;
 import org.lineageos.settings.thermal.ThermalUtils;
 import org.lineageos.settings.touchsampling.TouchSamplingUtils;
 
@@ -42,12 +39,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     public void onReceive(final Context context, Intent intent) {
         // Thermal Profiles
         ThermalUtils.startService(context);
-
-        // Dynamic Refresh Rate
-        DisplayUtils.updateRefreshRateSettings(context);
-
-        // Vibrator
-        HapticUtils.restoreLevel(context);
 
         // Touch Sampling
         TouchSamplingUtils.restoreSamplingValue(context);

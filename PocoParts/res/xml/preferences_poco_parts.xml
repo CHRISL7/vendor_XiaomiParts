@@ -47,18 +47,6 @@
         </Preference>
 
         <Preference
-            android:key="pref_refresh_rate_config"
-            android:summary="@string/enable_high_refresh_rate_summary"
-            app:iconSpaceReserved="false" 
-            android:layout="@layout/dot_preference_middle_card"
-            android:title="@string/enable_high_refresh_rate_title">
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="org.lineageos.settings"
-                android:targetClass="org.lineageos.settings.RefreshRateSettingsActivity" />
-        </Preference>
-
-        <Preference
             android:key="htsr_enable"
             android:title="@string/htsr_enable_title"
             app:iconSpaceReserved="false" 
@@ -138,18 +126,6 @@
                 android:action="android.intent.action.MAIN"
                 android:targetClass="com.xiaomi.parts.speaker.ClearSpeakerActivity"
                 android:targetPackage="com.xiaomi.parts.speaker" />
-        </Preference>
-
-        <Preference
-            android:key="vibrator_control"
-            android:title="@string/haptic_level_title"
-            app:iconSpaceReserved="false" 
-            android:layout="@layout/dot_preference_bottom_card"
-            android:summary="@string/haptic_level_summary">
-            <intent
-                android:action="android.intent.action.MAIN"
-                android:targetClass="org.lineageos.settings.haptic.HapticLevelActivity"
-                android:targetPackage="org.lineageos.settings" />
         </Preference>
 
       </PreferenceCategory>

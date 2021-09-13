@@ -44,20 +44,6 @@
     <string name="lcd_cabc_title">Modo de Controle de luz de fundo adaptável de conteúdo (CABC)</string>
     <string name="lcd_features_info">HBM aumenta o brilho máximo da tela para melhorar a visibilidade sob a luz solar.\n\nCABC Ajusta o brilho da tela e da luz de fundo com base no conteúdo mostrado atualmente.</string>
     
-    <!-- Refresh Rate tile -->
-    <string name="refresh_rate_tile_title">Taxa de atualização</string>
-    <string name="refresh_rate_title">Taxa de atualização dinâmica</string>
-    <string name="refresh_rate_summary">Altere a taxa de atualização da tela do seu dispositivo para uma melhor experiência</string>
-    <string name="enable_high_refresh_rate_title">Alta taxa de atualização</string>
-    <string name="enable_high_refresh_rate_summary">Ative a alta taxa de atualização para uma experiência mais suave</string>
-    <string name="current_refresh_rate_info">Taxa de atualização máxima / mínima: <xliff:g id="version">%1$s</xliff:g>Hz - <xliff:g id="version">%2$s</xliff:g>Hz</string>
-
-    <!-- Haptic Level Settings -->
-    <string name="haptic_title">Controlador de vibração</string>
-    <string name="haptic_level_title">Nível de força de vibração</string>
-    <string name="haptic_level_summary">Ajuste o nível de força do feedback tátil geral</string>
-    <string name="haptic_level_summary_incompatible">Seu kernel não suporta o nível de força tátil QTI personalizado</string>
-
     <!-- Raise to wake strings-->
     <string name="raise_to_wake_gesture_title">Pegar para despertar</string>
     <string name="raise_to_wake_gesture_summary">Desperte o dispositivo em vez de pulsar a notificação ao pega-lo</string>

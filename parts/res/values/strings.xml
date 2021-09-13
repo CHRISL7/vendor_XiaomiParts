@@ -44,20 +44,6 @@
     <string name="lcd_cabc_title">CABC Mode</string>
     <string name="lcd_features_info">High Brightness Mode (HBM) increases the maximum brightness of the display to improve visibility under sunlight. Increases power consumption.\n\nCABC (Content Adaptive Backlight Control) adjusts display and backlight brightness based on currently shown content, to reduce power consumption without degradation.</string>
     
-    <!-- Refresh Rate tile -->
-    <string name="refresh_rate_tile_title">Refresh Rate</string>
-    <string name="refresh_rate_title">Dynamic Refresh rate</string>
-    <string name="refresh_rate_summary">Change your device\'s display refresh rate for a better experience</string>
-    <string name="enable_high_refresh_rate_title">High refresh rate</string>
-    <string name="enable_high_refresh_rate_summary">Enable high refresh rate for a smoother experience</string>
-    <string name="current_refresh_rate_info">Maximum / minimum refresh rate: <xliff:g id="version">%1$s</xliff:g>Hz - <xliff:g id="version">%2$s</xliff:g>Hz</string>
-
-    <!-- Haptic Level Settings -->
-    <string name="haptic_title">Haptic feedback</string>
-    <string name="haptic_level_title">Feedback strength level</string>
-    <string name="haptic_level_summary">Adjust the strength level of overall haptic feedback</string>
-    <string name="haptic_level_summary_incompatible">Your kernel did not support custom QTI Haptic Strength Level</string>
-
     <!-- Raise to wake strings-->
     <string name="raise_to_wake_gesture_title">Raise to wake</string>
     <string name="raise_to_wake_gesture_summary">Wake up the device instead of pulsing notification</string>

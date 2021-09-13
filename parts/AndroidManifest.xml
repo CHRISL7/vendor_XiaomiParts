@@ -73,36 +73,6 @@
             </intent-filter>
         </service>
 
-        <service
-            android:name=".RefreshRateTileService"
-            android:icon="@drawable/ic_qs_refresh_rate"
-            android:label="@string/refresh_rate_tile_title"
-            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
-            <intent-filter>
-                <action android:name="android.service.quicksettings.action.QS_TILE"/>
-            </intent-filter>
-        </service>
-
-        <activity
-            android:name=".RefreshRateSettingsActivity"
-            android:label="@string/enable_high_refresh_rate_title"
-            android:theme="@style/Theme.Main">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-         </activity>
-
-        <activity
-            android:name=".haptic.HapticLevelActivity"
-            android:label="@string/haptic_title"
-            android:theme="@style/Theme.Main">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-         </activity>
-
         <activity
             android:name=".touchsampling.TouchSamplingSettingsActivity"
             android:label="@string/htsr_enable_title"
